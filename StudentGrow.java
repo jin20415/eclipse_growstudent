@@ -23,19 +23,20 @@ public class StudentGrow {
 	         int Attendence=0;
              int Month = 4;
              int Day = 20;
+             int Social = 10;
 	         String Daily[]={"화","수","목","금","토","일","월"};
 	         String Today = null;
 	         while(true){
 	        	 if(Month == 4) {Today=Daily[Day%7];}
 	            System.out.println("===================================================================");
 	            System.out.println("종강까지 D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일");
-	            System.out.println("체력 : "+Power+"  /  지적능력: "+Intelli+" /   돈 : "+Money+"원   /  친화력 : "+Friend);
+	            System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  친화력 : "+Friend + " /  사회성: "+Social);
 	            System.out.println();
 	            System.out.println("주인공 : 앞으로 중간고사까지 "+DdayNumber+"일! 뭘 해볼까?");
 	            System.out.println();
 	            System.out.println("1. 강의듣기 : 공부를 하자! 학점을 살려야겠어!(체력 -10 , 주말은 선택안됨)");
 	            System.out.println("2. 알바가기 : 돈을 벌어보자! 힘든만큼  보람찰거야!(체력 -50, 돈 +50000)"); 
-	            System.out.println("3. 친목활동하기 : 친목을 쌓아보자! 인맥도 능력이랬어!(1일 소모, 체력 -40, 돈 -10000)"); //랜덤함수로 랜덤하게 선배가 준 족보(지적능력+3) 이런것도 좋을듯?!
+	            System.out.println("3. 친목활동하기 : 친목을 쌓아보자! 인맥도 능력이랬어!(체력 -20, 돈 -20000)"); //랜덤함수로 랜덤하게 선배가 준 족보(지적능력+3) 이런것도 좋을듯?!
 	            System.out.println("4. 빈둥대기 : 쉬어보자! 역시 쉬는게 최고야!(1일 소모, 체력+10)");//랜덤함수로 배고파서 충동적으로 피자를 시켰다!(돈 -20000) 이런거..
 	            System.out.println("5. 과제하기: 중간고사까지 얼마 남지않았어 얼른 과제를 끝내고 공부를 해보자(1일 소모, 체력 -50)");
 	            System.out.println("===================================================================");//5. 공부하기를 따로 만들까 생각중
@@ -69,16 +70,16 @@ public class StudentGrow {
 	                      Intelli+=15;
 	                      System.out.println("교수님 : 터미널에서 cd apue.3파일로 이동해서 $%@#!@*&가나다$^@#... "+" [ 지능 : "+ Intelli+ "만큼 올랐어! ]" );
 	                      Power -= 5;
-	                      System.out.println(" '교수님: 이번 강의 내용을 A4 용지 4페이지 이내로 작성하여 과제 제출하세요' "+" [ 체력 : "+ Power+ "만큼 떨어졌어!" );                      
+	                      System.out.println(" '교수님: 이번 강의 내용을 A4 용지 4페이지 이내로 작성하여 과제 제출하세요' "+" [ 피로도 : "+ Power+ "만큼 떨어졌어!" );                      
 	                      System.out.println();
 	                   }
 	                   else if(study == 3) {
-	                	  System.out.println("\t \t 데이터베이스 강의 시작 \t \t");
+	                	  System.out.println("\t \t >> 데이터베이스 강의 시작  <<\t \t");
 	                	  Intelli += 15;	                     
 	                      System.out.println(" '교수님 : 박지성이 구매한 도서의 이름을 검색하시오' "+" [ 지능 : "+ Intelli+ "만큼 올랐어! ]" );	
 	                      System.out.println(" '교수님: 이번 주까지 연습문제 풀어서 과제 제출하세요' ");
 	                      Power -= 5;
-	                      System.out.println(" !데이터 베이스 과제가 나왔어!"+" [ 체력 : "+ Power+ "만큼 떨어졌어!" );	                     
+	                      System.out.println(" !데이터 베이스 과제가 나왔어!"+" [ 피로도 : "+ Power+ "만큼 떨어졌어!" );	                     
 	                      System.out.println();
 	                      System.out.println();
 	                      }
@@ -108,7 +109,8 @@ public class StudentGrow {
 	                      System.out.println("\n \t $$$$$$$$$$$$$$$$$ 오만원을 벌었다! $$$$$$$$$$$$$$$$$ \t \n");
 	                      Money+=50000;
 	                      Power-=50;
-	                      System.out.println(" [ 체력 : "+Power+" / 현재 나의 잔고 : "+Money+"원 ]" );
+	                      Social += 10;
+	                      System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원 " + "/사회성: "+Social+"]" );
 	                   }
 	                   else {
 		                      System.out.println("\n \t $$$$$$$$$$$$$$$$$ 보너스를 받았다! $$$$$$$$$$$$$$$$$ \t \n");
@@ -116,15 +118,30 @@ public class StudentGrow {
 		                      Money+=40000;		                      
 		                      Power-= 50;
 		                      Power+= 10;
-		                      System.out.println(" [ 체력 : "+Power+" / 현재 나의 잔고 : "+Money+"원 ]" );
+		                      System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원 ]" );
 	                   }
 	                   
 	                   Day++;
 	                   DdayNumber--;
 	                  
 	                   break;
-	               /*case 3 :
-	               case 4 :*/
+	                   
+	                 case 3 :
+	                	 System.out.println("--------------------------친목활동--------------------------");
+		                 System.out.println(" 1. 동아리 활동하기\n 2. 대외활동하기 \n ");
+		                 System.out.println("----------------------------------------------------------");
+		                 
+		                 int j[] = {1,2};
+		                 int act = input.nextInt();
+		                 if( act == 1) {
+		                	 System.out.println("\t\t 동아리 활동 \t\t");
+		                	 Friend+=10;
+		                	 Power -=20;
+		                	 Money -= 20000;
+		                	 Social +=10;
+		                	 System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원  / 친화력: "+Friend+ "/ 사교성: "+Social+"만큼 올랐다! ]" );
+		                 }
+	              /* case 4 :*/
 	            }
 	            //if(DdayNumber==0)
 	            	//System.exit(0);//
@@ -135,4 +152,6 @@ public class StudentGrow {
 	}  
 	      // TODO Auto-generated method stub
 }
-	
+	   
+
+
