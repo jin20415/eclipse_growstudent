@@ -31,18 +31,18 @@ public class StudentGrow {
 	         String Today = null;
 	         while(true){
 	        	 if(Month == 4) {Today=Daily[Day%7];}
-	            System.out.println("===================================================================");
+	            System.out.println("=============================================================================");
 	            System.out.println("종강까지 D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일");
 	            System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
 	            System.out.println();
 	            System.out.println("주인공 : 앞으로 중간고사까지 "+DdayNumber+"일! 뭘 해볼까?");
 	            System.out.println();
-	            System.out.println("1. 강의듣기 : 공부를 하자! 학점을 살려야겠어!(피로도 +20 , 지능 +5 주말은 선택안됨)");
+	            System.out.println("1. 강의듣기 : 공부를 하자! 학점을 살려야겠어!(피로도 +10 , 지능 +5 주말은 선택안됨)");
 	            System.out.println("2. 알바가기 : 돈을 벌어보자! 힘든만큼  보람찰거야!(피로도 +50, 돈 +50000)"); 
 	            System.out.println("3. 친목활동하기 : 친목을 쌓아보자! 인맥도 능력이랬어!(피로도 +20, 돈 -20000, 사교성 +10 , 사회성 +10)"); 
 	            System.out.println("4. 빈둥대기 : 쉬어보자! 역시 쉬는게 최고야!(1일 소모,피로도 0)");//랜덤함수로 배고파서 충동적으로 피자를 시켰다!(돈 -20000) 이런거..
 	            System.out.println("5. 공부하기: 중간고사까지 얼마 남지않았어 얼른 과제를 끝내고 공부를 해보자(1일 소모,피로도50, 지능+20)");//과제 하기 공부하기 두개로 
-	            System.out.println("===================================================================");
+	            System.out.println("=============================================================================");
 	            int select = input.nextInt();
 	            if(select == 1 && (Today.equals("토") || Today.equals("일"))) {
 		               System.out.println("※ 주말이니 다시 선택하세요!");
@@ -52,9 +52,13 @@ public class StudentGrow {
 	            switch(select){   
 	               case 1 :
 	                	  if(Power >= 91 ) {
-			            	   System.out.println("\n \t ※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※\t");
-			            	   System.out.println(" \t ※※※※※※※ 피로도가 최소 90이어야합니다.※※※※※※※ \t");
-			            	   continue;
+	    	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
+		                         System.out.println("................... 피로도가 최소 90이어야합니다!...................");					            	 		
+			                     System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
+				            	 Day++;
+				            	 DdayNumber--;
+				            	 Power = 0;
+				                 break;	
 	                	  }
 	                   System.out.print("\n강의를 듣는다.\n");
 	                   System.out.println("--------------------------강의 목록--------------------------");
@@ -75,7 +79,7 @@ public class StudentGrow {
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
 	                      System.out.println();
 	                      System.out.print("강의가 끝났어! 더 들을까?[1. YES] [2. No]\n");	                      
-	                   int[] o = {1,2};
+	                   
 	                      answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");
@@ -116,7 +120,7 @@ public class StudentGrow {
 	                      System.out.println("시스템 프로그래밍 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	  
 	                      System.out.println();
 	                      System.out.println("강의가 끝났어! 강의를 더 들을까? [1. YES] [2. No]");
-	                   int[] o = {1,2};
+	                 
 	                      answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");	   	                      	   	                      
@@ -157,7 +161,7 @@ public class StudentGrow {
 	                      project++;
 	                      System.out.println();
 	                      System.out.println("강의가 끝났어! 강의를 더 들을까? [1. YES] [2. No]");
-	                   int[] o = {1,2};
+	                  
 	                      answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");		   	                      	   	                      
@@ -195,8 +199,7 @@ public class StudentGrow {
 		                  System.out.println("교수님:$%@#!@*&가나다$^@#...");	                    
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
 	                      System.out.println();
-	                      System.out.println("강의가 끝났어! 더 들을까? [1. YES] [2. No]");
-	                      int[] o = {1,2};
+	                      System.out.println("강의가 끝났어! 더 들을까? [1. YES] [2. No]");	                      
 	                      answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");	
@@ -227,52 +230,65 @@ public class StudentGrow {
 		               break;
 	                   }	                   	                   	                  
 	                   }while(select == 1);
-
+	            
 	                   break;
 	                   
 	                   	                 	                   
 	                case 2 :
-	                	  if(Power >= 51 ) {
-			            	   System.out.println("\n \t ※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※\t");
-			            	   System.out.println(" \t ※※※※※※※ 피로도가 최소 50이어야합니다.※※※※※※※ \t");
-			            	   continue;
+	                	  if(Power >= 51 ) {	                		  
+			            	   System.out.println("※※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※※※※※※※※");
+			            	   System.out.println("※※※※※※※※※※※※※※※ 피로도가 최소 50이어야합니다.※※※※※※※※※※※※※※※ ");
+			            	   Day ++;
+			            	   DdayNumber--;
+			            	   Power = 0;
+			            	   break;
 	                	  }
 	                   System.out.println("\n             \t \t \t  알바를 가자. \t \t \t\n");
 	                   
 	                   int job = (int) Math.round(Math.random() * (10) + 1); 
 	                        
 	                   if(job<=7 && job>0){
-	                      System.out.println("              \t \t \t   알바 중   \t \t \t");
-	                      System.out.println("\n \t $$$$$$$$$$$$$$$$$ 오만원을 벌었다! $$$$$$$$$$$$$$$$$ \t \n");
+	                      System.out.println("        \t \t \t\t  알바 중   \t \t \t\t");
+	                      System.out.println("\n\t\t $$$$$$$$$$$$$$$$$ 오만원을 벌었다! $$$$$$$$$$$$$$$$$\t\t \n");
 	                      Money+=50000;
 	                      Power+=50;
 	                      Social += 10;
 	                      System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원 " + "/사회성: "+Social+"]" );
 	                   }
 	                   else {
-		                      System.out.println("\n \t $$$$$$$$$$$$$$$$$ 보너스를 받았다! $$$$$$$$$$$$$$$$$ \t \n");
-		                      System.out.println(" \t \t Money +4만원 만큼 올랐다!\t \t\n");
+		                      System.out.println("\n \t\t $$$$$$$$$$$$$$$$$ 보너스를 받았다! $$$$$$$$$$$$$$$$$ \t\t \n");
+		                      System.out.println(" (피로도가 20 줄었어!)\n");
 		                      Money+=40000;		                      
 		                      Power+= 50;
 		                      Power-= 20;
 		                      System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원 ]" );
 	                   }	                   
-	                   Day++;
-	                   DdayNumber--;
-	                  
+	                   	                 
 	                   break;
 	                   
-	                 case 3 :
+	                 case 3 :	                	 
+	                			                 
 	                	  if(Power > 80 ) {
-			            	   System.out.println("\n \t ※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※\t");
-			            	   System.out.println(" \t ※※※※※※※ 피로도가 최소 80이어야합니다.※※※※※※※ \t");
-			            	   continue;
-	                	  }	                	 
-	                	 System.out.println("--------------------------친목활동--------------------------");
-		                 System.out.println(" \n1. 동아리 활동하기\n 2. 대외활동하기 \n ");
-		                 System.out.println("----------------------------------------------------------");
-		                 
-		                 int j[] = {1,2};
+			            	   System.out.println("※※※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※※※※※※※※※");
+			            	   System.out.println("※※※※※※※※※※※※※※※ 피로도가 최소 80이어야합니다.※※※※※※※※※※※※※※※ ");
+			            	   System.out.println("※※※※※※※※※※※※※1번 강의듣기, 4번 빈둥대기만 선택가능합니다.※※※※※※※※※※※");
+			            	   System.out.println("1. 강의듣기 : 공부를 하자! 학점을 살려야겠어!(피로도 +10 , 지능 +5 주말은 선택안됨)");
+			            	   System.out.println("4. 빈둥대기 : 쉬어보자! 역시 쉬는게 최고야!(1일 소모,피로도 0)");
+			            	   
+			            	   
+			            	   if(Power >= 91) {
+			            		   System.out.println("※※※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※※※※※※※※※");
+			            	       System.out.println("※※※※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다.※※※※※※※※※※※※※※※ ");   
+			            	        Day ++;
+			            	        DdayNumber--;
+			            	        Power = 0;
+			            	        break;
+	                	  }			            	   
+			            	   break;  
+	                 }
+	                	  System.out.println("--------------------------친목활동--------------------------");
+			              System.out.println(" \n1. 동아리 활동하기\n2. 대외활동하기 \n ");
+			              System.out.println("----------------------------------------------------------");		                 		             
 		                 int act = input.nextInt();
 		                 if( act == 1) {
 		                	 int c = (int) Math.round(Math.random() * (10) + 1);
@@ -280,20 +296,18 @@ public class StudentGrow {
 		                	 Power +=20;
 		                	 Money -= 20000;
 		                	 Social +=10;
-		                	 System.out.println("\t\t 동아리 활동하기 \t\t");
-		                	 System.out.println("\t\t\t ... \t\t\t");
-		                	 System.out.println("\t\t\t ... \t\t\t");
-		                	 System.out.println("\t\t\t ... \t\t\t");
-		                	 System.out.println("\t\t 활동 중 \t\t");
-		                	 System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원  / 친화력: "+Friend+ "/ 사교성: "+Social+"만큼 올랐다! ]" );
+		                	 System.out.println("\t\t\t 동아리 활동하기 \t\t\t");
 		                	 System.out.println();
-		                	 System.out.println();
-		                	 System.out.println();
+		                	 System.out.println("\t $%@#!@*$^@#$%!@#$!%#$%!@#$!%...\t");	
 		                	 if((c >= 1) && ( c <=7)) {
 		                		 Intelli += 2;
-		                		 System.out.println("\t\t !!!!!족보를 얻었어!!!!! \t\t [지능 :"+ Intelli+"만큼 올랐어!]");
+		                		 System.out.println("\t !!!!!족보를 얻었어!!!!! \t (지능 :"+ Intelli+"만큼 올랐어!)");
 		                		 
 		                	 }
+		                	 System.out.println(" [ 피로도 : "+Power+" / 잔고 : "+Money+"원  / 친화력: "+Friend+ "/ 사교성: "+Social+"만큼 올랐다! ]" );
+                             
+		                 }
+		                	 
 		                	 else {
 		                		 		                	 
 		                		 Friend+=10;
@@ -301,14 +315,136 @@ public class StudentGrow {
 			                	 Money -= 20000;
 			                	 Social +=10;
 		                	     
-		                		 System.out.println("\t\t 대외 활동하기 \t\t");
+		                		 System.out.println("\t\t\t 대외 활동하기 \t\t\t");
+		                		 System.out.println();
+		                		 System.out.println("$%@#!@*$^@#$%!@#$!%#$%!@#$!%...");		                		
 		                		 System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원  / 친화력: "+Friend+ "/ 사교성: "+Social+"만큼 올랐다! ]" );
 		                	 }
-		                	 
-		                 }	 
+		                	 break;
+		                 	 
 		                 
 	              
-		                	 /* case 4 :*/
+		            case 4 :
+		            	Power = 0;
+		            	Day++;
+		            	DdayNumber--;
+		            	
+		            	System.out.println("\t\t >>>> 빈둥대기 <<<< \t\t");
+		            	System.out.println();
+	                	System.out.println("---------------------------------------------------------");
+		                System.out.println(" \n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+		                System.out.println("----------------------------------------------------------");
+		                int v = input.nextInt();
+		                
+		                if(v == 1) {
+		                	System.out.printf("[ 게임하기 ]");
+		                	System.out.printf("\n 1. 롤\n 2. 롤토체스\n 3. 오버워치");
+		                	int game = input.nextInt();
+		                	if(game == 1) {
+			                	System.out.println("롤 선택");
+			                	System.out.println("$%@#!@*$^@#...");
+			                	System.out.println("$%@#!@*$^@#...");
+		                		System.out.println("..승  리..");
+		                		System.out.println("한판 더 할까? [ 1. Yes / 2. No ]");
+		                		answer = input.nextInt();
+		                		if(answer == 1) {
+		                			System.out.println("[ Yes ]");
+				                	System.out.println("$%@#!@*$^@#...");
+				                	System.out.println("$%@#!@*$^@#...");
+			                		System.out.println("..패 배..");
+				                	System.out.println("후.. 다른거나 해볼까");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println("\n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+	
+		                		}
+		                		else {
+		                			System.out.println("[ No ]");
+		                			System.out.println("다른걸 해볼까?");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println(" \n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+		                		}
+		                	}
+		                	else if(game == 2) {
+			                	System.out.println("롤토체스 선택");
+			                	System.out.println("$%@#!$% 랭겜 중 @*$^@#...");
+			                	System.out.println("$%@#!@*$^@#$%!@#$!%...");
+		                		System.out.println("..승  리..");
+		                		System.out.println("한판 더 할까? [ 1. Yes / 2. No ]");
+		                		answer = input.nextInt();
+		                		if(answer == 1) {
+		                			System.out.println("[ Yes ]");
+				                	System.out.println("$%@#!$% 랭겜 중 @*$^@#...");
+				                	System.out.println("$%@#!@*$^@#$%!@#$!%...");
+			                		System.out.println("..패 배..");
+				                	System.out.println("후.. 다른거나 해볼까");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println(" \n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+	
+		                		}
+		                		else {
+		                			System.out.println("[ No ]");
+		                			System.out.println("다른걸 해볼까?");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println(" \n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+		                		}
+		                	}
+		                	else if(game == 3) {
+		                		System.out.println("오버워치");
+		                		System.out.println("$%@#!$% 랭겜 중 @*$^@#...");
+			                	System.out.println("$%@#!@*$^@#$%!@#$!%...");
+		                		System.out.println("..승  리..");
+		                		System.out.println("한판 더 할까? [ 1. Yes / 2. No ]");
+		                		answer = input.nextInt();
+		                		if(answer == 1) {
+		                			System.out.println("[ Yes ]");
+		                			System.out.println("$%@#!$% 랭겜 중 @*$^@#...");
+				                	System.out.println("$%@#!@*$^@#$%!@#$!%...");
+			                		System.out.println("..패 배..");
+				                	System.out.println("후.. 다른거나 해볼까");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println(" \n 1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+	
+		                		}
+		                		else {
+		                			System.out.println("[ No ]");
+		                			System.out.println("다른걸 해볼까?");
+				                	System.out.println("---------------------------------------------------------");
+					                System.out.println(" \n1. 게임하기\n 2. Tv 보기 \n 3. 배달시켜먹기\n 4. 영화, 넷플보기 \n 5. 잠을 더 자볼까");
+					                System.out.println("----------------------------------------------------------");
+				                	v=input.nextInt();
+		                		}
+		                	}
+		                }
+		                else if(v == 2) {
+		                	System.out.println("TV보기");
+		                	System.out.println();
+		                	System.out.println("대탈출(시리즈 몰아보기) 시청 중");
+		                	System.out.println("$%@#!@*$^@#$%!@#$!%#$%!@#$!%...");	
+		                	System.out.println("************다음날이 됩니다.************");	
+		                	break;
+		                }
+		                else if(v == 3) {
+		                	System.out.println(" 배달 음식 시키기");
+		                	System.out.println("---------------------------------------------------------");
+		                	System.out.println(" 1. 고추바사삭 주문\n 2. 감자피자 주문");
+		                	int food = input.nextInt();
+		                	if(food == 1) {
+		                		Money -= 19000;
+		                		System.out.println("고추바사삭 주문 중");
+		                		System.out.println("[돈: "+Money+"]");
+		                	}
+		                }
+		                
 	            
 	            //if(DdayNumber==0)
 	            	//System.exit(0);//
@@ -322,11 +458,4 @@ public class StudentGrow {
 	      // TODO Auto-generated method stub
 
 	   
-
-
-	   
-
-
-	   
-
 
