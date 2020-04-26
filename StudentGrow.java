@@ -18,7 +18,7 @@ public class StudentGrow {
 	         int DdayNumber=8; //초기값
 	         int Power=0;
 	         int Money=100000;
-	         int Friend=50;
+	         int Friend=10;
 	         int Intelli=0;
 	         int Attendence=0;
              int Month = 4;
@@ -32,7 +32,7 @@ public class StudentGrow {
 	         while(true){
 	        	 if(Month == 4) {Today=Daily[Day%7];}
 	            System.out.println("=============================================================================");
-	            System.out.println("종강까지 D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일");
+	            System.out.println("중간고사까지 D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일");
 	            System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
 	            System.out.println();
 	            System.out.println("주인공 : 앞으로 중간고사까지 "+DdayNumber+"일! 뭘 해볼까?");
@@ -459,8 +459,8 @@ public class StudentGrow {
 		                	int movie = input.nextInt();
 		                	if( movie == 1 ) {
 		                		System.out.println("[ 영화 ]\n");
-		                		System.out.println("                        기 읍 충\n ");
-		                		System.out.println("'제시카 : 제시카, 외동딸, 일리노이 시카고, 과 선배는 김진모, 그는 니 사촌 '");
+		                		System.out.println("                    >>    기  X 충   <<\n ");
+		                		System.out.println("'제시카 : 제시카, 외동딸, 일리노이 시카고, 과 선배는 김진모, 그는 니 사촌 '\n");
 		                		System.out.println(" 띵 ------dong \n");
 		                		System.out.println(" 영화보다 밤을 새버렸네.. ");
 		                		System.out.println("※※※※※※※※※※※※ 다음날이 됩니다 ※※※※※※※※※※※※");
@@ -473,10 +473,11 @@ public class StudentGrow {
 		                	}
 		                	else {
 		                		System.out.println("[ 넷플릭스 ]\n");
-		                		System.out.println("                        왕 덤\n ");
-		                		System.out.println("'주진모: 단 한명의 백성도 포기하지 않을 것입니다. '");
+		                		System.out.println("              >> 킹 X <<\n ");
+		                		System.out.println(" 세자: 단 한명의 백성도 포기하지 않을 것입니다. '");
+		                		System.out.println("$%@#!@*$^@#$%!@#$!%^$#^#&@...\n");
 		                		System.out.println(" 중전: 어떠하냐? 내 아기가 아주 건강해보이지 않느냐? \n");
-		                		System.out.println(" ...뭐?.. \n 시즌 4 기대된다!");
+		                		System.out.println(" ...뭐야 아침이야? \n !");
 		                		System.out.println("※※※※※※※※※※※※ 다음날이 됩니다 ※※※※※※※※※※※※");
 		                		
 		                		Money = -10000;
@@ -507,7 +508,7 @@ public class StudentGrow {
  	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
 	                     System.out.println("................... 피로도가 최소 50이어야합니다!...................");
 	                     System.out.println("---------------------------------------------------------");
-	                     System.out.println("[선택지]\n 1. 강의 듣기\n 3.친목활동\n 4.빈둥대기만 선택가능합니다............");	
+	                     System.out.println("[선택지]\n 1. 강의 듣기\n 3. 친목활동\n 4. 빈둥대기만 선택가능합니다..!");	
 			            	 
 			                 break;	
              	  }
@@ -516,6 +517,7 @@ public class StudentGrow {
 	                	System.out.println(" 1. 공부하기 \n 2. 과제하기");
 	                	System.out.println("---------------------------------------------------------");
 	                	int w = input.nextInt();
+	                	
 	                	if(w == 1) {
 	                		Power+=50;
 	                		Intelli+=10;
@@ -529,14 +531,61 @@ public class StudentGrow {
 	      		            System.out.println("※※※※※※※※※※※※ 다음날이 됩니다 ※※※※※※※※※※※※");
 	      		            break;
 	                	}
+	                	
+	                		
+	                	else {
+	                		
+	                		System.out.println("[ 과제하기 ]\n");
+	                		System.out.println("--------------------------------------------------------");
+	                		System.out.println(">> 과제 목록 <<\n 1. 시스템 프로그래밍\n 2. 데이터베이스");
+	                		System.out.println("--------------------------------------------------------");
+	                		System.out.println("순서대로 과제를 해볼까");
+	                		System.out.println("@#$#^!%^&!@#!#!$%!%^~@#*\n");
+	                		System.out.println("@#$#^!%^&!@#!#!$%!%^~@#*\n");
+	                		System.out.println("다 했다!\n");
+	                		System.out.println("이제 공부를 해볼까?\n");
+	                		System.out.println("부속질의 @#$%SELECT publisher FROM Book SELECT!@#$!\n");
+	                		System.out.println("master브랜치의 내용을 $%@#!@*$^@hotfix와 병합#$%!@#$!%...\n");
+	                		System.out.println("                         [ 피로도 : "+Power+" / 지능 : "+Intelli+"]" );
+	                		Intelli+=10;
+	                		Power = 0;
+	      		            Day++;
+	      		            DdayNumber--;
+	      		            System.out.println("※※※※※※※※※※※※ 다음날이 됩니다 ※※※※※※※※※※※※");
+	      		            break;
+	                		
+	                	}
+	                	
 	      }
+	          if(DdayNumber==0) {
+	        	
+	        	 System.out.println("========================================================================================================\n");
+	        	 System.out.println("D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일\n");
+	        	 System.out.println(" \t \t 오늘은 중간 고사 D-day야 \t \t\n");
+	        	 if(Intelli >= 85 ) {
+	        		 System.out.println("꾸준히 공부한 덕분에 중간고사는 올 A+이 나왔어\n 기말고사도 열심히 해서 학기를 마무리 해보자!");
+	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
+	        		 System.out.println("========================================================================================================\n");
+	        	 }
+	        	 else if(Intelli >= 70){
+	        		 System.out.println("놀면서 공부한거치고 평타는 쳤네\n 중간고사는 놀았으니까 기말고사는 열심히 해서 학기를 마무리 해보자!");
+	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
+	        		 System.out.println("========================================================================================================\n");
+	        		 
+	        	 }
+	        	 else {
+	        		 System.out.println("너무 놀았는데 c+이 몇개야..\n 오늘부터 기말고사 달린다;!");
+	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
+	        		 System.out.println("========================================================================================================\n");
+	        	 }
+	             System.exit(0);
+	            break;
+	          }
 		}  
 	}
   }
 }
-//if(DdayNumber==0)
-//System.exit(0);//
-//break;// //종강시 while끝나고 엔딩 나오게 함*/
+// //종강시 while끝나고 엔딩 나오게 함*/
 	      // TODO Auto-generated method stub
 
 	   
