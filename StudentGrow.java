@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class StudentGrow {
 	public static void main(String[] args) {
 		
@@ -19,13 +20,11 @@ public class StudentGrow {
 	         int Power=0;
 	         int Money=100000;
 	         int Friend=10;
-	         int Intelli=0;
-	         int Attendence=0;
+	         int Intelli=0;	        
              int Month = 4;
              int Day = 20;
              int Social = 0;
-             int answer; 
-             int project = 0;
+             int answer;             
              int study;
 	         String Daily[]={"화","수","목","금","토","일","월"};
 	         String Today = null;
@@ -40,7 +39,7 @@ public class StudentGrow {
 	            System.out.println("1. 강의듣기 : 공부를 하자! 학점을 살려야겠어!(피로도 +10 , 지능 +5 주말은 선택안됨)");
 	            System.out.println("2. 알바가기 : 돈을 벌어보자! 힘든만큼  보람찰거야!(피로도 +50, 돈 +50000)"); 
 	            System.out.println("3. 친목활동하기 : 친목을 쌓아보자! 인맥도 능력이랬어!(피로도 +20, 돈 -20000, 사교성 +10 , 사회성 +10)"); 
-	            System.out.println("4. 빈둥대기 : 쉬어보자! 역시 쉬는게 최고야!(1일 소모,피로도 0)");//랜덤함수로 배고파서 충동적으로 피자를 시켰다!(돈 -20000) 이런거..
+	            System.out.println("4. 빈둥대기 : 쉬어보자! 역시 쉬는게 최고야!(1일 소모)");//랜덤함수로 배고파서 충동적으로 피자를 시켰다!(돈 -20000) 이런거..
 	            System.out.println("5. 공부하기: 중간고사까지 얼마 남지않았어 공부를 해보자(1일 소모,피로도50, 지능+10)");//과제 하기 공부하기 두개로 
 	            System.out.println("=============================================================================");
 	            int select = input.nextInt();
@@ -115,7 +114,7 @@ public class StudentGrow {
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");	                      	                      
 	                      Power += 11;
 	                      System.out.println("교수님: 이번 강의 내용을 A4 용지 4페이지 이내로 작성하여 과제 제출하세요");
-	                      project++;
+	                    
 	                      System.out.println("시스템 프로그래밍 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	  
 	                      System.out.println();
 	                      System.out.println("강의가 끝났어! 강의를 더 들을까? [1. YES] [2. No]");
@@ -156,8 +155,7 @@ public class StudentGrow {
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");	                       
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");	                      	                      
                           System.out.println("교수님: 이번 주까지 연습문제 풀어서 과제 제출하세요");
-                          System.out.println("!데이터 베이스 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")"); 		                      
-	                      project++;
+                          System.out.println("!데이터 베이스 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")"); 		                      	                     
 	                      System.out.println();
 	                      System.out.println("강의가 끝났어! 강의를 더 들을까? [1. YES] [2. No]");
 	                  
@@ -316,7 +314,8 @@ public class StudentGrow {
 		                	     
 		                		 System.out.println("\t\t\t 대외 활동하기 \t\t\t");
 		                		 System.out.println();
-		                		 System.out.println("$%@#!@*$^@#$%!@#$!%#$%!@#$!%...");		                		
+		                		 System.out.println("$%@#!@*$^@#$%!@#$!%#$%!@#$!%...");		
+		                		 System.out.println("$%@#!@*$^@#$%!@#$!%#$%!@#$!%!@#%!!...\n");
 		                		 System.out.println(" [ 피로도 : "+Power+" / 현재 나의 잔고 : "+Money+"원  / 친화력: "+Friend+ "/ 사교성: "+Social+"만큼 올랐다! ]" );
 		                	 }
 		                	 break;
@@ -563,18 +562,18 @@ public class StudentGrow {
 	        	 System.out.println("D-" + DdayNumber + "  2020년  "+ Month +"월  "+ Day+"일  " + Today + "요일\n");
 	        	 System.out.println(" \t \t 오늘은 중간 고사 D-day야 \t \t\n");
 	        	 if(Intelli >= 85 ) {
-	        		 System.out.println("꾸준히 공부한 덕분에 중간고사는 올 A+이 나왔어\n 기말고사도 열심히 해서 학기를 마무리 해보자!");
+	        		 System.out.println("꾸준히 공부한 덕분에  올 A+이 나왔어\n !");
 	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
 	        		 System.out.println("========================================================================================================\n");
 	        	 }
 	        	 else if(Intelli >= 70){
-	        		 System.out.println("놀면서 공부한거치고 평타는 쳤네\n 중간고사는 놀았으니까 기말고사는 열심히 해서 학기를 마무리 해보자!");
+	        		 System.out.println("놀면서 공부한거치고 평타는 쳤네!\n ");
 	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
 	        		 System.out.println("========================================================================================================\n");
 	        		 
 	        	 }
 	        	 else {
-	        		 System.out.println("너무 놀았는데 c+이 몇개야..\n 오늘부터 기말고사 달린다;!");
+	        		 System.out.println("너무 놀았는데? c+이 몇개야..\n ");
 	        		 System.out.println("피로도 : "+Power+"  /  지적능력: "+Intelli+" /  돈 : "+Money+"원   /  사교성 : "+Friend + " /  사회성: "+Social);
 	        		 System.out.println("========================================================================================================\n");
 	        	 }
@@ -583,10 +582,10 @@ public class StudentGrow {
 	          }
 		}  
 	}
+		
   }
 }
-// //종강시 while끝나고 엔딩 나오게 함*/
-	      // TODO Auto-generated method stub
+
 
 	   
 
