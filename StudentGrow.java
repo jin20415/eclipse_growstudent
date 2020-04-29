@@ -21,11 +21,11 @@ public class StudentGrow {
 	         int Money=100000;
 	         int Friend=10;
 	         int Intelli=0;	        
-             int Month = 4;
-             int Day = 20;
-             int Social = 0;
-             int answer;             
-             int study;
+                 int Month = 4;
+                 int Day = 20;
+                 int Social = 0;
+                 int answer;             
+                 int study;
 	         String Daily[]={"화","수","목","금","토","일","월"};
 	         String Today = null;
 	         while(true){
@@ -53,7 +53,7 @@ public class StudentGrow {
 	                	  if(Power >= 91 ) {
 	    	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
 		                         System.out.println("................... 피로도가 최소 90이어야합니다!...................");					            	 		
-			                     System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
+			                 System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
 				            	 Day++;
 				            	 DdayNumber--;
 				            	 Power = 0;
@@ -72,18 +72,18 @@ public class StudentGrow {
 	                	  System.out.println();
 	                	  Intelli+=5;
 	                	  Power += 10;
-	                      System.out.println("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&가나다$^@#... " );
-	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");
-	                      System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
-	                      System.out.println();
-	                      System.out.print("강의가 끝났어! 더 들을까?[1. YES] [2. No]\n");	                      
+	                          System.out.println("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&가나다$^@#... " );
+	                          System.out.println("교수님:$%@#!@*&가나다$^@#...");
+	                          System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
+	                          System.out.println();
+	                          System.out.print("강의가 끝났어! 더 들을까?[1. YES] [2. No]\n");	                      
 	                   
 	                      answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");
 	         	   	            if((Power >= 90)&&(select == 1)) {
 	   	   	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
-	   		                     System.out.println("................... 피로도가 최소 89이어야합니다!...................");		
+	   		                         System.out.println("................... 피로도가 최소 89이어야합니다!...................");		
 	   			            	 System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
 	   			            	 Day++;
 	   			                 DdayNumber--;
@@ -124,8 +124,8 @@ public class StudentGrow {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");	   	                      	   	                      
 	  	   	   	            if((Power >= 80)&&(select == 1)) {
 	  	   	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
-		                         System.out.println("................... 피로도가 최소 79이어야합니다!...................");					            	 		
-			                     System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
+		                                 System.out.println("................... 피로도가 최소 79이어야합니다!...................");					            	 		
+			                         System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
 				            	 Day++;
 				            	 DdayNumber--;
 				            	 Power = 0;
@@ -133,9 +133,9 @@ public class StudentGrow {
 			         	    }
 	  	   	   	              Power+=10;
 	  	   	   	              System.out.println("--------------------------강의 목록--------------------------");
-	   	                      System.out.println(" 1. 오픈소스 소프트웨어\n 2. 시스템 프로그래밍\n 3. 데이터베이스\n 4. 정보보호 ");
-	   	                      System.out.println("----------------------------------------------------------");
-	   	                      study = input.nextInt();
+	   	                              System.out.println(" 1. 오픈소스 소프트웨어\n 2. 시스템 프로그래밍\n 3. 데이터베이스\n 4. 정보보호 ");
+	   	                              System.out.println("----------------------------------------------------------");
+	   	                              study = input.nextInt();
 	                      }
 	                      
 	                      else {
@@ -154,8 +154,8 @@ public class StudentGrow {
 	                      System.out.println("교수님 : 박지성이 구매한 도서의 이름을 검색하시오" );
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");	                       
 	                      System.out.println("교수님:$%@#!@*&가나다$^@#...");	                      	                      
-                          System.out.println("교수님: 이번 주까지 연습문제 풀어서 과제 제출하세요");
-                          System.out.println("!데이터 베이스 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")"); 		                      	                     
+                              System.out.println("교수님: 이번 주까지 연습문제 풀어서 과제 제출하세요");
+                              System.out.println("!데이터 베이스 과제가 나왔어!(지능 : "+ Intelli+ " /  피로도 : " +Power+")"); 		                      	                     
 	                      System.out.println();
 	                      System.out.println("강의가 끝났어! 강의를 더 들을까? [1. YES] [2. No]");
 	                  
@@ -173,9 +173,9 @@ public class StudentGrow {
 			         	    }
 	  	   	   	          Power+=10;
    	   	                  System.out.println("--------------------------강의 목록--------------------------");
-	                      System.out.println(" 1. 오픈소스 소프트웨어\n 2. 시스템 프로그래밍\n 3. 데이터베이스\n 4. 정보보호 ");
-	                      System.out.println("----------------------------------------------------------");
-	                      study = input.nextInt();
+	                          System.out.println(" 1. 오픈소스 소프트웨어\n 2. 시스템 프로그래밍\n 3. 데이터베이스\n 4. 정보보호 ");
+	                          System.out.println("----------------------------------------------------------");
+	                          study = input.nextInt();
 	                      }
 	                      else {
 	                    	  System.out.print("[ No ]\n");	   
@@ -194,22 +194,22 @@ public class StudentGrow {
 		                  Power += 10;
 		                  System.out.println("교수님 : 나한테 배우면 쉬워~~");
 		                  System.out.println("교수님:$%@#!@*&가나다$^@#...");	                    
-	                      System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
-	                      System.out.println();
-	                      System.out.println("강의가 끝났어! 더 들을까? [1. YES] [2. No]");	                      
-	                      answer = input.nextInt();
+	                          System.out.println("교수님:$%@#!@*&가나다$^@#...(지능 : "+ Intelli+ " /  피로도 : " +Power+")");	                      
+	                          System.out.println();
+	                          System.out.println("강의가 끝났어! 더 들을까? [1. YES] [2. No]");	                      
+	                          answer = input.nextInt();
 	                      if(answer == 1) {
 	                    	  System.out.print("[ YES ] 연강 시 피로도 +10 패널티를 받게됩니다.\n");	
 	  	   	   	            if((Power >= 90)&&(select == 1)) {
 	  	   	   	                 System.out.println("※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다.※※※※※※※※※※※※※※※ ");
-                                 System.out.println("................... 피로도가 최소 89이어야합니다!...................");		
+                                                 System.out.println("................... 피로도가 최소 89이어야합니다!...................");		
 				            	 System.out.println("※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다 ※※※※※※※※※※※※");
 				            	 Day++;
 				            	 DdayNumber--;
 				            	 Power = 0;
 				            	 break;			            	   
 			         	    }
-	  	   	   	          Power += 10;
+	  	   	      Power += 10;
 	                      System.out.println("--------------------------강의 목록--------------------------");
 	                      System.out.println(" 1. 오픈소스 소프트웨어\n 2. 시스템 프로그래밍\n 3. 데이터베이스\n 4. 정보보호 ");
 	                      System.out.println("----------------------------------------------------------");
@@ -268,14 +268,14 @@ public class StudentGrow {
 	                	  
 			            	 		            	   			       
 	                	  if(Power >= 91) {
-		            		   System.out.println("※※※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※※※※※※※※※");
-		            	       System.out.println("※※※※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다.※※※※※※※※※※※※※※※ ");   
+		            	        System.out.println("※※※※※※※※※※※※※※※ 현재 피로도는 "+Power+"입니다. ※※※※※※※※※※※※※※※");
+		            	        System.out.println("※※※※※※※※※※※※※※※ 피로도가 높아 다음날이 됩니다.※※※※※※※※※※※※※※※ ");   
 		            	        Day ++;
 		            	        DdayNumber--;
 		            	        Power = 0;
 		            	        break;
                	  }	
-	                	  System.out.println("--------------------------친목활동--------------------------");
+	                	      System.out.println("--------------------------친목활동--------------------------");
 			              System.out.println(" \n1. 동아리 활동하기\n2. 대외활동하기 \n ");
 			              System.out.println("----------------------------------------------------------");		                 		             
 		                 int act = input.nextInt();
