@@ -39,11 +39,30 @@ public class Main  {
 		frame.setSize(400,640);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		
+		JLabel label1;
+		label1 = new JLabel("대학생 키우기");
+		Font f = new Font("Serif",Font.BOLD,61);
+		label1.setForeground(Color.WHITE);
+		label1.setFont(f);
+		label1.setBounds(120,115,400,100);
 		ImagePanel panel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 		//File f = new File("./image/main.jpg"); 파일 결로가 맞는지 확인//
 		//System.out.println(f.exists()?"Exists":"doesnt exists"); 파일경로가 맞는지 확인//
+		JButton b1,b2;
+		b1 = new JButton("게임 시작");
+		b2 = new JButton("게임 종료");
+		Font f2 = new Font("Dialog",Font.BOLD,20);
+		b1.setFont(f2);
+		b1.setBackground(Color.WHITE);
+		b1.setBounds(215,390,200,50);
+		b2.setFont(f2);
+		b2.setBackground(Color.WHITE);
+		b2.setBounds(215,460,200,50);
 		frame.add(panel);
+		panel.add(label1);
+		panel.add(b1);
+		panel.add(b2);
+		panel.setVisible(true);
 		frame.pack();//패널의 이미지 사이즈에 맞게 자동 조절//
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
