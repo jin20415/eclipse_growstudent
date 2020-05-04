@@ -3,28 +3,23 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 class ImagePanel extends JPanel{
 	private Image img;
-	
+	 		
 	public ImagePanel(Image img) {
+		
 		this.img=img;
 		setSize(new Dimension(img.getWidth(null),img.getHeight(null)));
 		setPreferredSize(new Dimension(img.getWidth(null),img.getHeight(null)));//pack()한 후 프레임 사이즈가 맞게 나오지 않을 때 설정해줌.
 		setLayout(null);
+		
 	}
 
     public void paintComponent(Graphics g) {
@@ -32,7 +27,17 @@ class ImagePanel extends JPanel{
      }
  }
 
-public class Main  {
+public class Main  {			
+	
+	private static final int DdayNumber = 8;
+	private static final int Month = 4;
+	private static final int Day = 20;
+	private static final int Power = 100;
+	private static final int Money = 100000;
+	private static final int Intelli = 0;
+	private static final int Friendship = 0;
+	private static final int Social = 0;
+	
 	public static void main(String[]args) {
 		Main ma = new Main();
 		JFrame frame = new JFrame("대학생 키우기");
@@ -50,23 +55,75 @@ public class Main  {
 		//System.out.println(f.exists()?"Exists":"doesnt exists"); 파일경로가 맞는지 확인//
 		JButton b1,b2;
 		b1 = new JButton("게임 시작");
-		b2 = new JButton("게임 종료");
-		Font f2 = new Font("Dialog",Font.BOLD,20);
-		b1.setFont(f2);
+		b2 = new JButton("게임 종료");		
+		Font f1 = new Font("Dialog",Font.BOLD,20);
+		b1.setFont(f1);
 		b1.setBackground(Color.WHITE);
 		b1.setBounds(215,390,200,50);
-		b2.setFont(f2);
+		b2.setFont(f1);
 		b2.setBackground(Color.WHITE);
-		b2.setBounds(215,460,200,50);
-		frame.add(panel);
+		b2.setBounds(215,460,200,50);		
+		
+									
+		frame.add(panel);	
 		panel.add(label1);
 		panel.add(b1);
 		panel.add(b2);
 		panel.setVisible(true);
-		frame.pack();//패널의 이미지 사이즈에 맞게 자동 조절//
+		frame.pack();//패널의 이미지 사이즈에 맞게 자동 조절//				
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-	 
-	
+		
+		b1.addActionListener(e ->{
+			
+			JPanel p2 = new JPanel();			
+			p2.setLayout(null);
+			JLabel label2 = new JLabel(" '뭘 "); 
+			JLabel label3 = new JLabel("해볼까?'");
+			Font f2 = new Font("monospaced",Font.BOLD | Font.ITALIC,45);
+			Font f3 = new Font("monospaced",Font.BOLD ,40);
+			label2.setBounds(15,45,150,70);
+			label3.setBounds(125,70,300,70);
+			label2.setFont(f2);
+			label3.setFont(f3);	
+			Font f4 = new Font("monospaced",Font.BOLD ,20);
+			JButton b3 = new JButton("강의 듣기");
+			JButton b4 = new JButton("알바");
+			JButton b5 = new JButton("친목 활동");
+			JButton b6 = new JButton("빈둥 대기");
+			JButton b7 = new JButton("공부하기");
+			JButton b8 = new JButton("과제하기");
+			b3.setBounds(55,200,150,110);
+			b4.setBounds(250,200,150,110);
+			b5.setBounds(445,200,150,110);
+			b6.setBounds(55,420,150,110);
+			b7.setBounds(250,420,150,110);
+			b8.setBounds(445,420,150,110);			
+			b3.setFont(f4);
+			b4.setFont(f4);
+			b5.setFont(f4);
+			b6.setFont(f4);
+			b7.setFont(f4);
+			b8.setFont(f4);
+			p2.add(label2);
+			p2.add(label3);	
+			p2.add(b3);
+			p2.add(b4);
+			p2.add(b5);
+			p2.add(b6);
+			p2.add(b7);
+			p2.add(b8);
+			frame.add(p2);
+			p2.setVisible(true);
+			frame.setVisible(true);	
+			
+		});	
+		
+		b2.addActionListener(e->{
+			System.exit(0);
+		});
+	}	 	
 }
-	
+		  
+		
+		
+			
