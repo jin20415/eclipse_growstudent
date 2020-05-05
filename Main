@@ -69,7 +69,7 @@ public class Main  {
 		label1.setFont(f);
 		label1.setBounds(120,115,400,100);
 		ImagePanel panel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
-	//	File file = new File("./image/sub.jpg"); //파일 결로가 맞는지 확인//
+	//	File file = new File("./image/sub.jpg"); //파일 경로가 맞는지 확인//
 	//	System.out.println(file.exists()?"Exists":"doesnt exists"); //파일경로가 맞는지 확인//
 		JButton b1,b2;
 		b1 = new JButton("게임 시작");
