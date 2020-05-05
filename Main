@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -9,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 class ImagePanel extends JPanel{
 	private Image img;	
@@ -51,6 +53,9 @@ public class Main  {
 	private static final int Friendship = 0;
 	private static final int Social = 0;
 	
+
+	
+	
 	public static void main(String[]args) {
 		Main ma = new Main();
 		JFrame frame = new JFrame("대학생 키우기");
@@ -75,49 +80,71 @@ public class Main  {
 		b1.setBounds(215,390,200,50);
 		b2.setFont(f1);
 		b2.setBackground(Color.WHITE);
-		b2.setBounds(215,460,200,50);		
-		
-									
+		b2.setBounds(215,460,200,50);													
 		frame.add(panel);	
 		panel.add(label1);
 		panel.add(b1);
-		panel.add(b2);
-	
+		panel.add(b2);	
 		panel.setVisible(true);
 		frame.pack();//패널의 이미지 사이즈에 맞게 자동 조절//				
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		b1.addActionListener(e ->{
-						
-			subImagePanel p2 = new subImagePanel(new ImageIcon("./image/sub.jpg").getImage());
+		b1.addActionListener(e ->{          
+			
+				
+			
+			subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
 			p2.setLayout(null);
 			JLabel label2 = new JLabel(" '뭘 "); 
 			JLabel label3 = new JLabel("해볼까?'");
-			Font f2 = new Font("monospaced",Font.BOLD | Font.ITALIC,45);
-			Font f3 = new Font("monospaced",Font.BOLD ,40);
-			label2.setBounds(15,45,150,70);
-			label3.setBounds(125,70,300,70);
+			Font f2 = new Font("monospaced",Font.BOLD | Font.ITALIC,75);
+			Font f3 = new Font("monospaced",Font.BOLD ,60);
+			label2.setBounds(110,53,300,80);
+			label3.setBounds(240,123,300,70);
 			label2.setFont(f2);
 			label3.setFont(f3);	
-			Font f4 = new Font("monospaced",Font.BOLD ,20);
+			label3.setForeground(Color.WHITE);
+			label2.setForeground(Color.WHITE);
+			Font f4 = new Font("monospaced",Font.BOLD ,25);
 			JButton b3 = new JButton("강의 듣기");
-			JButton b4 = new JButton("알바");
+			JButton b4 = new JButton("알바 가기");
 			JButton b5 = new JButton("친목 활동");
 			JButton b6 = new JButton("빈둥 대기");
 			JButton b7 = new JButton("공부하기");
-			JButton b8 = new JButton("과제하기");
-			b3.setBounds(55,200,150,150);
-			b4.setBounds(250,200,150,150);
-			b5.setBounds(445,200,150,150);
-			b6.setBounds(55,420,150,150);
-			b7.setBounds(250,420,150,150);
-			b8.setBounds(445,420,150,150);			
+			
+			b3.setBounds(170,210,300,60);
+			b4.setBounds(170,290,300,60);
+			b5.setBounds(170,370,300,60);
+			b6.setBounds(170,450,300,60);
+			b7.setBounds(170,530,300,60);
+				
+			LineBorder l3 = new LineBorder(new Color(255,255,255));									
+			b3.setBorder(l3);
+			Container con = new Container();
+			con.add(b3);
+			b4.setBorderPainted(false);
+			b5.setBorderPainted(false);
+			b6.setBorderPainted(false);
+			b7.setBorderPainted(false);
+			
 			b3.setFont(f4);
 			b4.setFont(f4);
 			b5.setFont(f4);
 			b6.setFont(f4);
 			b7.setFont(f4);
-			b8.setFont(f4);
+			
+			b3.setBackground(new Color(255,204,153));
+			b4.setBackground(new Color(255,204,153));
+			b5.setBackground(new Color(255,204,153));
+			b6.setBackground(new Color(255,204,153));
+			b7.setBackground(new Color(255,204,153));
+		
+			b3.setFocusPainted(false);
+			b4.setFocusPainted(false);
+			b5.setFocusPainted(false);
+			b6.setFocusPainted(false);
+			b7.setFocusPainted(false);
+			
 			p2.add(label2);
 			p2.add(label3);	
 			p2.add(b3);
@@ -125,7 +152,7 @@ public class Main  {
 			p2.add(b5);
 			p2.add(b6);
 			p2.add(b7);
-			p2.add(b8);
+			
 			frame.add(p2);
 			panel.setVisible(false);
 			frame.setVisible(true);	
