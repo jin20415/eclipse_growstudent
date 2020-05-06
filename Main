@@ -59,14 +59,14 @@ class ImagePanel extends JPanel{
  } 
 public class Main extends JButton {			
 	
-	private static final int DdayNumber = 8;
-	private static final int Month = 5;
-	private static final int Day = 20;
-	private static final int Power = 100;
-	private static final int Money = 100000;
-	private static final int Intelli = 0;
-	private static final int Friendship = 0;
-	private static final int Social = 0;
+	private static int DdayNumber = 8;
+	private static int Month = 5;
+	private static int Day = 20;
+	private static int Power = 100;
+	private static int Money = 100000;
+	private static int Intelli = 0;
+	private static int Friendship = 0;
+	private static int Social = 0;
 	
     static JButton b3;
     static JButton b4;
@@ -74,10 +74,8 @@ public class Main extends JButton {
     static JButton b6;
     static JButton b7;
 	
-	
-	public static void main(String[]args) {
-		Main ma = new Main();
-		JFrame frame = new JFrame("대학생 키우기");
+    Main(){
+    	JFrame frame = new JFrame("대학생 키우기");
 		frame.setSize(400,640);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
@@ -110,6 +108,60 @@ public class Main extends JButton {
 		frame.pack();//패널의 이미지 사이즈에 맞게 자동 조절//				
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		b3 = new JButton("강의 듣기");
+		b4 = new JButton("알바 가기");
+		b5 = new JButton("친목 활동");
+		b6 = new JButton("빈둥 대기");
+		b7 = new JButton("공부하기");
+		
+		b3.setBounds(170,260,300,50);
+		b4.setBounds(170,330,300,50);
+		b5.setBounds(170,400,300,50);
+		b6.setBounds(170,470,300,50);
+		b7.setBounds(170,540,300,50);
+			
+		LineBorder l3 = new LineBorder(new Color(255,204,051));									
+		b3.setBorder(l3);
+		LineBorder l4 = new LineBorder(new Color(255,204,051));									
+		b4.setBorder(l4);
+		LineBorder l5 = new LineBorder(new Color(255,204,051));									
+		b5.setBorder(l5);
+		LineBorder l6 = new LineBorder(new Color(255,204,051));									
+		b6.setBorder(l6);
+		LineBorder l7 = new LineBorder(new Color(255,204,051));									
+		b7.setBorder(l7);
+		Container con = new Container();
+		con.add(b3);
+		con.add(b4);
+		con.add(b5);
+		con.add(b6);
+		con.add(b7);
+		
+		b3.setForeground(Color.WHITE);
+		
+		b4.setBorderPainted(false);
+		b5.setBorderPainted(false);
+		b6.setBorderPainted(false);
+		b7.setBorderPainted(false);
+		Font f4 = new Font("Dialog",Font.BOLD ,25);
+		b3.setFont(f4);
+		b4.setFont(f4);
+		b5.setFont(f4);
+		b6.setFont(f4);
+		b7.setFont(f4);
+		
+		b3.setBackground(new Color(255,204,051));
+		b4.setBackground(Color.WHITE);
+		b5.setBackground(Color.WHITE);
+		b6.setBackground(Color.WHITE);
+		b7.setBackground(Color.WHITE);
+							
+		b3.setFocusPainted(false);
+		b4.setFocusPainted(false);
+		b5.setFocusPainted(false);
+		b6.setFocusPainted(false);
+		b7.setFocusPainted(false);
+		
 		b1.addActionListener(e ->{          
 								
 			subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
@@ -124,60 +176,8 @@ public class Main extends JButton {
 			label3.setFont(f3);	
 			label3.setForeground(Color.lightGray);
 			label2.setForeground(Color.lightGray);
-			Font f4 = new Font("Dialog",Font.BOLD ,25);
-			b3 = new JButton("강의 듣기");
-			b4 = new JButton("알바 가기");
-			b5 = new JButton("친목 활동");
-			b6 = new JButton("빈둥 대기");
-			b7 = new JButton("공부하기");
 			
-			b3.setBounds(170,260,300,50);
-			b4.setBounds(170,330,300,50);
-			b5.setBounds(170,400,300,50);
-			b6.setBounds(170,470,300,50);
-			b7.setBounds(170,540,300,50);
-				
-			LineBorder l3 = new LineBorder(new Color(255,204,051));									
-			b3.setBorder(l3);
-			LineBorder l4 = new LineBorder(new Color(255,204,051));									
-			b4.setBorder(l4);
-			LineBorder l5 = new LineBorder(new Color(255,204,051));									
-			b5.setBorder(l5);
-			LineBorder l6 = new LineBorder(new Color(255,204,051));									
-			b6.setBorder(l6);
-			LineBorder l7 = new LineBorder(new Color(255,204,051));									
-			b7.setBorder(l7);
-			Container con = new Container();
-			con.add(b3);
-			con.add(b4);
-			con.add(b5);
-			con.add(b6);
-			con.add(b7);
-			
-			b3.setForeground(Color.WHITE);
-			
-			b4.setBorderPainted(false);
-			b5.setBorderPainted(false);
-			b6.setBorderPainted(false);
-			b7.setBorderPainted(false);
-			
-			b3.setFont(f4);
-			b4.setFont(f4);
-			b5.setFont(f4);
-			b6.setFont(f4);
-			b7.setFont(f4);
-			
-			b3.setBackground(new Color(255,204,051));
-			b4.setBackground(Color.WHITE);
-			b5.setBackground(Color.WHITE);
-			b6.setBackground(Color.WHITE);
-			b7.setBackground(Color.WHITE);
-								
-			b3.setFocusPainted(false);
-			b4.setFocusPainted(false);
-			b5.setFocusPainted(false);
-			b6.setFocusPainted(false);
-			b7.setFocusPainted(false);
+		
 			
 			p2.add(label2);
 			p2.add(label3);	
@@ -196,7 +196,7 @@ public class Main extends JButton {
 		b2.addActionListener(e->{
 			System.exit(0);
 		});
-				
+			
 		b3.addActionListener(e->{
 			lectureImagePanel p3 = new lectureImagePanel(new ImageIcon("./image/lecture.jpg").getImage());	
 			p3.setLayout(null);
@@ -207,24 +207,15 @@ public class Main extends JButton {
 			p3.add(label4);
 			panel.setVisible(false);			
 			frame.setVisible(true);
- 		});
+			});
+		
 		
 	}	 	
+    
+	
+	public static void main(String[]args) {
+		
+		Main ma = new Main();
+		
+ }
 }
-		  
-		
-		
-			
-		
-
-       
-		
-		
-		
-		
-		
-     
- 
-
-
-
