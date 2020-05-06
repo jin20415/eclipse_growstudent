@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -42,10 +43,24 @@ class ImagePanel extends JPanel{
 	 g.drawImage(subimg,0,0,null);
      }
  } 
-public class Main  {			
+    class lectureImagePanel extends JPanel {
+        private Image lectureimg;
+        
+        public lectureImagePanel(Image lectureimg) {
+        	this.lectureimg =lectureimg;
+        	setSize(new Dimension(lectureimg.getWidth(null),lectureimg.getHeight(null)));
+    		setPreferredSize(new Dimension(lectureimg.getWidth(null),lectureimg.getHeight(null)));//pack()한 후 프레임 사이즈가 맞게 나오지 않을 때 설정해줌.
+    		setLayout(null);
+        }
+    
+    public void paintComponent(Graphics g) {
+	 g.drawImage(lectureimg,0,0,null);
+     }
+ } 
+public class Main extends JButton {			
 	
 	private static final int DdayNumber = 8;
-	private static final int Month = 4;
+	private static final int Month = 5;
 	private static final int Day = 20;
 	private static final int Power = 100;
 	private static final int Money = 100000;
@@ -53,7 +68,11 @@ public class Main  {
 	private static final int Friendship = 0;
 	private static final int Social = 0;
 	
-
+    static JButton b3;
+    static JButton b4;
+    static JButton b5;
+    static JButton b6;
+    static JButton b7;
 	
 	
 	public static void main(String[]args) {
@@ -64,12 +83,12 @@ public class Main  {
 		frame.setVisible(true);
 		JLabel label1;
 		label1 = new JLabel("대학생 키우기");
-		Font f = new Font("Serif",Font.BOLD,61);
-		label1.setForeground(Color.WHITE);
+		Font f = new Font("monospaced",Font.BOLD,63);
+		label1.setForeground(Color.lightGray);
 		label1.setFont(f);
-		label1.setBounds(120,115,400,100);
+		label1.setBounds(120,115,450,110);
 		ImagePanel panel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
-	//	File file = new File("./image/sub.jpg"); //파일 경로가 맞는지 확인//
+	//	File file = new File("./image/lecture.jpg"); //파일 결로가 맞는지 확인//
 	//	System.out.println(file.exists()?"Exists":"doesnt exists"); //파일경로가 맞는지 확인//
 		JButton b1,b2;
 		b1 = new JButton("게임 시작");
@@ -80,7 +99,9 @@ public class Main  {
 		b1.setBounds(215,390,200,50);
 		b2.setFont(f1);
 		b2.setBackground(Color.WHITE);
-		b2.setBounds(215,460,200,50);													
+		b2.setBounds(215,460,200,50);	
+		b2.setBorderPainted(false);
+		b1.setBorderPainted(false);
 		frame.add(panel);	
 		panel.add(label1);
 		panel.add(b1);
@@ -90,38 +111,51 @@ public class Main  {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		b1.addActionListener(e ->{          
-			
-				
-			
+								
 			subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
 			p2.setLayout(null);
-			JLabel label2 = new JLabel(" '뭘 "); 
-			JLabel label3 = new JLabel("해볼까?'");
-			Font f2 = new Font("monospaced",Font.BOLD | Font.ITALIC,75);
-			Font f3 = new Font("monospaced",Font.BOLD ,60);
-			label2.setBounds(110,53,300,80);
-			label3.setBounds(240,123,300,70);
+			JLabel label2 = new JLabel(" '무슨 멘트를 "); 
+			JLabel label3 = new JLabel("적으면 좋을까?'");
+			Font f2 = new Font("monospaced",Font.BOLD | Font.ITALIC,40);
+			Font f3 = new Font("monospaced",Font.BOLD ,40);
+			label2.setBounds(137,65,300,80);
+			label3.setBounds(137,110,400,70);
 			label2.setFont(f2);
 			label3.setFont(f3);	
-			label3.setForeground(Color.WHITE);
-			label2.setForeground(Color.WHITE);
-			Font f4 = new Font("monospaced",Font.BOLD ,25);
-			JButton b3 = new JButton("강의 듣기");
-			JButton b4 = new JButton("알바 가기");
-			JButton b5 = new JButton("친목 활동");
-			JButton b6 = new JButton("빈둥 대기");
-			JButton b7 = new JButton("공부하기");
+			label3.setForeground(Color.lightGray);
+			label2.setForeground(Color.lightGray);
+			Font f4 = new Font("Dialog",Font.BOLD ,25);
+			b3 = new JButton("강의 듣기");
+			b4 = new JButton("알바 가기");
+			b5 = new JButton("친목 활동");
+			b6 = new JButton("빈둥 대기");
+			b7 = new JButton("공부하기");
 			
-			b3.setBounds(170,210,300,60);
-			b4.setBounds(170,290,300,60);
-			b5.setBounds(170,370,300,60);
-			b6.setBounds(170,450,300,60);
-			b7.setBounds(170,530,300,60);
+			b3.setBounds(170,260,300,50);
+			b4.setBounds(170,330,300,50);
+			b5.setBounds(170,400,300,50);
+			b6.setBounds(170,470,300,50);
+			b7.setBounds(170,540,300,50);
 				
-			LineBorder l3 = new LineBorder(new Color(255,255,255));									
+			LineBorder l3 = new LineBorder(new Color(255,204,051));									
 			b3.setBorder(l3);
+			LineBorder l4 = new LineBorder(new Color(255,204,051));									
+			b4.setBorder(l4);
+			LineBorder l5 = new LineBorder(new Color(255,204,051));									
+			b5.setBorder(l5);
+			LineBorder l6 = new LineBorder(new Color(255,204,051));									
+			b6.setBorder(l6);
+			LineBorder l7 = new LineBorder(new Color(255,204,051));									
+			b7.setBorder(l7);
 			Container con = new Container();
 			con.add(b3);
+			con.add(b4);
+			con.add(b5);
+			con.add(b6);
+			con.add(b7);
+			
+			b3.setForeground(Color.WHITE);
+			
 			b4.setBorderPainted(false);
 			b5.setBorderPainted(false);
 			b6.setBorderPainted(false);
@@ -133,12 +167,12 @@ public class Main  {
 			b6.setFont(f4);
 			b7.setFont(f4);
 			
-			b3.setBackground(new Color(255,204,153));
-			b4.setBackground(new Color(255,204,153));
-			b5.setBackground(new Color(255,204,153));
-			b6.setBackground(new Color(255,204,153));
-			b7.setBackground(new Color(255,204,153));
-		
+			b3.setBackground(new Color(255,204,051));
+			b4.setBackground(Color.WHITE);
+			b5.setBackground(Color.WHITE);
+			b6.setBackground(Color.WHITE);
+			b7.setBackground(Color.WHITE);
+								
 			b3.setFocusPainted(false);
 			b4.setFocusPainted(false);
 			b5.setFocusPainted(false);
@@ -156,12 +190,25 @@ public class Main  {
 			frame.add(p2);
 			panel.setVisible(false);
 			frame.setVisible(true);	
-			
+											
 		});	
 		
 		b2.addActionListener(e->{
 			System.exit(0);
 		});
+				
+		b3.addActionListener(e->{
+			lectureImagePanel p3 = new lectureImagePanel(new ImageIcon("./image/lecture.jpg").getImage());	
+			p3.setLayout(null);
+			JLabel label4 = new JLabel("D-"+DdayNumber+" "+Month+"월"+ " "+Day+"일" );			
+			label4.setBounds(20,10,400,20);
+			
+			frame.add(p3);
+			p3.add(label4);
+			panel.setVisible(false);			
+			frame.setVisible(true);
+ 		});
+		
 	}	 	
 }
 		  
