@@ -161,10 +161,10 @@ public class Main extends JButton {
 		b5.setFocusPainted(false);
 		b6.setFocusPainted(false);
 		b7.setFocusPainted(false);
+		subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
 		
 		b1.addActionListener(e ->{          
-								
-			subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
+											
 			p2.setLayout(null);
 			JLabel label2 = new JLabel(" '무슨 멘트를 "); 
 			JLabel label3 = new JLabel("적으면 좋을까?'");
@@ -205,7 +205,8 @@ public class Main extends JButton {
 			
 			frame.add(p3);
 			p3.add(label4);
-			panel.setVisible(false);			
+			panel.setVisible(false);
+			p2.setVisible(false);
 			frame.setVisible(true);
 			});
 		
