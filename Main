@@ -93,19 +93,18 @@ public class Main extends JButton {
 		frame.setSize(400,640);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		JLabel label1,label_1,label1_1;
-		label1 = new JLabel("학생  ");
-		label_1 = new JLabel("대");
+		JLabel label1,label1_1;
+		label1 = new JLabel("대학생 ");
+		
 		label1_1 = new JLabel("키우기");
-		label1.setBounds(174,87,450,200);
-		label_1.setBounds(90,87,450,200);
-		label1_1.setBounds(280,182,450,200);
-		Font label_1font = new Font("HY견고딕",Font.BOLD,90);
-		Font f = new Font("HY견고딕",Font.BOLD,83);
-		label1.setForeground(new Color(153,204,102));
-		label1_1.setForeground(new Color(153,204,102));
-		label_1.setForeground(new Color(153,204,102));
-		label_1.setFont(label_1font);
+		label1.setBounds(170,40,450,200);
+		
+		label1_1.setBounds(170,132,450,200);
+		
+		Font f = new Font("휴먼옛체",Font.PLAIN,103);
+		label1.setForeground(new Color(204,204,051));
+		label1_1.setForeground(new Color(204,204,051));
+		
 		label1.setFont(f);
 		label1_1.setFont(f);
 		
@@ -113,20 +112,21 @@ public class Main extends JButton {
 	//	File file = new File("./image/book.png"); //파일 경로가 맞는지 확인//
     //	System.out.println(file.exists()?"Exists":"doesnt exists"); //파일경로가 맞는지 확인//
 		JButton b1,b2;
-		b1 = new JButton("게임 시작");
-		b2 = new JButton("게임 종료");		
-		Font f1 = new Font("휴먼둥근헤드라인",Font.BOLD,25);
+		b1 = new JButton(">> 게임 시작");
+		b2 = new JButton(" 게임 종료 <<");		
+		Font f1 = new Font("휴먼둥근헤드라인",Font.PLAIN,22);
 		b1.setFont(f1);
 		b1.setBackground(new Color(255,255,255));
-		b1.setBounds(200,410,265,60);
+		b1.setBounds(0,410,360,45);
+		
 		
 		b2.setFont(f1);
 		b2.setBackground(new Color(255,255,255));
-		b2.setBounds(200,490,265,60);	
+		b2.setBounds(290,470,360,45);	
 		b2.setBorderPainted(false);
 		b1.setBorderPainted(false);
 		frame.add(panel);	
-		panel.add(label_1);
+		
 		panel.add(label1);
 		panel.add(label1_1);
 		panel.add(b1);
@@ -141,43 +141,25 @@ public class Main extends JButton {
 		b6 = new JButton("빈둥 대기");
 		b7 = new JButton("공부하기");
 		
-		b3.setBounds(170,260,300,50);
-		b4.setBounds(170,330,300,50);
-		b5.setBounds(170,400,300,50);
-		b6.setBounds(170,470,300,50);
-		b7.setBounds(170,540,300,50);
+		b3.setBounds(170,258,300,48);
+		b4.setBounds(170,328,300,48);
+		b5.setBounds(170,398,300,48);
+		b6.setBounds(170,468,300,48);
+		b7.setBounds(170,538,300,48);
 			
-		LineBorder l3 = new LineBorder(new Color(255,204,051));									
-		b3.setBorder(l3);
-		LineBorder l4 = new LineBorder(new Color(255,204,051));									
-		b4.setBorder(l4);
-		LineBorder l5 = new LineBorder(new Color(255,204,051));									
-		b5.setBorder(l5);
-		LineBorder l6 = new LineBorder(new Color(255,204,051));									
-		b6.setBorder(l6);
-		LineBorder l7 = new LineBorder(new Color(255,204,051));									
-		b7.setBorder(l7);
-		Container con = new Container();
-		con.add(b3);
-		con.add(b4);
-		con.add(b5);
-		con.add(b6);
-		con.add(b7);
-		
-		b3.setForeground(Color.WHITE);
-		
+		b3.setBorderPainted(false);
 		b4.setBorderPainted(false);
 		b5.setBorderPainted(false);
 		b6.setBorderPainted(false);
 		b7.setBorderPainted(false);
-		Font f4 = new Font("Dialog",Font.BOLD ,25);
+		Font f4 = new Font("휴먼엑스포",Font.BOLD ,25);
 		b3.setFont(f4);
 		b4.setFont(f4);
 		b5.setFont(f4);
 		b6.setFont(f4);
 		b7.setFont(f4);
 		
-		b3.setBackground(new Color(255,204,051));
+		b3.setBackground(Color.WHITE);
 		b4.setBackground(Color.WHITE);
 		b5.setBackground(Color.WHITE);
 		b6.setBackground(Color.WHITE);
@@ -195,7 +177,7 @@ public class Main extends JButton {
 		b9 = new JButton("시스템 프로그래밍");
 		b10 = new JButton("데이터베이스");
 		b11 = new JButton("정보보호");
-		Font b3eventfont = new Font("Dialog",Font.BOLD ,25);
+		Font b3eventfont = new Font("돋움",Font.BOLD ,25);
 		b8.setFont(b3eventfont);
 		b9.setFont(b3eventfont);
 		b10.setFont(b3eventfont);
@@ -230,19 +212,29 @@ public class Main extends JButton {
 		
 	    JLabel label5 = new JLabel("D-"+DdayNumber+" "+Month+"월"+ " "+Day+"일");
 	    JLabel label10 = new JLabel("체력:"+Power);
-	    label5.setBounds(20,10,400,30);
-	    Font label5font = new Font("monospaced", Font.BOLD,25);
+	    label5.setBounds(10,10,400,30);
+	    Font label5font = new Font("HY견고딕", Font.PLAIN,25);
 	    label5.setFont(label5font);
 	    
 	    JButton b12 = new JButton("강의 목록으로 돌아가기 ");
 	    JButton b13 = new JButton("메뉴 화면으로 돌아가기");
 	    JButton b14 = new JButton("하루일과 마무리하기");
+	    b12.setBackground(Color.WHITE);
+	    b13.setBackground(Color.WHITE);
+	    b14.setBackground(Color.WHITE);
+	    
+	    b12.setBorderPainted(false);
+	    b13.setBorderPainted(false);
+	    b14.setBorderPainted(false);
+	    b12.setFocusPainted(false);
+	    b13.setFocusPainted(false);
+	    b14.setFocusPainted(false);
 	    b12.setBounds(27,600,180,30);
 	    b13.setBounds(229,600,180,30);
 	    b14.setBounds(434,600,180,30);
 		
 		b1.addActionListener(e ->{          
-											
+						
 			p2.setLayout(null);
 			JLabel label2 = new JLabel(" '무슨 멘트를 "); 
 			JLabel label3 = new JLabel("적으면 좋을까?'");
@@ -295,22 +287,23 @@ public class Main extends JButton {
 			});
 		
 		b8.addActionListener(e->{
-			  Power-=10;
+		      Power-=10;
 		      Intelli+=5;
 		      p4.setLayout(null);
 
 		      JLabel label6,label7,label8,label9;
 		      label6 = new JLabel("오픈소스 소프트웨어 강의");
 		      label6.setBounds(170,469,300,50);
-		      Font label6font = new Font("나눔바른고딕",Font.BOLD,24);
+		      Font label6font = new Font("HY견고딕",Font.PLAIN,24);
 		      label6.setFont(label6font);
 		      label7 = new JLabel("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&$^@#...");
-		      label7.setBounds(10,515,500,50);
+		      label7.setBounds(10,511,500,50);
 		      label8 = new JLabel("수업이 끝났어!");
 		      label8.setBounds(10,565,300,50);
 		      label9 = new JLabel("[알림: 체력 - 10, 지능 + 5]");
 		      label9.setBounds(300,565,300,50); 
-
+                      Font lecturelabel = new Font("휴먼엑스포",Font.PLAIN,15);
+                      label7.setFont(lecturelabel);
 		      frame.add(p4);
 		      p4.add(label5);
 		      p4.add(label6);
