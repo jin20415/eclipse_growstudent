@@ -287,27 +287,32 @@ public class Main extends JButton {
 			});
 		
 		b8.addActionListener(e->{
-		      Power-=10;
+			  Power-=10;
 		      Intelli+=5;
 		      p4.setLayout(null);
 
-		      JLabel label6,label7,label8,label9;
-		      label6 = new JLabel("오픈소스 소프트웨어 강의");
-		      label6.setBounds(170,469,300,50);
-		      Font label6font = new Font("HY견고딕",Font.PLAIN,24);
+		      JLabel label6,label7,label_7,label8,label9;
+		      label6 = new JLabel("오픈소스 소프트웨어 강의를 재생했어!");
+		      label6.setBounds(10,469,300,50);
+		      Font label6font = new Font("HY견고딕",Font.PLAIN,15);
 		      label6.setFont(label6font);
-		      label7 = new JLabel("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&$^@#...");
-		      label7.setBounds(10,511,500,50);
-		      label8 = new JLabel("수업이 끝났어!");
-		      label8.setBounds(10,565,300,50);
+		      label7 = new JLabel("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&$^@#...");		 
+		      label7.setBounds(10,485,500,50);
+		      label_7= new JLabel("@#$!!^*!@$^%*^(!@$#@#%&*(_)))(^@#!@!");
+		      label_7.setBounds(10,505,300,50);		     
+		      label8 = new JLabel("수업이 끝났어! 강의를 더 들을까?");
+		      label8.setBounds(10,525,300,50);		      
 		      label9 = new JLabel("[알림: 체력 - 10, 지능 + 5]");
-		      label9.setBounds(300,565,300,50); 
-                      Font lecturelabel = new Font("휴먼엑스포",Font.PLAIN,15);
-                      label7.setFont(lecturelabel);
+		      label9.setBounds(300,565,300,50); 		      
+              Font lecturelabel = new Font("휴먼엑스포",Font.PLAIN,15);
+              label7.setFont(lecturelabel);
+              label_7.setFont(lecturelabel);
+              label8.setFont(lecturelabel);
 		      frame.add(p4);
 		      p4.add(label5);
 		      p4.add(label6);
 		      p4.add(label7);
+		      p4.add(label_7);
 		      p4.add(label8);
 		      p4.add(label9);
 		      p4.add(label10);
