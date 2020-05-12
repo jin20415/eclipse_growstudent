@@ -71,6 +71,7 @@ class ImagePanel extends JPanel{
 	 g.drawImage(lectureimg,0,0,null);
      }
  } 
+    
 public class Main extends JButton {			
 	
 	private static int DdayNumber = 8;
@@ -171,7 +172,7 @@ public class Main extends JButton {
 		b6.setFocusPainted(false);
 		b7.setFocusPainted(false);
 		subImagePanel p2 = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
-		
+		ImageIcon powerlabel = new ImageIcon("./image/power.jpg");
 		JButton b8,b9,b10,b11;
 		b8 = new JButton("오픈소스 소프트웨어");
 		b9 = new JButton("시스템 프로그래밍");
@@ -287,6 +288,7 @@ public class Main extends JButton {
 			});
 		
 		b8.addActionListener(e->{
+			  
 			  Power-=10;
 		      Intelli+=5;
 		      p4.setLayout(null);
@@ -303,11 +305,13 @@ public class Main extends JButton {
 		      label8 = new JLabel("수업이 끝났어! 강의를 더 들을까?");
 		      label8.setBounds(10,525,300,50);		      
 		      label9 = new JLabel("[알림: 체력 - 10, 지능 + 5]");
-		      label9.setBounds(300,565,300,50); 		      
-              Font lecturelabel = new Font("휴먼엑스포",Font.PLAIN,15);
+		      label9.setBounds(250,525,300,50); 		      
+              Font lecturelabel = new Font("HY견고딕",Font.PLAIN,15);
               label7.setFont(lecturelabel);
               label_7.setFont(lecturelabel);
-              label8.setFont(lecturelabel);
+              label8.setFont(lecturelabel);             
+              JLabel imagelabel = new JLabel(powerlabel);
+              imagelabel.setBounds(100,10,77,75);
 		      frame.add(p4);
 		      p4.add(label5);
 		      p4.add(label6);
@@ -319,10 +323,33 @@ public class Main extends JButton {
 		      p4.add(b12);
 		      p4.add(b13);
 		      p4.add(b14);
+		      p4.add(imagelabel);
+		      imagelabel.setVisible(true);
 		      p2.setVisible(false);
 		      p3.setVisible(false);
 		      frame.setVisible(true);
 		});
+		      b12.addActionListener(e->{
+		            p3.setLayout(null);			
+					JLabel label4 = new JLabel("강의 목록");
+					label4.setBounds(157,142,500,90);
+					Font label4font = new Font("monospaced",Font.BOLD ,70);			
+					label4.setFont(label4font);
+																
+					frame.add(p3);
+					p3.add(label4);
+					p3.add(b8);
+					p3.add(b9);
+					p3.add(b10);
+					p3.add(b11);
+					panel.setVisible(false);
+					p2.setVisible(false);
+					p3.setVisible(true);
+					p4.setVisible(false);
+					frame.setVisible(true);
+				});
+	
+		
 		
 	}	 	
     
