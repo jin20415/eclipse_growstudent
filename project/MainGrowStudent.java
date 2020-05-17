@@ -50,7 +50,7 @@ class subImagePanel extends JPanel {
 }
 
 public class MainGrowStudent extends JFrame {
-	Container contentPane;
+	static Container contentPane;
 
 	MainGrowStudent() {
 		setTitle("<< 대학생 키우기 >>");
@@ -133,7 +133,6 @@ public class MainGrowStudent extends JFrame {
 		// " 친화력 " + init.Friend);
 		// MenuPanel.add(Lb2);
 
-		Font f3 = new Font("monospaced", Font.BOLD, 30);
 		Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 		// Lb2.setFont(f3);
 		// Lb1.setForeground(Color.RED);
@@ -203,9 +202,9 @@ public class MainGrowStudent extends JFrame {
 
 		MBtn.addActionListener(event -> {
 
-			JLabel todaylabel = new JLabel("하루를 어떻게 보낼까?");
-			todaylabel.setBounds(0, 0, 400, 50);
-			choosepanel.add(todaylabel);
+			//JLabel todaylabel = new JLabel("하루를 어떻게 보낼까?");
+			//todaylabel.setBounds(0, 0, 400, 50);
+			//choosepanel.add(todaylabel);
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
 			choosepanel.setVisible(true);
@@ -215,48 +214,36 @@ public class MainGrowStudent extends JFrame {
 
 		});
 
+		Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
+		Font 활동선택폰트 = new Font("HY견고딕", Font.BOLD, 12);
 		JButton LectureBtn = new JButton("강의 듣기");
+		LectureBtn.setFont(활동선택버튼폰트);
 		JLabel detail = new JLabel();
-		detail.setText("체력 10이 요구됩니다.\n 지식이 5만큼 오릅니다.");
+		detail.setText("[요구 능력치: 체력 10]");
+		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식+5]");
+		detail.setFont(활동선택폰트);
+		detailL.setFont(활동선택폰트);
+		choosepanel.add(detailL);
 		choosepanel.add(LectureBtn);
-		LectureBtn.setBounds(208, 48, 100, 30);
+		choosepanel.add(detail);
+		LectureBtn.setBounds(200, 78, 100, 30);
+		detail.setBounds(191, 108, 200, 30);
+		detail.setVisible(true);
+		detailL.setBounds(191, 123, 200, 30);
 		LectureBtn.setBorderPainted(false);
 		LectureBtn.setFocusPainted(false);
-		LectureBtn.setBackground(new Color(156, 245, 91));
+		LectureBtn.setBackground(new Color(153, 239, 90));
 		LectureBtn.addActionListener(event -> {
-			JLabel 시작멘트 = new JLabel();
-			시작멘트.setText("오픈소스 소프트웨어 강의를 재생했어!");
-			시작멘트.setBounds(10, 469, 300, 50);
-			Font 모든레이블폰트 = new Font("휴먼옛체", Font.PLAIN, 15);
-			시작멘트.setFont(모든레이블폰트);
-			JLabel 교수님멘트 = new JLabel();
-			교수님멘트.setText("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&$^@#...\n교수님: @#$!!^*!@$^%*^(!@$#@#%&*(_)))(^@#!@!");
-			교수님멘트.setBounds(10, 485, 500, 50);
-			JLabel 시스템멘트 = new JLabel("수업이 끝났어! 강의를 더 들을까?");
-			시스템멘트.setBounds(10, 525, 300, 50);
-			JLabel 알림멘트 = new JLabel("[알림: 체력 - 10, 지능 + 5]");
-			알림멘트.setBounds(250, 525, 300, 50);
-
-			알림멘트.setFont(모든레이블폰트);
-			교수님멘트.setFont(모든레이블폰트);
-			시스템멘트.setFont(모든레이블폰트);
-			subImagePanel 강의화면패널 = new subImagePanel(new ImageIcon("./image/lecture.jpg").getImage());
-			강의화면패널.setLayout(null);
-			강의화면패널.setBounds(0, 0, 640, 640);
-			강의화면패널.add(알림멘트);
-			강의화면패널.add(교수님멘트);
-			강의화면패널.add(시스템멘트);
-			contentPane.add(강의화면패널);
-			
-			contentPane.setBounds(640,480,640,120);
+			Study.Study();
+			LectureBtn.setVisible(false);
 			MenuPanel.setVisible(false);
 			StartPanel.setVisible(false);
-			choosepanel.setLayout(null);
+			choosepanel.setVisible(false);
 			week.setVisible(false);
 			choosepanel.setVisible(false);
 			contentPane.setBackground(Color.WHITE);
-			강의화면패널.setVisible(true);
-			contentPane.setVisible(true);
+			contentPane.add(Study.lecturelist);
+			Study.lecturelist.setVisible(true);
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -264,10 +251,53 @@ public class MainGrowStudent extends JFrame {
 			} else
 				new Study();
 		});
+		JButton playBtn = new JButton(" 휴식하기 ");
+		Font bonusfont = new Font("HY견고딕", Font.BOLD, 10);
+		choosepanel.add(playBtn);
+		playBtn.setBounds(370, 108, 100, 30);
+		playBtn.setBackground(new Color(241, 228, 90));
+		playBtn.setFocusPainted(false);
+		playBtn.setBorderPainted(false);
+		playBtn.setFont(활동선택버튼폰트);
+		JLabel pdetail = new JLabel();
+		pdetail.setText("[요구 능력치: 체력 50]");
+		JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
+		JLabel bonus = new JLabel("보너스를 받을 수  있을지도?");
+		pdetail.setFont(활동선택폰트);
+		pdetail.setBounds(371, 143, 200, 30);
+		pdetailL.setFont(활동선택폰트);
+		pdetailL.setBounds(371, 163, 200, 30);
+		bonus.setFont(bonusfont);
+		bonus.setBounds(403, 183, 200, 30);
+		choosepanel.add(pdetail);
+		choosepanel.add(pdetailL);
+		choosepanel.add(bonus);
+
+		JButton partamBtn = new JButton("알바 가기");
+		// Font bonusfont = new Font("HY견고딕",Font.BOLD,10);
+		choosepanel.add(partamBtn);
+		partamBtn.setBounds(370, 108, 100, 30);
+		partamBtn.setBackground(new Color(241, 228, 90));
+		partamBtn.setFocusPainted(false);
+		partamBtn.setBorderPainted(false);
+		partamBtn.setFont(활동선택버튼폰트);
+		// JLabel pdetail = new JLabel();
+		pdetail.setText("[요구 능력치: 체력 50]");
+		// JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
+		// JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
+		pdetail.setFont(활동선택폰트);
+		pdetail.setBounds(371, 143, 200, 30);
+		pdetailL.setFont(활동선택폰트);
+		pdetailL.setBounds(371, 163, 200, 30);
+		bonus.setFont(bonusfont);
+		bonus.setBounds(403, 183, 200, 30);
+		choosepanel.add(pdetail);
+		choosepanel.add(pdetailL);
+		choosepanel.add(bonus);
 
 		JButton SBtn = new JButton("공부하기");
 		choosepanel.add(SBtn);
-	//	SBtn.setBounds(170, 328, 300, 48);
+		// SBtn.setBounds(170, 328, 300, 48);
 		SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -287,8 +317,8 @@ public class MainGrowStudent extends JFrame {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
-			}// else
-				//new PartTime();
+			} // else
+				// new PartTime();
 		});
 
 		JButton PlayBtn = new JButton("친구와 놀러가기");
@@ -304,8 +334,8 @@ public class MainGrowStudent extends JFrame {
 			} else if (init.Money <= 0) {
 				JOptionPane.showMessageDialog(null, "돈이 없어서 더 이상 할 수 없습니다", "경고", JOptionPane.WARNING_MESSAGE); // 메시지
 																												// 출력
-			} //else
-				//new Play();
+			} // else
+				// new Play();
 		});
 
 		JButton RestBtn = new JButton("휴식하기");
