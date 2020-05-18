@@ -40,7 +40,7 @@ class subImagePanel extends JPanel {
 		this.subimg = subimg;
 		setSize(new Dimension(subimg.getWidth(null), subimg.getHeight(null)));
 		setPreferredSize(new Dimension(subimg.getWidth(null), subimg.getHeight(null)));// pack()한 후 프레임 사이즈가 맞게 나오지 않을 때
-		setSize(640, 640);
+		setSize(660, 640);
 		setLayout(null);
 	}
 
@@ -51,17 +51,28 @@ class subImagePanel extends JPanel {
 
 public class MainGrowStudent extends JFrame {
 	static Container contentPane;
+	static ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
+	static subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
+	static subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
+	static JButton MBtn = new JButton("일정채우기");
+	static JButton ThBtn = new JButton("일정채우기");
+	static JButton WBtn = new JButton("일정채우기");
+	static JButton TuBtn = new JButton("일정채우기");
+	static JButton FBtn = new JButton("일정채우기");
+	static JButton SatBtn = new JButton("일정채우기");
+	static JButton SunBtn = new JButton("일정채우기");
+	static JLabel click = new JLabel("click");
+	static Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
+	static JLabel week = new JLabel();
 
+	
 	MainGrowStudent() {
 		setTitle("<< 대학생 키우기 >>");
 		contentPane = getContentPane();
 		contentPane.setLayout(null);
-		setSize(640, 640);
+		setSize(655, 650);
 		setLayout(null);
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
-		subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
 
 		JLabel label1, label1_1;
 		label1 = new JLabel("대학생 ");
@@ -107,6 +118,25 @@ public class MainGrowStudent extends JFrame {
 			System.exit(0);
 		});
 
+		StartBt.addActionListener(e -> {
+			// MenuPanel.add(Lb1);
+			// MenuPanel.add(Lb2);			
+			요일선택화면();
+			MenuPanel.add(MBtn);
+			MenuPanel.add(click);
+			MenuPanel.add(TuBtn);
+			MenuPanel.add(WBtn);
+			MenuPanel.add(ThBtn);
+			MenuPanel.add(FBtn);
+			MenuPanel.add(SatBtn);
+			MenuPanel.add(SunBtn);
+
+			setBackground(Color.WHITE);
+			contentPane.add(MenuPanel);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
 		init.MT();
 		JLabel Lb1 = new JLabel();
 		Lb1.setText("종강까지 D-" + init.DdayNumber);
@@ -115,7 +145,7 @@ public class MainGrowStudent extends JFrame {
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 18);
 		dateLb.setFont(datefont);
 		dateLb.setBounds(45, 8, 640, 50);
-		JLabel week = new JLabel();
+
 		week.setText("종강까지 D-" + init.DdayNumber);
 		Font weekfont = new Font("휴먼옛체", Font.PLAIN, 30);
 		week.setFont(weekfont);
@@ -133,93 +163,19 @@ public class MainGrowStudent extends JFrame {
 		// " 친화력 " + init.Friend);
 		// MenuPanel.add(Lb2);
 
-		Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 		// Lb2.setFont(f3);
 		// Lb1.setForeground(Color.RED);
 		// Lb2.setForeground(Color.lightGray);
 
-		JButton MBtn = new JButton("일정채우기");
-		MenuPanel.add(MBtn);
-		MBtn.setBorderPainted(false);
-		MBtn.setFocusPainted(false);
-		MBtn.setBounds(95, 100, 150, 40);
+	}
 
-		JButton ThBtn = new JButton("일정채우기");
-		MenuPanel.add(ThBtn);
-		ThBtn.setBorderPainted(false);
-		ThBtn.setFocusPainted(false);
-		ThBtn.setBackground(Color.WHITE);
-		ThBtn.setBounds(385, 100, 150, 40);
-		ThBtn.setFont(f4);
-
-		JButton WBtn = new JButton("일정채우기");
-		MenuPanel.add(WBtn);
-		WBtn.setBorderPainted(false);
-		WBtn.setFocusPainted(false);
-		WBtn.setBackground(Color.WHITE);
-		WBtn.setBounds(95, 425, 150, 40);
-		WBtn.setFont(f4);
-
-		JButton TuBtn = new JButton("일정채우기");
-		TuBtn.setBorderPainted(false);
-		TuBtn.setFocusPainted(false);
-		TuBtn.setBackground(Color.WHITE);
-		TuBtn.setBounds(95, 265, 150, 40);
-		TuBtn.setFont(f4);
-
-		JButton FBtn = new JButton("일정채우기");
-		JLabel click = new JLabel("Click");
-		click.setBounds(500, 195, 150, 140);
-		click.setFont(f4);
-		FBtn.setBorderPainted(false);
-		FBtn.setFocusPainted(false);
-		FBtn.setBackground(Color.WHITE);
-		FBtn.setBounds(385, 265, 150, 40);
-		FBtn.setBackground(new Color(214, 214, 214));
-		FBtn.setFont(f4);
-
-		Font f5 = new Font("휴먼엑스포", Font.BOLD, 15);
-		JButton SatBtn = new JButton("일정채우기");
-
-		SatBtn.setBorderPainted(false);
-		SatBtn.setFocusPainted(false);
-		SatBtn.setBackground(Color.WHITE);
-		SatBtn.setBounds(385, 395, 150, 25);
-		SatBtn.setBackground(new Color(214, 214, 214));
-		SatBtn.setFont(f5);
-
-		JButton SunBtn = new JButton("일정채우기");
-		// MenuPanel.add(SunBtn);
-		SunBtn.setBorderPainted(false);
-		SunBtn.setFocusPainted(false);
-		SunBtn.setBackground(new Color(214, 214, 214));
-		SunBtn.setBounds(385, 473, 150, 25);
-		SunBtn.setFont(f5);
-
-		subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
-		choosepanel.setLayout(null);
-		choosepanel.setBounds(0, 80, 640, 640);
-
-		MBtn.addActionListener(event -> {
-
-			//JLabel todaylabel = new JLabel("하루를 어떻게 보낼까?");
-			//todaylabel.setBounds(0, 0, 400, 50);
-			//choosepanel.add(todaylabel);
-			contentPane.add(choosepanel);
-			contentPane.setBackground(Color.WHITE);
-			choosepanel.setVisible(true);
-			MenuPanel.setVisible(false);
-			StartPanel.setVisible(false);
-			contentPane.setVisible(true);
-
-		});
-
+	static void 활동선택메뉴() {
 		Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
 		Font 활동선택폰트 = new Font("HY견고딕", Font.BOLD, 12);
 		JButton LectureBtn = new JButton("강의 듣기");
 		LectureBtn.setFont(활동선택버튼폰트);
 		JLabel detail = new JLabel();
-		detail.setText("[요구 능력치: 체력 10]");
+		detail.setText("[요구 능력치: 체력 25]");
 		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식+5]");
 		detail.setFont(활동선택폰트);
 		detailL.setFont(활동선택폰트);
@@ -234,7 +190,7 @@ public class MainGrowStudent extends JFrame {
 		LectureBtn.setFocusPainted(false);
 		LectureBtn.setBackground(new Color(153, 239, 90));
 		LectureBtn.addActionListener(event -> {
-			Study.Study();
+			Lecture.Lecture();
 			LectureBtn.setVisible(false);
 			MenuPanel.setVisible(false);
 			StartPanel.setVisible(false);
@@ -242,8 +198,8 @@ public class MainGrowStudent extends JFrame {
 			week.setVisible(false);
 			choosepanel.setVisible(false);
 			contentPane.setBackground(Color.WHITE);
-			contentPane.add(Study.lecturelist);
-			Study.lecturelist.setVisible(true);
+			contentPane.add(Lecture.lecturelist);
+			Lecture.lecturelist.setVisible(true);
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -251,40 +207,40 @@ public class MainGrowStudent extends JFrame {
 			} else
 				new Study();
 		});
-		JButton playBtn = new JButton(" 휴식하기 ");
-		Font bonusfont = new Font("HY견고딕", Font.BOLD, 10);
+		JButton playBtn = new JButton("휴식 하기 ");
+		// Font rest = new Font("HY견고딕", Font.BOLD, 10);
 		choosepanel.add(playBtn);
-		playBtn.setBounds(370, 108, 100, 30);
-		playBtn.setBackground(new Color(241, 228, 90));
+		playBtn.setBounds(55, 260, 112, 30);
+		playBtn.setBackground(new Color(89, 205, 242));
 		playBtn.setFocusPainted(false);
 		playBtn.setBorderPainted(false);
 		playBtn.setFont(활동선택버튼폰트);
-		JLabel pdetail = new JLabel();
-		pdetail.setText("[요구 능력치: 체력 50]");
-		JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
-		JLabel bonus = new JLabel("보너스를 받을 수  있을지도?");
-		pdetail.setFont(활동선택폰트);
-		pdetail.setBounds(371, 143, 200, 30);
-		pdetailL.setFont(활동선택폰트);
-		pdetailL.setBounds(371, 163, 200, 30);
-		bonus.setFont(bonusfont);
-		bonus.setBounds(403, 183, 200, 30);
-		choosepanel.add(pdetail);
-		choosepanel.add(pdetailL);
-		choosepanel.add(bonus);
+		JLabel rdetail = new JLabel();
+		rdetail.setText("[요구능력치: 없음]");
+		JLabel rdetailL = new JLabel("[얻을 수 있는 능력치: 체력 + 20]");
+		// JLabel s = new JLabel("보너스를 받을 수 있을지도?");
+		rdetail.setFont(활동선택폰트);
+		rdetail.setBounds(60, 290, 200, 30);
+		rdetailL.setFont(활동선택폰트);
+		rdetailL.setBounds(60, 310, 200, 30);
+		// s.setFont(rest);
+		// s.setBounds(30, 183, 200, 30);
+		choosepanel.add(rdetail);
+		choosepanel.add(rdetailL);
+		// choosepanel.add(s);
 
 		JButton partamBtn = new JButton("알바 가기");
-		// Font bonusfont = new Font("HY견고딕",Font.BOLD,10);
+		Font bonusfont = new Font("HY견고딕", Font.BOLD, 10);
 		choosepanel.add(partamBtn);
-		partamBtn.setBounds(370, 108, 100, 30);
+		partamBtn.setBounds(370, 110, 100, 30);
 		partamBtn.setBackground(new Color(241, 228, 90));
 		partamBtn.setFocusPainted(false);
 		partamBtn.setBorderPainted(false);
 		partamBtn.setFont(활동선택버튼폰트);
-		// JLabel pdetail = new JLabel();
+		JLabel pdetail = new JLabel();
 		pdetail.setText("[요구 능력치: 체력 50]");
-		// JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
-		// JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
+		JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
+		JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
 		pdetail.setFont(활동선택폰트);
 		pdetail.setBounds(371, 143, 200, 30);
 		pdetailL.setFont(활동선택폰트);
@@ -295,9 +251,39 @@ public class MainGrowStudent extends JFrame {
 		choosepanel.add(pdetailL);
 		choosepanel.add(bonus);
 
-		JButton SBtn = new JButton("공부하기");
+		JButton back = new JButton("뒤로가기");
+		back.setBackground(new Color(243, 90, 181));
+		back.setBounds(410, 310, 100, 30);
+		choosepanel.add(back);
+		back.setFont(활동선택버튼폰트);
+		back.setFocusPainted(false);
+		back.setBorderPainted(false);
+		back.addActionListener(event -> {
+			요일선택화면();
+			MenuPanel.setVisible(true);
+			choosepanel.setVisible(false);
+		});
+
+		JButton SBtn = new JButton("공부 하기");
 		choosepanel.add(SBtn);
-		// SBtn.setBounds(170, 328, 300, 48);
+		SBtn.setBounds(236, 340, 100, 30);
+		SBtn.setBackground(new Color(210, 89, 242));
+		SBtn.setFocusPainted(false);
+		SBtn.setBorderPainted(false);
+		SBtn.setFont(활동선택버튼폰트);
+		JLabel sdetail = new JLabel();
+		sdetail.setText("[요구능력치: 체력 25]");
+		JLabel sdetailL = new JLabel("[얻을 수 있는 능력치: 지능 + 5]");
+		// JLabel s = new JLabel("보너스를 받을 수 있을지도?");
+		sdetail.setFont(활동선택폰트);
+		sdetail.setBounds(235, 370, 200, 30);
+		sdetailL.setFont(활동선택폰트);
+		sdetailL.setBounds(235, 385, 200, 30);
+		// s.setFont(rest);
+		// s.setBounds(30, 183, 200, 30);
+		choosepanel.add(sdetail);
+		choosepanel.add(sdetailL);
+		// choosepanel.add(s);
 		SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -343,44 +329,167 @@ public class MainGrowStudent extends JFrame {
 		RestBtn.setBorderPainted(false);
 		RestBtn.setFocusPainted(false);
 		// RestBtn.setBounds(170, 538, 300, 48);
-		RestBtn.addActionListener(event -> {
-			new Rest(Lb1/* , Lb2 */);
-		});
+		// RestBtn.addActionListener(event -> {
+		// Rest.Rest(Lb1);
+		// });
 
 		MBtn.setFont(f4);
-		SBtn.setFont(f4);
+		// SBtn.setFont(f4);
 		PtBtn.setFont(f4);
 		PlayBtn.setFont(f4);
 		RestBtn.setFont(f4);
 
 		MBtn.setBackground(Color.WHITE);
-		SBtn.setBackground(Color.WHITE);
+		// SBtn.setBackground(Color.WHITE);
 		PtBtn.setBackground(Color.WHITE);
 		PlayBtn.setBackground(Color.WHITE);
 		RestBtn.setBackground(Color.WHITE);
 
-		StartBt.addActionListener(e -> {
-			// MenuPanel.add(Lb1);
-			// MenuPanel.add(Lb2);
-			MenuPanel.add(MBtn);
-			MenuPanel.add(click);
-			MenuPanel.add(TuBtn);
-			MenuPanel.add(WBtn);
-			MenuPanel.add(ThBtn);
-			MenuPanel.add(FBtn);
-			MenuPanel.add(SatBtn);
-			MenuPanel.add(SunBtn);
+	}
 
-			setBackground(Color.WHITE);
-			contentPane.add(MenuPanel);
+	static void 요일선택화면() {
+
+		MenuPanel.add(MBtn);
+		MBtn.setBorderPainted(false);
+		MBtn.setFocusPainted(false);
+		MBtn.setBackground(Color.WHITE);
+		MBtn.setBounds(95, 100, 150, 40);
+		MBtn.setFont(f4);
+
+		MenuPanel.add(ThBtn);
+		ThBtn.setBorderPainted(false);
+		ThBtn.setFocusPainted(false);
+		ThBtn.setBackground(Color.WHITE);
+		ThBtn.setBounds(385, 100, 150, 40);
+		ThBtn.setFont(f4);
+
+		MenuPanel.add(WBtn);
+		WBtn.setBorderPainted(false);
+		WBtn.setFocusPainted(false);
+		WBtn.setBackground(Color.WHITE);
+		WBtn.setBounds(95, 425, 150, 40);
+		WBtn.setFont(f4);
+
+		TuBtn.setBorderPainted(false);
+		TuBtn.setFocusPainted(false);
+		TuBtn.setBackground(Color.WHITE);
+		TuBtn.setBounds(95, 265, 150, 40);
+		TuBtn.setFont(f4);
+
+		click.setBounds(500, 245, 80, 30);
+		click.setFont(f4);
+		FBtn.setBorderPainted(false);
+		FBtn.setFocusPainted(false);
+		click.setBackground(new Color(214, 214, 214));
+		FBtn.setBounds(385, 265, 150, 40);
+		FBtn.setBackground(new Color(214, 214, 214));
+		FBtn.setFont(f4);
+
+		Font f5 = new Font("휴먼엑스포", Font.BOLD, 15);
+
+		SatBtn.setBorderPainted(false);
+		SatBtn.setFocusPainted(false);
+		SatBtn.setBackground(Color.WHITE);
+		SatBtn.setBounds(385, 395, 150, 25);
+		SatBtn.setBackground(new Color(214, 214, 214));
+		SatBtn.setFont(f5);
+
+		// MenuPanel.add(SunBtn);
+		SunBtn.setBorderPainted(false);
+		SunBtn.setFocusPainted(false);
+		SunBtn.setBackground(new Color(214, 214, 214));
+		SunBtn.setBounds(385, 473, 150, 25);
+		SunBtn.setFont(f5);
+
+		choosepanel.setLayout(null);
+		choosepanel.setBounds(0, 80, 640, 640);
+
+		MBtn.addActionListener(event -> {
+				
+			MBtn.setText("어제");			
+			활동선택메뉴();
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
 			StartPanel.setVisible(false);
 			contentPane.setVisible(true);
+
 		});
 
+		TuBtn.addActionListener(event -> {
+			
+			활동선택메뉴();			
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
+
+		WBtn.addActionListener(event -> {
+
+			활동선택메뉴();	
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
+
+		ThBtn.addActionListener(event -> {
+
+			활동선택메뉴();	
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
+
+		FBtn.addActionListener(event -> {
+
+			활동선택메뉴();	
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
+		SatBtn.addActionListener(event -> {
+
+			활동선택메뉴();	
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
+		SunBtn.addActionListener(event -> {
+
+			활동선택메뉴();	
+			contentPane.add(choosepanel);
+			contentPane.setBackground(Color.WHITE);
+			choosepanel.setVisible(true);
+			MenuPanel.setVisible(false);
+			StartPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		});
 	}
 
 	public static void main(String[] args) {
-		File file = new File("./image/postit.jpg");
+		File file = new File("./image/xshort.png");
 		System.out.println(file.exists() ? "Exists" : "doesnt exists");
 		new MainGrowStudent();
 
