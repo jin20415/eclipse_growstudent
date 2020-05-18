@@ -48,7 +48,7 @@ class init {
 		}
 	}
 
-	 static void 오픈소스소프트웨어() {
+	static void 오픈소스소프트웨어() {
 		lectureImagePanel 강의이미지패널 = new lectureImagePanel(new ImageIcon("./image/lecture.jpg").getImage());
 		강의이미지패널.setLayout(null);
 		if (Power <= 0) {
@@ -74,30 +74,29 @@ class init {
 		시스템멘트.setBounds(10, 525, 300, 50);
 		JLabel 알림멘트 = new JLabel("[알림: 체력 - 10, 지능 + 5]");
 		알림멘트.setBounds(250, 525, 300, 50);
-		
+
 		알림멘트.setFont(모든레이블폰트);
 		교수님멘트.setFont(모든레이블폰트);
 		시스템멘트.setFont(모든레이블폰트);
 		subImagePanel 강의화면패널 = new subImagePanel(new ImageIcon("./image/lecture.jpg").getImage());
 		강의화면패널.setLayout(null);
 		강의화면패널.setBounds(0, 0, 640, 640);
-	    
+
 		강의화면패널.add(알림멘트);
 		강의화면패널.add(교수님멘트);
 		강의화면패널.add(시스템멘트);
 		MainGrowStudent.contentPane.add(강의화면패널);
-		
-		MainGrowStudent.contentPane.setBounds(640,480,640,120);
-		
+
+		MainGrowStudent.contentPane.setBounds(640, 480, 640, 120);
+
 		MainGrowStudent.contentPane.setBackground(Color.WHITE);
 		강의화면패널.setVisible(true);
 		MainGrowStudent.contentPane.setVisible(true);
-		Power -= 20;
-		Money -= 5000;
+		Power -= 25;
 		MT();
 	}
 
-	 static void 데이터베이스() {
+	static void 데이터베이스() {
 		if (Power <= 0) {
 			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 					JOptionPane.WARNING_MESSAGE);
@@ -105,14 +104,11 @@ class init {
 			Power = 100;// 메시지 출력
 		}
 
-		Power -= 10;
-		Day += 1;
-		DdayNumber -= 1;
-		Money -= 5000;
+		Power -= 25;
 		MT();
 	}
 
-	 static void 정보보호() {
+	static void 정보보호() {
 		if (Power <= 0) {
 			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 					JOptionPane.WARNING_MESSAGE);
@@ -132,7 +128,7 @@ class init {
 			Intelli += 5;
 			JOptionPane.showMessageDialog(null, "대충대충 했다.\n 지식이 5만큼 올랐다!", "넘나 귀찮은 것", JOptionPane.INFORMATION_MESSAGE);
 		}
-		Power -= 10;
+		Power -= 25;
 		Day += 1;
 		DdayNumber -= 1;
 		Money -= 5000;
@@ -161,7 +157,7 @@ class init {
 			JOptionPane.showMessageDialog(null, "의욕이 넘쳐 실수를 했다.\n 체력이 5만큼 감소하고 알바비를 1만원 받았다!", "앗 안돼!",
 					JOptionPane.INFORMATION_MESSAGE);
 		}
-		Power -= 10;
+		Power -= 50;
 		Day += 1;
 		DdayNumber -= 1;
 		MT();
