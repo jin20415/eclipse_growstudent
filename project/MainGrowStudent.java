@@ -40,7 +40,7 @@ class subImagePanel extends JPanel {
 		this.subimg = subimg;
 		setSize(new Dimension(subimg.getWidth(null), subimg.getHeight(null)));
 		setPreferredSize(new Dimension(subimg.getWidth(null), subimg.getHeight(null)));// pack()한 후 프레임 사이즈가 맞게 나오지 않을 때
-		setSize(660, 640);
+		setSize(655, 650);
 		setLayout(null);
 	}
 
@@ -54,7 +54,7 @@ public class MainGrowStudent extends JFrame {
 	static ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	static subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
 	static subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
-	static JButton MBtn = new JButton("일정채우기");
+    static JButton MBtn = new JButton("일정채우기");
 	static JButton ThBtn = new JButton("일정채우기");
 	static JButton WBtn = new JButton("일정채우기");
 	static JButton TuBtn = new JButton("일정채우기");
@@ -139,17 +139,17 @@ public class MainGrowStudent extends JFrame {
 		});
 		init.MT();
 		JLabel Lb1 = new JLabel();
-		Lb1.setText("종강까지 D-" + init.DdayNumber);
+		Lb1.setText("종강까지 단, D-" + init.DdayNumber+"!");
 		JLabel dateLb = new JLabel();
 		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 18);
 		dateLb.setFont(datefont);
 		dateLb.setBounds(45, 8, 640, 50);
 
-		week.setText("종강까지 D-" + init.DdayNumber);
-		Font weekfont = new Font("휴먼옛체", Font.PLAIN, 30);
+		week.setText("종강까지 단 D-" + init.DdayNumber+"일!");
+		Font weekfont = new Font("휴먼둥근헤드라인", Font.PLAIN, 30);
 		week.setFont(weekfont);
-		week.setBounds(400, 10, 600, 40);
+		week.setBounds(340, 10, 600, 40);
 		add(week);
 		setBackground(Color.WHITE);
 		Lb1.setFont(weekfont);
@@ -171,7 +171,7 @@ public class MainGrowStudent extends JFrame {
 
 	static void 활동선택메뉴() {
 		Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
-		Font 활동선택폰트 = new Font("HY견고딕", Font.BOLD, 12);
+		Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 12);
 		JButton LectureBtn = new JButton("강의 듣기");
 		LectureBtn.setFont(활동선택버튼폰트);
 		JLabel detail = new JLabel();
@@ -191,15 +191,31 @@ public class MainGrowStudent extends JFrame {
 		LectureBtn.setBackground(new Color(153, 239, 90));
 		LectureBtn.addActionListener(event -> {
 			Lecture.Lecture();
+			init.오픈소스소프트웨어();	
+			init.데이터베이스();
+			init.정보보호();
 			LectureBtn.setVisible(false);
 			MenuPanel.setVisible(false);
 			StartPanel.setVisible(false);
 			choosepanel.setVisible(false);
 			week.setVisible(false);
 			choosepanel.setVisible(false);
-			contentPane.setBackground(Color.WHITE);
+			Lecture.check.setVisible(true);
+			Lecture.button1.setVisible(true);
 			contentPane.add(Lecture.lecturelist);
 			Lecture.lecturelist.setVisible(true);
+			Lecture.button1.setVisible(true);
+			Lecture.button2.setVisible(true);
+			Lecture.button3.setVisible(true);
+			Lecture.버튼1강의장소.setVisible(true);
+			Lecture.버튼1교수님.setVisible(true);
+			Lecture.버튼1강의자료.setVisible(true);
+			Lecture.버튼2강의장소.setVisible(true);
+			Lecture.버튼2교수님.setVisible(true);
+			Lecture.버튼2강의자료.setVisible(true);
+			Lecture.버튼3강의장소.setVisible(true);
+			Lecture.버튼3교수님.setVisible(true);
+			Lecture.버튼3강의자료.setVisible(true);
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -349,10 +365,12 @@ public class MainGrowStudent extends JFrame {
 
 	static void 요일선택화면() {
 
+		MenuPanel.setBounds(0,50,640,640);
 		MenuPanel.add(MBtn);
 		MBtn.setBorderPainted(false);
 		MBtn.setFocusPainted(false);
 		MBtn.setBackground(Color.WHITE);
+		contentPane.setBackground(Color.WHITE);
 		MBtn.setBounds(95, 100, 150, 40);
 		MBtn.setFont(f4);
 
@@ -406,8 +424,9 @@ public class MainGrowStudent extends JFrame {
 
 		MBtn.addActionListener(event -> {
 				
-			MBtn.setText("어제");			
-			활동선택메뉴();
+			MBtn.setText("어제");	
+			init.Power = 100;
+			활동선택메뉴();			
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
 			choosepanel.setVisible(true);
@@ -419,6 +438,7 @@ public class MainGrowStudent extends JFrame {
 
 		TuBtn.addActionListener(event -> {
 			
+			init.Power = 100;
 			활동선택메뉴();			
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -431,6 +451,7 @@ public class MainGrowStudent extends JFrame {
 
 		WBtn.addActionListener(event -> {
 
+			init.Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -442,7 +463,7 @@ public class MainGrowStudent extends JFrame {
 		});
 
 		ThBtn.addActionListener(event -> {
-
+			init.Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -454,7 +475,7 @@ public class MainGrowStudent extends JFrame {
 		});
 
 		FBtn.addActionListener(event -> {
-
+			init.Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -465,7 +486,7 @@ public class MainGrowStudent extends JFrame {
 
 		});
 		SatBtn.addActionListener(event -> {
-
+			init.Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -476,7 +497,7 @@ public class MainGrowStudent extends JFrame {
 
 		});
 		SunBtn.addActionListener(event -> {
-
+			init.Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -489,7 +510,7 @@ public class MainGrowStudent extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		File file = new File("./image/xshort.png");
+		File file = new File("./image/lecture.jpg");
 		System.out.println(file.exists() ? "Exists" : "doesnt exists");
 		new MainGrowStudent();
 
