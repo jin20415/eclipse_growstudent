@@ -54,6 +54,7 @@ public class MainGrowStudent extends JFrame {
 	static ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	static subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
 	static subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
+	static subImagePanel power = new subImagePanel(new ImageIcon("./image/power.png").getImage());
     static JButton MBtn = new JButton("일정채우기");
 	static JButton ThBtn = new JButton("일정채우기");
 	static JButton WBtn = new JButton("일정채우기");
@@ -64,7 +65,7 @@ public class MainGrowStudent extends JFrame {
 	static JLabel click = new JLabel("click");
 	static Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 	static JLabel week = new JLabel();
-
+	static JLabel powerlabel = new JLabel(""+init.Power);
 	
 	MainGrowStudent() {
 		setTitle("<< 대학생 키우기 >>");
@@ -172,6 +173,7 @@ public class MainGrowStudent extends JFrame {
 	static void 활동선택메뉴() {
 		Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
 		Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 12);
+		Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
 		JButton LectureBtn = new JButton("강의 듣기");
 		LectureBtn.setFont(활동선택버튼폰트);
 		JLabel detail = new JLabel();
@@ -179,6 +181,17 @@ public class MainGrowStudent extends JFrame {
 		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식+5]");
 		detail.setFont(활동선택폰트);
 		detailL.setFont(활동선택폰트);
+		power.setLayout(null);
+		power.setBounds(25,5,80,80);			
+		
+		powerlabel.setBounds(20,15,25,30);
+		powerlabel.setFont(powerfont);
+		power.add(powerlabel);
+		choosepanel.setBounds(0,110,640,640);
+		contentPane.add(power);
+		//choosepanel.add(power);
+		power.setVisible(true);
+		contentPane.setVisible(true);
 		choosepanel.add(detailL);
 		choosepanel.add(LectureBtn);
 		choosepanel.add(detail);
@@ -200,7 +213,7 @@ public class MainGrowStudent extends JFrame {
 			choosepanel.setVisible(false);
 			week.setVisible(false);
 			choosepanel.setVisible(false);
-			Lecture.check.setVisible(true);
+			Lecture.longs.setVisible(true);
 			Lecture.button1.setVisible(true);
 			contentPane.add(Lecture.lecturelist);
 			Lecture.lecturelist.setVisible(true);
