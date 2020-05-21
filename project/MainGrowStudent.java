@@ -54,7 +54,7 @@ public class MainGrowStudent extends JFrame {
 	static ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	static subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
 	static subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
-	static subImagePanel power = new subImagePanel(new ImageIcon("./image/power.png").getImage());
+	static subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
     static JButton MBtn = new JButton("일정채우기");
 	static JButton ThBtn = new JButton("일정채우기");
 	static JButton WBtn = new JButton("일정채우기");
@@ -65,8 +65,13 @@ public class MainGrowStudent extends JFrame {
 	static JLabel click = new JLabel("click");
 	static Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 	static JLabel week = new JLabel();
-	static JLabel powerlabel = new JLabel(""+init.Power);
-	
+	static int DdayNumber = 45;
+	static int Power = 100;
+	static int Money = 100000;
+	static int Friend = 50;
+	static int Intelli = 30;
+	static JLabel powerlabel = new JLabel(""+Power);
+	static JLabel 체력확인레이블 = new JLabel();
 	MainGrowStudent() {
 		setTitle("<< 대학생 키우기 >>");
 		contentPane = getContentPane();
@@ -140,14 +145,14 @@ public class MainGrowStudent extends JFrame {
 		});
 		init.MT();
 		JLabel Lb1 = new JLabel();
-		Lb1.setText("종강까지 단, D-" + init.DdayNumber+"!");
+		Lb1.setText("종강까지 단, D-" + DdayNumber+"!");
 		JLabel dateLb = new JLabel();
 		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 18);
 		dateLb.setFont(datefont);
 		dateLb.setBounds(45, 8, 640, 50);
 
-		week.setText("종강까지 단 D-" + init.DdayNumber+"일!");
+		week.setText("종강까지 단 D-" + DdayNumber+"일!");
 		Font weekfont = new Font("휴먼둥근헤드라인", Font.PLAIN, 30);
 		week.setFont(weekfont);
 		week.setBounds(340, 10, 600, 40);
@@ -181,16 +186,17 @@ public class MainGrowStudent extends JFrame {
 		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식+5]");
 		detail.setFont(활동선택폰트);
 		detailL.setFont(활동선택폰트);
-		power.setLayout(null);
-		power.setBounds(25,5,80,80);			
+		powers.setLayout(null);
+		powers.setBounds(25,5,80,80);			
 		
-		powerlabel.setBounds(20,15,25,30);
+		powerlabel.setBounds(15,15,40,30);
 		powerlabel.setFont(powerfont);
-		power.add(powerlabel);
+		powers.add(powerlabel);
 		choosepanel.setBounds(0,110,640,640);
-		contentPane.add(power);
+		contentPane.add(powers);
 		//choosepanel.add(power);
-		power.setVisible(true);
+		powers.setVisible(true);
+		contentPane.setBounds(0,0,640,109);
 		contentPane.setVisible(true);
 		choosepanel.add(detailL);
 		choosepanel.add(LectureBtn);
@@ -203,10 +209,25 @@ public class MainGrowStudent extends JFrame {
 		LectureBtn.setFocusPainted(false);
 		LectureBtn.setBackground(new Color(153, 239, 90));
 		LectureBtn.addActionListener(event -> {
+			if (Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
+						JOptionPane.WARNING_MESSAGE);
+				MainGrowStudent.DdayNumber--;
+				MainGrowStudent.Power = 100;
+				MainGrowStudent.요일선택화면();
+				MainGrowStudent.MenuPanel.setVisible(true);
+				MainGrowStudent.StartPanel.setVisible(false);
+				MainGrowStudent.choosepanel.setVisible(false);
+				Lecture.longs.setVisible(false);
+				Lecture.shorts.setVisible(false);
+				Lecture.lectures.setVisible(false);
+				Lecture.활동선택하기.setVisible(false);
+				MainGrowStudent.week.setVisible(true);
+			}
 			Lecture.Lecture();
-			init.오픈소스소프트웨어();	
-			init.데이터베이스();
-			init.정보보호();
+			//init.오픈소스소프트웨어();	
+			//init.데이터베이스();
+			//init.정보보호();
 			LectureBtn.setVisible(false);
 			MenuPanel.setVisible(false);
 			StartPanel.setVisible(false);
@@ -229,12 +250,12 @@ public class MainGrowStudent extends JFrame {
 			Lecture.버튼3강의장소.setVisible(true);
 			Lecture.버튼3교수님.setVisible(true);
 			Lecture.버튼3강의자료.setVisible(true);
-			if (init.Power <= 0) {
-				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
+			/*if (Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new Study();
+				new Study();*/
 		});
 		JButton playBtn = new JButton("휴식 하기 ");
 		// Font rest = new Font("HY견고딕", Font.BOLD, 10);
@@ -314,8 +335,8 @@ public class MainGrowStudent extends JFrame {
 		choosepanel.add(sdetailL);
 		// choosepanel.add(s);
 		SBtn.addActionListener(event -> {
-			if (init.Power <= 0) {
-				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
+			if (Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
@@ -328,8 +349,8 @@ public class MainGrowStudent extends JFrame {
 		MenuPanel.add(PtBtn);
 		// PtBtn.setBounds(170, 398, 300, 48);
 		PtBtn.addActionListener(event -> {
-			if (init.Power <= 0) {
-				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
+			if (Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} // else
@@ -342,11 +363,11 @@ public class MainGrowStudent extends JFrame {
 		PlayBtn.setFocusPainted(false);
 		// PlayBtn.setBounds(170, 468, 300, 48);
 		PlayBtn.addActionListener(event -> {
-			if (init.Power <= 0) {
-				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
+			if (Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
-			} else if (init.Money <= 0) {
+			} else if (Money <= 0) {
 				JOptionPane.showMessageDialog(null, "돈이 없어서 더 이상 할 수 없습니다", "경고", JOptionPane.WARNING_MESSAGE); // 메시지
 																												// 출력
 			} // else
@@ -438,7 +459,7 @@ public class MainGrowStudent extends JFrame {
 		MBtn.addActionListener(event -> {
 				
 			MBtn.setText("어제");	
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();			
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -451,7 +472,7 @@ public class MainGrowStudent extends JFrame {
 
 		TuBtn.addActionListener(event -> {
 			
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();			
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -464,7 +485,7 @@ public class MainGrowStudent extends JFrame {
 
 		WBtn.addActionListener(event -> {
 
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -476,7 +497,7 @@ public class MainGrowStudent extends JFrame {
 		});
 
 		ThBtn.addActionListener(event -> {
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -488,7 +509,7 @@ public class MainGrowStudent extends JFrame {
 		});
 
 		FBtn.addActionListener(event -> {
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -499,7 +520,7 @@ public class MainGrowStudent extends JFrame {
 
 		});
 		SatBtn.addActionListener(event -> {
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -510,7 +531,7 @@ public class MainGrowStudent extends JFrame {
 
 		});
 		SunBtn.addActionListener(event -> {
-			init.Power = 100;
+			Power = 100;
 			활동선택메뉴();	
 			contentPane.add(choosepanel);
 			contentPane.setBackground(Color.WHITE);
@@ -521,7 +542,15 @@ public class MainGrowStudent extends JFrame {
 
 		});
 	}
-
+static void lecturepower() {
+	Power=Power-25;
+	Intelli+=5;
+	체력확인레이블 = new JLabel("" + Power);
+	체력확인레이블.setBounds(470,465, 60, 90);
+	powers.add(체력확인레이블);
+	체력확인레이블.setVisible(true);
+	powers.setVisible(true);
+}
 	public static void main(String[] args) {
 		File file = new File("./image/lecture.jpg");
 		System.out.println(file.exists() ? "Exists" : "doesnt exists");
