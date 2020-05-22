@@ -65,7 +65,7 @@ public class MainGrowStudent extends JFrame {
 	static JLabel click = new JLabel("click");
 	static Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 	static JLabel week = new JLabel();
-	static int DdayNumber = 45;
+	static int DdayNumber = 7;
 	static int Power = 100;
 	static int Money = 100000;
 	static int Friend = 50;
