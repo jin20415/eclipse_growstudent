@@ -30,56 +30,40 @@ class subImagePanel extends JPanel {
 
 class init {
 
-	static int DdayNumber = 45;
-	static int Power = 100;
-	static int Money = 100000;
-	static int Friend = 50;
-	static int Intelli = 30;
+
 	static int Month = 5;
 	static int Day = 1;
 	static String Daily[] = { "금", "토", "일", "월", "화", "수", "목" };
 	static String Today = null;
 
 	static void MT() {
-		if (Month == 5) {
-			Today = Daily[Day % 7 - 1];
+		
+			if (Month == 5) {
+				Today = Daily[Day % 7 - 1];
 
-		} else if (Month == 5 && Day == 32) {
-			Day = 1;
-			Today = Daily[Day % 7 + 2];
-		}
+			} else if (Month == 5 && Day == 32) {
+				Day = 1;
+				Today = Daily[Day % 7 + 2];
+			}
 	}
+}
 
-	static void 오픈소스소프트웨어() {
-		Intelli += 5;
-		Power -= 25;
+	/*static void 오픈소스소프트웨어() {
+		MainGrowStudent.Intelli += 5;
+		MainGrowStudent.Power -= 25;
 		MT();
 
-		if (Power <= 0) {
-			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
-					JOptionPane.WARNING_MESSAGE);
-			DdayNumber--;
-			Power = 100;
-			MainGrowStudent.요일선택화면();
-			MainGrowStudent.MenuPanel.setVisible(true);
-			MainGrowStudent.StartPanel.setVisible(false);
-			MainGrowStudent.choosepanel.setVisible(false);
-			Lecture.check.setVisible(false);
-			Lecture.back.setVisible(false);
-			Lecture.lectures.setVisible(false);
-			Lecture.뒤로가기.setVisible(false);
-			MainGrowStudent.week.setVisible(true);
-		}
-		if (Power < 20) {
-			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n 최소 필요 체력보다 낮아 강의를 들을 수 없습니다.", "경고",
-					JOptionPane.WARNING_MESSAGE);
-		}
 		
-	}
+		//if (Power < 20) {
+			//JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n 최소 필요 체력보다 낮아 강의를 들을 수 없습니다.", "경고",
+				//	JOptionPane.WARNING_MESSAGE);
+		}
 
+	}
+/*
 	static void 데이터베이스() {
 		Intelli += 5;
-		Power -= 25;
+		//Power -= 25;
 		MT();
 		if (Power <= 0) {
 			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -88,18 +72,18 @@ class init {
 			Power = 100;
 			MainGrowStudent.요일선택화면();
 			MainGrowStudent.MenuPanel.setVisible(true);
-			Lecture.check.setVisible(false);
-			Lecture.back.setVisible(false);
+			Lecture.longs.setVisible(false);
+			Lecture.shorts.setVisible(false);
 			Lecture.lectures.setVisible(false);
-			Lecture.뒤로가기.setVisible(false);
+			Lecture.활동선택하기.setVisible(false);
 			MainGrowStudent.week.setVisible(true);
 		}
-		
+
 	}
 
 	static void 정보보호() {
 		Intelli += 5;
-		Power -= 25;
+	//	Power -= 25;
 		MT();
 		if (Power <= 0) {
 			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -108,10 +92,10 @@ class init {
 			Power = 100;
 			MainGrowStudent.요일선택화면();
 			MainGrowStudent.MenuPanel.setVisible(true);
-			Lecture.check.setVisible(false);
-			Lecture.back.setVisible(false);
+			Lecture.longs.setVisible(false);
+			Lecture.shorts.setVisible(false);
 			Lecture.lectures.setVisible(false);
-			Lecture.뒤로가기.setVisible(false);
+			Lecture.활동선택하기.setVisible(false);
 			MainGrowStudent.week.setVisible(true);
 		}
 
@@ -124,10 +108,10 @@ class init {
 		 * else { Intelli += 5; JOptionPane.showMessageDialog(null,
 		 * "대충대충 했다.\n 지식이 5만큼 올랐다!", "넘나 귀찮은 것", JOptionPane.INFORMATION_MESSAGE); }
 		 */
-	
-	}
 
-	static void money_up() {
+
+
+/*	static void money_up() {
 		if (Power <= 0) {
 			JOptionPane.showMessageDialog(null, "체력이 " + Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 					JOptionPane.WARNING_MESSAGE);
@@ -206,4 +190,4 @@ class init {
 		DdayNumber -= 1;
 		MT();
 	}
-}
+	*/
