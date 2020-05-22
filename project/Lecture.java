@@ -46,7 +46,7 @@ class Lecture {
 	static JLabel 시스템멘트 = new JLabel("'수업이 끝났어! 강의를 더 들을까?'");
 	static JLabel 알림멘트 = new JLabel();
 	static JLabel 수업시작 = new JLabel();
-
+    static JLabel 스탯레이블 = new JLabel();
 	static void Lecture() {
 
 		longs.setLayout(null);
@@ -312,7 +312,7 @@ class Lecture {
 			타이틀.setVisible(false);
 			longs.setVisible(false);
 			shorts.setVisible(false);
-			lecturelist.setVisible(false);
+			lecturelist.setVisible(false); 
 			button1.setVisible(false);
 			button2.setVisible(false);
 			button3.setVisible(false);
@@ -350,6 +350,9 @@ class Lecture {
 			MainGrowStudent.choosepanel.setVisible(true);
 			MainGrowStudent.contentPane.setBackground(Color.WHITE);
 			MainGrowStudent.contentPane.setVisible(true);
+			스탯레이블.setText(""+MainGrowStudent.DdayNumber);
+			스탯레이블.setBounds(5,15,40,30);
+			스탯레이블.setVisible(true);
 			lecturelist.setVisible(false);
 			longs.setVisible(false);
 			shorts.setVisible(false);
@@ -366,8 +369,8 @@ class Lecture {
 			버튼3강의자료.setVisible(false);
 			버튼3강의장소.setVisible(false);
 			MainGrowStudent.powers.setLayout(null);
-			MainGrowStudent.powers.setBounds(25,5,80,80);						
-			MainGrowStudent.체력확인레이블.setBounds(15,15,40,30);
+			MainGrowStudent.powers.setBounds(520,5,80,80);						
+			MainGrowStudent.체력확인레이블.setBounds(530,15,40,30);
 			MainGrowStudent.체력확인레이블.setFont(btnfont);
 			MainGrowStudent.powers.add(MainGrowStudent.체력확인레이블);
 			MainGrowStudent.contentPane.add(MainGrowStudent.체력확인레이블);
