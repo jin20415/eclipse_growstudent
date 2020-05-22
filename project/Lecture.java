@@ -47,6 +47,7 @@ class Lecture {
 	static JLabel 알림멘트 = new JLabel();
 	static JLabel 수업시작 = new JLabel();
     static JLabel 스탯레이블 = new JLabel();
+  
 	static void Lecture() {
 
 		longs.setLayout(null);
@@ -140,7 +141,7 @@ class Lecture {
 		button1.setBounds(50, 110, 300, 30);
 		button2.setBounds(50, 250, 228, 30);
 		button3.setBounds(56, 410, 170, 30);
-		MainGrowStudent.powerlabel.setVisible(false);
+		MainGrowStudent.체력확인레이블.setVisible(false);
 		MainGrowStudent.powers.setVisible(false);
 
 		lecturelist.setVisible(true);
@@ -149,13 +150,13 @@ class Lecture {
 		
 		button1.addActionListener(event -> {
 			
-			MainGrowStudent.lecturepower();
+			init.lecturepower();
 			
-			if (MainGrowStudent.Power <= 0) {
-				JOptionPane.showMessageDialog(null, "체력이 " + MainGrowStudent.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다",
+			if (init.Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다",
 						"경고", JOptionPane.WARNING_MESSAGE);
-				MainGrowStudent.DdayNumber--;
-				MainGrowStudent.Power = 100;
+				init.DdayNumber--;
+				init.Power = 100;
 				MainGrowStudent.요일선택화면();
 				MainGrowStudent.MenuPanel.setVisible(true);
 				MainGrowStudent.StartPanel.setVisible(false);
@@ -173,8 +174,8 @@ class Lecture {
 			시작멘트.setBounds(10, 470, 640, 50);
 			시작멘트.setFont(모든레이블폰트);
 			수업시작.setText("'강의 시작했어! 집중 해보자.'");
-			수업시작.setBounds(10,490,500,50);
-			교수님멘트.setText("교수님 : 원격저장소의 내용을 로컬저장소로 가져오려면 $%@#!@*&$^@#!");
+			수업시작.setBounds(10,490,640,50);
+			교수님멘트.setText("교수님 : 원격저장소 기능에는 포크, 풀 리퀘스트, 이슈, 위키가 있습니다.");
 			교수님멘트.setBounds(10, 510, 640, 50);
 			시스템멘트.setBounds(10, 530, 300, 50);
 			알림멘트.setText("[알림: 체력 - 25 지능 + 5]");
@@ -183,7 +184,7 @@ class Lecture {
 			교수님멘트.setFont(모든레이블폰트);
 			시스템멘트.setFont(모든레이블폰트);
 			수업시작.setFont(모든레이블폰트);
-			강의선택하기.setBounds(0, 30, 120, 35);
+			강의선택하기.setBounds(0, 30, 130, 30);
 			체력확인.setBounds(0, 75, 120, 35);
 			lectures.add(시작멘트);
 			lectures.add(알림멘트);
@@ -201,7 +202,7 @@ class Lecture {
 			강의선택하기.setBorderPainted(false);
 			강의선택하기.setFocusPainted(false);
 			강의선택하기.setFont(btnfont);
-			강의선택하기.setVisible(false);
+			강의선택하기.setVisible(true);
 			longs.setVisible(false);
 			shorts.setVisible(false);
 			button1.setVisible(false);
@@ -350,7 +351,7 @@ class Lecture {
 			MainGrowStudent.choosepanel.setVisible(true);
 			MainGrowStudent.contentPane.setBackground(Color.WHITE);
 			MainGrowStudent.contentPane.setVisible(true);
-			스탯레이블.setText(""+MainGrowStudent.DdayNumber);
+			스탯레이블.setText(""+init.DdayNumber);
 			스탯레이블.setBounds(5,15,40,30);
 			스탯레이블.setVisible(true);
 			lecturelist.setVisible(false);
@@ -368,11 +369,17 @@ class Lecture {
 			버튼3교수님.setVisible(false);
 			버튼3강의자료.setVisible(false);
 			버튼3강의장소.setVisible(false);
+			MainGrowStudent.돈확인레이블.setText(""+"돈: "+init.Money +" 사교성:"+init.Friend+" 지식:"+init.Intelli);
+			MainGrowStudent.돈확인레이블.setBounds(100,15,500,50);
+			MainGrowStudent.돈확인레이블.setFont(btnfont);
+			MainGrowStudent.돈확인레이블.setVisible(true);
+			MainGrowStudent.contentPane.add(MainGrowStudent.돈확인레이블);
 			MainGrowStudent.powers.setLayout(null);
 			MainGrowStudent.powers.setBounds(520,5,80,80);						
 			MainGrowStudent.체력확인레이블.setBounds(530,15,40,30);
 			MainGrowStudent.체력확인레이블.setFont(btnfont);
 			MainGrowStudent.powers.add(MainGrowStudent.체력확인레이블);
+			MainGrowStudent.contentPane.add(스탯레이블);
 			MainGrowStudent.contentPane.add(MainGrowStudent.체력확인레이블);
 			MainGrowStudent.contentPane.add(MainGrowStudent.powers);			
 			MainGrowStudent.powers.setVisible(true);
@@ -384,7 +391,10 @@ class Lecture {
 		});
 
 		체력확인.addActionListener(event -> {
-			체력확인.setText("" + MainGrowStudent.Power);
+			체력확인.setText("" + init.Power);
+		});
+		강의선택하기.addActionListener(event -> {
+			강의선택();
 		});
 	}
 
@@ -405,7 +415,7 @@ class Lecture {
 		MainGrowStudent.contentPane.add(체력확인);
 		MainGrowStudent.contentPane.add(활동선택하기);
 		// MainGrowStudent.contentPane.add(shorts);
-
+        longs.setVisible(true);
 		활동선택하기.setVisible(true);
 		활동선택하기.setBounds(0, 73, 130, 30);
 		활동선택하기.setBorderPainted(false);
@@ -480,46 +490,18 @@ class Lecture {
 		button1.setBounds(50, 110, 300, 30);
 		button2.setBounds(50, 250, 228, 30);
 		button3.setBounds(56, 410, 170, 30);
+		button1.setVisible(true);
+		button2.setVisible(true);
+		button3.setVisible(true);
+		lectures.setVisible(false);
+		
+		버튼1교수님.setVisible(true);
+		버튼1강의장소.setVisible(true);
+		버튼1강의자료.setVisible(true);
         MainGrowStudent.powers.setVisible(false);
         MainGrowStudent.체력확인레이블.setVisible(false);
 		lecturelist.setVisible(true);
 	}
-	/*
-	 * static void 강의선택화면으로가기버튼메소드() { JOptionPane.showMessageDialog(null,
-	 * "뒤로 이동합니다", "뒤로 이동", JOptionPane.INFORMATION_MESSAGE);
-	 * MainGrowStudent.choosepanel.setVisible(true);
-	 * MainGrowStudent.contentPane.setBackground(Color.WHITE);
-	 * MainGrowStudent.contentPane.setVisible(true); 뒤로가기.setVisible(true);
-	 * 타이틀.setVisible(true); lectures.setVisible(true); 버튼1교수님.setVisible(true);
-	 * 버튼1강의자료.setVisible(true); 버튼1강의장소.setVisible(true); 버튼2교수님.setVisible(true);
-	 * 버튼2강의자료.setVisible(true); 버튼2강의장소.setVisible(true); 버튼3교수님.setVisible(true);
-	 * 버튼3강의자료.setVisible(true); 버튼3강의장소.setVisible(true); }
-	 */
-	/*
-	 * public void lecture() {
-	 * 
-	 * // JLabel Lb1, Lb2; JLabel LLb1 = new JLabel();
-	 * LLb1.setText("어떤 과목의 강의를 들으시겠습니까?"); LLb1.setBounds(107, 142, 600, 90);
-	 * 
-	 * Font label4font = new Font("HY견고딕", Font.BOLD, 30); LLb1.setFont(label4font);
-	 * 
-	 * button1.setEnabled(true); button2.setEnabled(true); button3.setEnabled(true);
-	 * 
-	 * lecturelist.add(button1); lecturelist.add(button2); lecturelist.add(button3);
-	 * 
-	 * button1.setBounds(320, 260, 300, 50); button2.setBounds(320, 330, 300, 50);
-	 * button3.setBounds(320, 410, 300, 50);
-	 * 
-	 * Font f4 = new Font("휴먼엑스포", Font.BOLD, 25); button1.setFont(f4);
-	 * button2.setFont(f4); button3.setFont(f4);
-	 * 
-	 * button1.setBackground(Color.WHITE); button2.setBackground(Color.WHITE);
-	 * button3.setBackground(Color.WHITE);
-	 * 
-	 * lecturelist.setVisible(true); lecturelist.setLayout(null);
-	 * lecturelist.add(LLb1); lecturelist.add(button1); lecturelist.add(button2);
-	 * lecturelist.add(button3);
-	 */
-//	}
+	
 
 }
