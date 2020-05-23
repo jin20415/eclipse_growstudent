@@ -55,9 +55,9 @@ public class MainGrowStudent extends JFrame {
 	static subImagePanel MenuPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());
 	static subImagePanel choosepanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	static subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
-	 subImagePanel theater = new subImagePanel(new ImageIcon("./image/theater.jpg").getImage());
-	 subImagePanel pizza = new subImagePanel(new ImageIcon("./image/pizza.jpg").getImage());
-	 subImagePanel bakery = new subImagePanel(new ImageIcon("./image/bakery.jpg").getImage());
+	static subImagePanel theater = new subImagePanel(new ImageIcon("./image/theater.jpg").getImage());
+	static subImagePanel pizza = new subImagePanel(new ImageIcon("./image/pizza.jpg").getImage());
+	static subImagePanel bakery = new subImagePanel(new ImageIcon("./image/bakery.jpg").getImage());
 	static subImagePanel 알바선택 = new subImagePanel(new ImageIcon("./image/career4.png").getImage());
 	static JButton MBtn = new JButton("일정채우기");
 	static JButton ThBtn = new JButton("일정채우기");
@@ -69,15 +69,14 @@ public class MainGrowStudent extends JFrame {
 	static JLabel click = new JLabel("click");
 	static Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 	static JLabel week = new JLabel();
-	 JButton 제과점 = new JButton("제과점");
-	 JButton 영화관 = new JButton("영화관");
-	 JButton 피자 = new JButton("피자");
-	 JButton 뒤로가기 = new JButton("뒤로가기");
-	static JLabel 체력확인레이블 = new JLabel(""+init.Power);
-	static JLabel 지식확인레이블 = new JLabel(""+init.Intelli);
-	static JLabel 돈확인레이블 = new JLabel(""+init.Money);
-	static JLabel 친구확인레이블= new JLabel(""+init.Friend);
-	
+	JButton 제과점 = new JButton("제과점");
+	JButton 영화관 = new JButton("영화관");
+	JButton 피자 = new JButton("피자");
+	JButton 뒤로가기 = new JButton("뒤로가기");
+	static JLabel 체력확인레이블 = new JLabel("" + init.Power);
+	static JLabel 지식확인레이블 = new JLabel("" + init.Intelli);
+	static JLabel 돈확인레이블 = new JLabel("" + init.Money);
+	static JLabel 친구확인레이블 = new JLabel("" + init.Friend);
 
 	MainGrowStudent() {
 		setTitle("<< 대학생 키우기 >>");
@@ -196,11 +195,11 @@ public class MainGrowStudent extends JFrame {
 		choosepanel.setBounds(0, 110, 640, 640);
 		contentPane.add(체력확인레이블);
 		contentPane.add(powers);
-		돈확인레이블.setText(""+"돈: "+init.Money +" 사교성:"+init.Friend+" 지식:"+init.Intelli);
-		돈확인레이블.setBounds(100,15,500,50);
+		돈확인레이블.setText("" + "돈: " + init.Money + " 사교성:" + init.Friend + " 지식:" + init.Intelli);
+		돈확인레이블.setBounds(100, 15, 500, 50);
 		돈확인레이블.setFont(powerfont);
 		돈확인레이블.setVisible(true);
-	    contentPane.add(돈확인레이블);
+		contentPane.add(돈확인레이블);
 		contentPane.setBounds(0, 0, 640, 109);
 		contentPane.setVisible(true);
 		choosepanel.add(detailL);
@@ -305,41 +304,136 @@ public class MainGrowStudent extends JFrame {
 		choosepanel.add(pdetail);
 		choosepanel.add(pdetailL);
 		choosepanel.add(bonus);
-		
-		partamBtn.addActionListener(event->{
-			Font 설명폰트 = new Font("휴먼둥근헤드라인",Font.PLAIN,20);
-			Font 폰트 = new Font("HY견고딕",Font.BOLD,15);
-			JLabel 설명 = new JLabel("알바 면접을 합격한 곳은 제과점, 영화관, 패스트푸드점");
-			JLabel 설명1 = new JLabel("단 3곳이야");
-			JLabel 설명2 = new JLabel("어떤 직종의 알바를 해볼까?");
-			JLabel 설명3 = new JLabel("영화관");
-			JLabel 설명4 = new JLabel("패스트푸드점");
-			JLabel 설명5 = new JLabel("제과점");
+		JLabel 설명 = new JLabel("알바 면접을 합격한 곳은 제과점, 영화관, 패스트푸드점");
+		JLabel 설명1 = new JLabel("단 3곳이야");
+		JLabel 설명2 = new JLabel("어떤 직종의 알바를 해볼까?");
+		JLabel 설명3 = new JLabel("영화관");
+		JLabel 설명4 = new JLabel("패스트푸드점");
+		JLabel 설명5 = new JLabel("제과점");
+		JButton 영화관알바 = new JButton("알바하기");
+		JButton 제과점알바 = new JButton("알바하기");
+		JButton 패스트푸드알바 = new JButton("알바하기");
+		partamBtn.addActionListener(event -> {
+			Font 설명폰트 = new Font("휴먼둥근헤드라인", Font.PLAIN, 20);
+			Font 폰트 = new Font("HY견고딕", Font.BOLD, 15);
+
 			설명.setFont(설명폰트);
 			설명1.setFont(설명폰트);
-			설명2.setFont(설명폰트);		
+			설명2.setFont(설명폰트);
 			설명3.setFont(폰트);
 			설명4.setFont(폰트);
 			설명5.setFont(폰트);
 			알바선택.setLayout(null);
-			알바선택.setBounds(0,100,640,290);
-			설명.setBounds(57,115,640,640);
-			설명1.setBounds(260,145,640,640);
-			설명2.setBounds(180,175,640,640);
-			설명3.setBounds(90,0,640,640);
+			알바선택.setBounds(0, 100, 640, 290);
+			설명.setBounds(57, 125, 640, 640);
+			설명1.setBounds(260, 155, 640, 640);
+			설명2.setBounds(180, 185, 640, 640);
+			설명3.setBounds(140, 0, 640, 640);
+			설명4.setBounds(270, 0, 640, 640);
+			설명5.setBounds(450, 0, 640, 640);
+			영화관알바.setBounds(120, 380, 90, 25);
+			패스트푸드알바.setBounds(260, 380, 90, 25);
+			제과점알바.setBounds(430, 380, 90, 25);
+			영화관알바.setBorderPainted(false);
+			영화관알바.setFocusPainted(false);
+			패스트푸드알바.setBorderPainted(false);
+			패스트푸드알바.setFocusPainted(false);
+			제과점알바.setBorderPainted(false);
+			제과점알바.setFocusPainted(false);
+			영화관알바.setBackground(Color.WHITE);
+			패스트푸드알바.setBackground(Color.WHITE);
+			제과점알바.setBackground(Color.WHITE);
 			알바선택.add(설명3);
 			설명3.setVisible(true);
+			알바선택.add(설명4);
+			설명4.setVisible(true);
+			알바선택.add(설명5);
+			설명5.setVisible(true);
+			알바선택.add(영화관알바);
+			영화관알바.setVisible(true);
+			알바선택.add(패스트푸드알바);
+			패스트푸드알바.setVisible(true);
+			알바선택.add(제과점알바);
+			제과점알바.setVisible(true);
 			알바선택.setVisible(true);
 			contentPane.add(설명);
 			contentPane.add(설명1);
 			contentPane.add(설명2);
-	    //    contentPane.add(설명3);
-			contentPane.add(알바선택);			
-			contentPane.setBounds(0,290,640,349);
+			contentPane.add(설명3);
+			contentPane.add(설명4);
+			contentPane.add(설명5);
+			contentPane.add(영화관알바);
+			contentPane.add(패스트푸드알바);
+			contentPane.add(제과점알바);
+			contentPane.add(알바선택);
+			contentPane.setBounds(0, 290, 640, 349);
 			contentPane.setBackground(Color.WHITE);
 			contentPane.setVisible(true);
 			choosepanel.setVisible(false);
-			
+
+		});
+		영화관알바.addActionListener(event -> {
+			init.Power = init.Power - 50;
+			theater.setVisible(true);
+			theater.setLayout(null);
+			theater.setBounds(0, 70, 640, 640);
+			contentPane.add(theater);
+			알바선택.setVisible(false);
+			설명.setVisible(false);
+			설명1.setVisible(false);
+			설명2.setVisible(false);
+			설명3.setVisible(false);
+			설명4.setVisible(false);
+			설명5.setVisible(false);
+			패스트푸드알바.setVisible(false);
+			영화관알바.setVisible(false);
+			제과점알바.setVisible(false);
+
+		});
+		패스트푸드알바.addActionListener(event -> {
+			JLabel 내용 = new JLabel();
+			내용.setText(
+					"피자 패스트푸드점에 출근했어. 점심 장사를 시작하기 전 300백개의 피자 포장 박스를 접어야 해.\n + 나는 정신없이 상자를 다 접고, 12:00 오픈 준비를 끝냈어.\n "
+							+ "잠시후 주문이 밀려오기 시작했고, 주방에 주문 리스트들을 전달했어\n"
+							+ "홀 주문, 배달 어플 주문, 전화 주문 3가지 주문 방식으로  오는 주문량에 힘이 들기시작했어" + "그렇게 오후 장사가 끝났어"
+							+ "늦은 점심을 먹으며 30분 정도의 휴식 시간을 보냈어" + "이후 2시간이 흐르고, 드디어 교대 시간이 다가왔어!!!!!"
+							+ "마침내 교대정산을 마치고 가게를 나왔어!");
+			내용.setBounds(10, 15, 640, 640);
+			init.Power = init.Power - 50;
+			pizza.setVisible(true);
+			pizza.setLayout(null);
+			pizza.setBounds(0, 59, 640, 640);
+			pizza.add(내용);
+			내용.setVisible(true);
+			contentPane.add(pizza);
+			알바선택.setVisible(false);
+			설명.setVisible(false);
+			설명1.setVisible(false);
+			설명2.setVisible(false);
+			설명3.setVisible(false);
+			설명4.setVisible(false);
+			설명5.setVisible(false);
+			패스트푸드알바.setVisible(false);
+			영화관알바.setVisible(false);
+			제과점알바.setVisible(false);
+		});
+		제과점알바.addActionListener(event -> {
+			init.Power = init.Power - 50;
+			bakery.setVisible(true);
+			bakery.setLayout(null);
+			bakery.setBounds(0, 90, 640, 640);
+			contentPane.add(bakery);
+			알바선택.setVisible(false);
+			설명.setVisible(false);
+			설명1.setVisible(false);
+			설명2.setVisible(false);
+			설명3.setVisible(false);
+			설명4.setVisible(false);
+			설명5.setVisible(false);
+			패스트푸드알바.setVisible(false);
+			영화관알바.setVisible(false);
+			제과점알바.setVisible(false);
+
 		});
 		JButton back = new JButton("뒤로가기");
 		back.setBackground(new Color(243, 90, 181));
@@ -583,7 +677,6 @@ public class MainGrowStudent extends JFrame {
 		});
 	}
 
-	
 	public static void main(String[] args) {
 		File file = new File("./image/lecture.jpg");
 		System.out.println(file.exists() ? "Exists" : "doesnt exists");
