@@ -81,7 +81,13 @@ class Lecture {
 		button1.setFont(lecture);
 		button2.setFont(lecture);
 		button3.setFont(lecture);
-
+		MainGrowStudent.contentPane.add(PartTime.일과끝내기);
+		PartTime.일과끝내기.setFont(btnfont);
+		PartTime.일과끝내기.setBackground(new Color(225, 80, 80));
+		PartTime.일과끝내기.setBounds(0, 153, 130, 30);
+		PartTime.일과끝내기.setBorderPainted(false);
+		PartTime.일과끝내기.setFocusPainted(false);
+		PartTime.일과끝내기.setVisible(true);
 		버튼1교수님.setBounds(95, 155, 500, 20);
 		버튼1강의장소.setBounds(95, 175, 200, 20);
 		버튼1강의자료.setBounds(95, 195, 200, 20);
@@ -139,10 +145,21 @@ class Lecture {
 		button2.setBounds(50, 250, 228, 30);
 		button3.setBounds(56, 410, 170, 30);
 		활동선택하기.setVisible(true);
-		PartTime.일과끝내기.setVisible(false);
+		//PartTime.일과끝내기.setVisible(false);
 		MainGrowStudent.체력확인레이블.setVisible(false);
 		MainGrowStudent.powers.setVisible(false);
-
+		PartTime.설명.setVisible(false);
+		PartTime.설명1.setVisible(false);
+		PartTime.설명2.setVisible(false);
+		PartTime.설명3.setVisible(false);
+		PartTime.설명4.setVisible(false);			
+		PartTime.설명5.setVisible(false);
+		PartTime.내용.setVisible(false);
+		PartTime.내용1.setVisible(false);
+		PartTime.내용2.setVisible(false);
+		PartTime.내용3.setVisible(false);
+		PartTime.내용4.setVisible(false);			
+		PartTime.내용5.setVisible(false);
 		lecturelist.setVisible(true);
 		
 		
@@ -153,7 +170,7 @@ class Lecture {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다",
 						"경고", JOptionPane.WARNING_MESSAGE);
-				init.DdayNumber--;
+				MainGrowStudent.week.setText(""+init.newday());
 				init.Power = 100;
 				MainGrowStudent.요일선택화면();
 				MainGrowStudent.MenuPanel.setVisible(true);
@@ -165,7 +182,11 @@ class Lecture {
 				Lecture.활동선택하기.setVisible(false);
 				MainGrowStudent.week.setVisible(true);
 			}
-			
+			if(init.Power <= 24) {
+				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n 다른활동을 선택해주세요 ",
+						"경고", JOptionPane.WARNING_MESSAGE);
+				MainGrowStudent.활동선택메뉴();
+			}
 			lectures.setLayout(null);
 			lectures.setBounds(0, 0, 640, 640);
 			시작멘트.setText("'공7514 오픈소스 소프트웨어 강의실에 도착했어 사물함에 가서 강의자료를 가져오자.'");
@@ -210,6 +231,13 @@ class Lecture {
 			버튼1강의자료.setVisible(false);
 			버튼1교수님.setVisible(false);
 			체력확인.setVisible(false);
+			MainGrowStudent.contentPane.add(PartTime.일과끝내기);
+			PartTime.일과끝내기.setFont(btnfont);
+			PartTime.일과끝내기.setBackground(new Color(225, 80, 80));
+			PartTime.일과끝내기.setBounds(0, 115, 130, 30);
+			PartTime.일과끝내기.setBorderPainted(false);
+			PartTime.일과끝내기.setFocusPainted(false);
+			PartTime.일과끝내기.setVisible(true);
 			lecturelist.setVisible(false);
 			MainGrowStudent.powers.setVisible(true);
 			MainGrowStudent.powers.setBounds(570, 555, 640, 90);
@@ -228,7 +256,12 @@ class Lecture {
 			MainGrowStudent.체력확인레이블.setVisible(true);
 			MainGrowStudent.contentPane.setBounds(640, 480, 640, 120);
 			MainGrowStudent.contentPane.add(lectures);
-			
+			PartTime.내용.setVisible(false);
+			PartTime.내용1.setVisible(false);
+			PartTime.내용2.setVisible(false);
+			PartTime.내용3.setVisible(false);
+			PartTime.내용4.setVisible(false);			
+			PartTime.내용5.setVisible(false);
 			lectures.setVisible(true);
 			
 			MainGrowStudent.contentPane.setVisible(true);
@@ -280,6 +313,13 @@ class Lecture {
 			버튼1강의자료.setVisible(false);
 			버튼1교수님.setVisible(false);
 			체력확인.setVisible(false);
+			MainGrowStudent.contentPane.add(PartTime.일과끝내기);
+			PartTime.일과끝내기.setFont(btnfont);
+			PartTime.일과끝내기.setBackground(new Color(225, 80, 80));
+			PartTime.일과끝내기.setBounds(0, 115, 130, 30);
+			PartTime.일과끝내기.setBorderPainted(false);
+			PartTime.일과끝내기.setFocusPainted(false);
+			PartTime.일과끝내기.setVisible(true);
 			lecturelist.setVisible(false);
 			MainGrowStudent.powers.setVisible(true);
 			MainGrowStudent.powers.setBounds(570, 555, 640, 90);
@@ -299,7 +339,12 @@ class Lecture {
 			MainGrowStudent.체력확인레이블.setVisible(true);
 			MainGrowStudent.contentPane.setBounds(640, 480, 640, 120);
 			MainGrowStudent.contentPane.add(lectures);
-			
+			PartTime.내용.setVisible(false);
+			PartTime.내용1.setVisible(false);
+			PartTime.내용2.setVisible(false);
+			PartTime.내용3.setVisible(false);
+			PartTime.내용4.setVisible(false);			
+			PartTime.내용5.setVisible(false);
 			lectures.setVisible(true);
 			
 			MainGrowStudent.contentPane.setVisible(true);
@@ -351,6 +396,13 @@ class Lecture {
 			버튼1강의자료.setVisible(false);
 			버튼1교수님.setVisible(false);
 			체력확인.setVisible(false);
+			MainGrowStudent.contentPane.add(PartTime.일과끝내기);
+			PartTime.일과끝내기.setFont(btnfont);
+			PartTime.일과끝내기.setBackground(new Color(225, 80, 80));
+			PartTime.일과끝내기.setBounds(0, 115, 130, 30);
+			PartTime.일과끝내기.setBorderPainted(false);
+			PartTime.일과끝내기.setFocusPainted(false);
+			PartTime.일과끝내기.setVisible(true);
 			lecturelist.setVisible(false);
 			MainGrowStudent.powers.setVisible(true);
 			MainGrowStudent.powers.setBounds(570, 555, 640, 90);
@@ -370,6 +422,12 @@ class Lecture {
 			MainGrowStudent.체력확인레이블.setVisible(true);
 			MainGrowStudent.contentPane.setBounds(640, 480, 640, 120);
 			MainGrowStudent.contentPane.add(lectures);
+			PartTime.내용.setVisible(false);
+			PartTime.내용1.setVisible(false);
+			PartTime.내용2.setVisible(false);
+			PartTime.내용3.setVisible(false);
+			PartTime.내용4.setVisible(false);			
+			PartTime.내용5.setVisible(false);
 			
 			lectures.setVisible(true);
 			
@@ -391,7 +449,7 @@ class Lecture {
 			MainGrowStudent.choosepanel.setVisible(true);
 			MainGrowStudent.contentPane.setBackground(Color.WHITE);
 			MainGrowStudent.contentPane.setVisible(true);
-			스탯레이블.setText(""+init.day());
+			스탯레이블.setText(""+init.getday());
 			스탯레이블.setBounds(5,15,40,30);
 			스탯레이블.setVisible(true);
 			lecturelist.setVisible(false);
@@ -409,7 +467,7 @@ class Lecture {
 			버튼3교수님.setVisible(false);
 			버튼3강의자료.setVisible(false);
 			버튼3강의장소.setVisible(false);
-			MainGrowStudent.돈확인레이블.setText(""+"돈: "+init.Money +" 사교성:"+init.Friend+" 지식:"+ init.Intelli);
+			MainGrowStudent.돈확인레이블.setText(""+"돈: "+init.Money +" 사교성:"+init.Friend+" 지식:"+ init.lectureIntel());
 			MainGrowStudent.돈확인레이블.setBounds(100,15,500,50);
 			MainGrowStudent.돈확인레이블.setFont(btnfont);
 			MainGrowStudent.돈확인레이블.setVisible(true);
@@ -422,11 +480,18 @@ class Lecture {
 			MainGrowStudent.powers.add(MainGrowStudent.체력확인레이블);
 			MainGrowStudent.contentPane.add(스탯레이블);
 			MainGrowStudent.contentPane.add(MainGrowStudent.체력확인레이블);
-			MainGrowStudent.contentPane.add(MainGrowStudent.powers);			
+			MainGrowStudent.contentPane.add(MainGrowStudent.powers);
+			PartTime.내용.setVisible(false);
+			PartTime.내용1.setVisible(false);
+			PartTime.내용2.setVisible(false);
+			PartTime.내용3.setVisible(false);
+			PartTime.내용4.setVisible(false);			
+			PartTime.내용5.setVisible(false);
 			MainGrowStudent.powers.setVisible(true);
 			MainGrowStudent.체력확인레이블.setVisible(true);
 			MainGrowStudent.contentPane.setBounds(0,0,640,109);
 			MainGrowStudent.contentPane.setVisible(true);
+			
 			
 
 		});
@@ -436,6 +501,25 @@ class Lecture {
 		});
 		강의선택하기.addActionListener(event -> {
 			강의선택();
+		});
+		PartTime.일과끝내기.addActionListener(event -> {
+
+			JLabel 남은날짜 = new JLabel();
+			남은날짜.setText("" + init.newday());
+			남은날짜.setVisible(true);
+			남은날짜.setBounds(10, 5, 600, 40);
+			MainGrowStudent.MenuPanel.add(남은날짜);
+			MainGrowStudent.요일선택화면();
+			MainGrowStudent.MenuPanel.setVisible(true);
+			MainGrowStudent.StartPanel.setVisible(false);
+			MainGrowStudent.choosepanel.setVisible(false);
+			Lecture.longs.setVisible(false);
+			Lecture.shorts.setVisible(false);
+			Lecture.lectures.setVisible(false);
+			Lecture.활동선택하기.setVisible(false);
+			PartTime.일과끝내기.setVisible(false);
+			MainGrowStudent.powers.setVisible(false);
+			MainGrowStudent.week.setVisible(true);
 		});
 	}
 
@@ -535,7 +619,12 @@ class Lecture {
 		button2.setVisible(true);
 		button3.setVisible(true);
 		lectures.setVisible(false);
-		
+		PartTime.내용.setVisible(false);
+		PartTime.내용1.setVisible(false);
+		PartTime.내용2.setVisible(false);
+		PartTime.내용3.setVisible(false);
+		PartTime.내용4.setVisible(false);			
+		PartTime.내용5.setVisible(false);
 		버튼1교수님.setVisible(true);
 		버튼1강의장소.setVisible(true);
 		버튼1강의자료.setVisible(true);
