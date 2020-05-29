@@ -33,19 +33,6 @@ class lectureImagePanel extends JPanel {
 @SuppressWarnings("serial")
 class N_Lecture extends JFrame {
 	Container contentPane;
-	/*
-	 * JButton button1 = new JButton("N1. 오픈소스소프트웨어"); JButton button2 = new
-	 * JButton("N2. 데이터베이스"); JButton button3 = new JButton("N3. 정보보호"); JLabel
-	 * 버튼1교수님 = new JLabel("1) 겸임 교수님: 강신재교수님"); JLabel 버튼1강의장소 = new
-	 * JLabel("2) 강의 장소: 공7514"); JLabel 버튼1강의자료 = new JLabel("3) 교재: LMS 강의자료 ");
-	 * JLabel 버튼2교수님 = new JLabel("1) 겸임 교수님: 남인길교수님"); JLabel 버튼2강의장소 = new
-	 * JLabel("2) 강의 장소: 공7507"); JLabel 버튼2강의자료 = new
-	 * JLabel("3) 교재: 오라클로 배우는 데이터베이스 "); JLabel 버튼3교수님 = new
-	 * JLabel("1) 겸임 교수님: 김창훈교수님"); JLabel 버튼3강의장소 = new JLabel("2) 강의 장소: 공7714");
-	 * JLabel 버튼3강의자료 = new JLabel("3) 교재: 오라클로 배우는 데이터베이스 "); JLabel 타이틀 = new
-	 * JLabel("강의선택");
-	 */
-	JButton button4 = new JButton("뒤로가기");
 
 	subImagePanel longs = new subImagePanel(new ImageIcon("./image/longp.png").getImage());
 	subImagePanel shorts = new subImagePanel(new ImageIcon("./image/shortp.png").getImage());
