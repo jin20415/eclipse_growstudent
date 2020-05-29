@@ -169,7 +169,7 @@ class N_PartTime extends JFrame {
 			
 			powers.setVisible(true);
 			powers.setBounds(560, 435, 190, 80);
-			init.partampower();
+			init.N_partampower();
 			체력확인레이블.setText("" + init.Power);
 			체력확인레이블.setBounds(580, 450, 100, 30);
 			체력확인레이블.setFont(btnfont);
@@ -256,7 +256,7 @@ class N_PartTime extends JFrame {
 			pizza.setVisible(true);
 			powers.setVisible(true);
 			powers.setBounds(550, 510, 190, 80);
-			init.partampower();
+			init.N_partampower();
 			체력확인레이블.setText("" + init.Power);
 			체력확인레이블.setBounds(570, 525, 100, 30);
 			체력확인레이블.setFont(btnfont);
@@ -345,7 +345,7 @@ class N_PartTime extends JFrame {
 			
 			powers.setVisible(true);
 			powers.setBounds(560, 435, 190, 80);
-			init.partampower();
+			init.N_partampower();
 			체력확인레이블.setText("" + init.Power);
 			체력확인레이블.setBounds(580, 450, 100, 30);
 			체력확인레이블.setFont(btnfont);
