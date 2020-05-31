@@ -52,15 +52,18 @@ public class MainGrowStudent extends JFrame {
 	Container contentPane;
 	ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	subImagePanel LevelPanel = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
-	subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/Room.jpg").getImage());
+	subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/home.png").getImage());
 	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel H_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
 	subImagePanel intellis = new subImagePanel(new ImageIcon("./image/intelli.png").getImage());
 	subImagePanel moneys = new subImagePanel(new ImageIcon("./image/money.png").getImage());
 	subImagePanel friends = new subImagePanel(new ImageIcon("./image/friend.png").getImage());// 이미지 패널 객체 생성
+	subImagePanel dates = new subImagePanel(new ImageIcon("./image/date3.png").getImage());
 
 	JLabel click = new JLabel("click");
+	
+	JLabel DL = new JLabel();
 	JLabel PL = new JLabel();
 	JLabel IL = new JLabel();
 	JLabel ML = new JLabel();
@@ -71,6 +74,19 @@ public class MainGrowStudent extends JFrame {
 	Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
 
 	MainGrowStudent() {
+		if (init.DdayNumber == 0) {
+			if (init.오픈소스이해도 >= 90) {
+				JLabel ending = new JLabel("오픈소스소프트웨어 이해도" + init.오픈소스이해도 + "입니다. A+을 받았어");
+				ending.setBounds(50,51,640,100);
+				ending.setVisible(true);
+				contentPane.add(ending);
+				
+				contentPane.setBounds(0, 0, 655, 650);
+				contentPane.setBackground(Color.WHITE);
+				contentPane.setVisible(true);
+				JOptionPane.showMessageDialog(null, "시험이 끝났어", "종강", JOptionPane.WARNING_MESSAGE);
+			}
+		}
 		setTitle("<< 대학생 키우기 >>");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = getContentPane();
@@ -153,11 +169,7 @@ public class MainGrowStudent extends JFrame {
 
 		init.MT();
 
-		Font weekfont = new Font("휴먼둥근헤드라인", Font.PLAIN, 20);
-		JLabel Lb1 = new JLabel();
-		Lb1.setText("종강까지 단, D-" + init.DdayNumber + "!");
-		Lb1.setFont(weekfont);
-		Lb1.setBounds(20, 10, 640, 50);
+		
 
 		JLabel dateLb = new JLabel();
 		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
@@ -169,7 +181,7 @@ public class MainGrowStudent extends JFrame {
 		Lb2.setBounds(70, 100, 600, 50);
 		Font Lb2font = new Font("HY견고딕", Font.PLAIN, 25);
 		Lb2.setFont(Lb2font);
-		Lb2.setText("<체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend + ">"); // (N+H)ManuPanel화면
+	//	Lb2.setText("<체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend + ">"); // (N+H)ManuPanel화면
 
 		JButton N_MoveBtn = new JButton("활동하기");
 		N_MoveBtn.setFont(f1);
@@ -186,7 +198,7 @@ public class MainGrowStudent extends JFrame {
 		H_MoveBtn.setFocusPainted(false);
 
 		NormalBtn.addActionListener(e -> {
-			HomePanel.add(Lb1);
+			
 			HomePanel.add(dateLb);
 			HomePanel.add(Lb2);
 			HomePanel.add(N_MoveBtn);
@@ -226,9 +238,19 @@ public class MainGrowStudent extends JFrame {
 			friends.add(FL);
 			friends.setVisible(true);
 			contentPane.add(friends);
+			
 
-			HomePanel.setBounds(0, 73, 640, 640);
-			contentPane.setBounds(0, 0, 640, 109);
+			dates.setLayout(null);
+			dates.setBounds(390, 0, 100, 100);
+			DL.setText("D- " + init.DdayNumber);
+			DL.setBounds(12, 16, 150, 50);
+			DL.setFont(powerfont);
+			dates.add(DL);
+			dates.setVisible(true);
+			contentPane.add(dates);			
+
+			HomePanel.setBounds(0, 73, 640, 452);
+			contentPane.setBounds(0, 452, 640, 200);
 			contentPane.add(HomePanel);
 			LevelPanel.setVisible(false);
 			contentPane.setVisible(true);
@@ -236,7 +258,7 @@ public class MainGrowStudent extends JFrame {
 		}); // 난이도 보통인 HomePanel로 이동
 
 		HardBtn.addActionListener(e -> {
-			HomePanel.add(Lb1);
+			
 			HomePanel.add(dateLb);
 			HomePanel.add(Lb2);
 			HomePanel.add(H_MoveBtn);
@@ -273,6 +295,16 @@ public class MainGrowStudent extends JFrame {
 			friends.setVisible(true);
 			contentPane.add(friends);
 
+
+			dates.setLayout(null);
+			dates.setBounds(390, 0, 100, 100);
+			DL.setText("D- " + init.DdayNumber);
+			DL.setBounds(12, 16, 150, 50);
+			DL.setFont(powerfont);
+			dates.add(DL);
+			dates.setVisible(true);
+			contentPane.add(dates);	
+			
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.add(HomePanel);
@@ -307,7 +339,7 @@ public class MainGrowStudent extends JFrame {
 																												// 출력
 
 			} else
-				new N_Lecture(PL, IL, ML, FL);
+				new N_Lecture(PL, IL, ML, FL, DL);
 		}); // N_Lecture 클래스 이동
 
 		JButton N_SBtn = new JButton("공부하기");
@@ -332,7 +364,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new N_Study(PL,IL,ML,FL);
+				new N_Study(PL, IL, ML, FL, DL);
 		}); // N_Study 클래스 이동
 
 		JButton N_PtBtn = new JButton("알바가기");
@@ -380,7 +412,12 @@ public class MainGrowStudent extends JFrame {
 		rdetailL.setBounds(37, 305, 250, 30);
 
 		N_RestBtn.addActionListener(event -> {
-			new N_Rest(PL,IL,ML,FL);
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+			new N_Rest(PL, IL, ML, FL, DL);
 		}); // N_Rest 클래스 이동
 
 		JButton N_BackBtn = new JButton("뒤로가기");
@@ -391,15 +428,15 @@ public class MainGrowStudent extends JFrame {
 		N_BackBtn.setBorderPainted(false);
 
 		N_BackBtn.addActionListener(event -> {
-            HomePanel.setVisible(true);
+			HomePanel.setVisible(true);
 			N_MenuPanel.setVisible(false);
 			contentPane.add(HomePanel);
 			contentPane.setBackground(Color.WHITE);
-			contentPane.setVisible(true);		
+			contentPane.setVisible(true);
 		}); // 다시 이동하기 누르면 아무 창도 안뜸... 수정
 
 		N_MoveBtn.addActionListener(e -> {
-			N_MenuPanel.add(Lb1);
+		
 			N_MenuPanel.add(N_LBtn);
 			N_MenuPanel.add(detail);
 			N_MenuPanel.add(detailL); // 강의버튼
@@ -449,7 +486,7 @@ public class MainGrowStudent extends JFrame {
 																												// 출력
 
 			} else
-				new H_Lecture(Lb1, Lb2);
+				new H_Lecture(Lb2);
 		}); // H_Lecture 클래스 이동
 
 		JButton H_SBtn = new JButton("공부하기");
@@ -473,7 +510,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new H_Study(Lb1,Lb2);
+				new H_Study(Lb2);
 		}); // H_Study 클래스 이동
 
 		JButton H_PtBtn = new JButton("알바가기");
@@ -501,7 +538,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new H_PartTime(Lb1, Lb2);
+				new H_PartTime(Lb2);
 		}); // H_PartTime 클래스 이동
 
 		JButton H_RestBtn = new JButton("놀기");
@@ -520,7 +557,7 @@ public class MainGrowStudent extends JFrame {
 		HrdetailL.setBounds(37, 305, 250, 30);
 
 		H_RestBtn.addActionListener(event -> {
-			new H_Rest(Lb1, Lb2);
+			new H_Rest(PL,  IL,  ML,  FL, DL);
 		}); // H_Rest 클래스 이동
 
 		JButton H_BackBtn = new JButton("뒤로가기");
@@ -532,21 +569,50 @@ public class MainGrowStudent extends JFrame {
 
 		H_BackBtn.addActionListener(event -> {
 
-			HomePanel.add(Lb1);
+			
 			HomePanel.add(dateLb);
 			HomePanel.add(Lb2);
 			HomePanel.add(H_MoveBtn);
 
 			HomePanel.setBounds(0, 73, 640, 640);
+
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.add(HomePanel);
+
 			LevelPanel.setVisible(false);
 			contentPane.setVisible(true);
 			contentPane.setBackground(Color.WHITE);
+
 		}); // 다시 이동하기 누르면 아무 창도 안뜸... 수정
 
+		N_MoveBtn.addActionListener(e -> {
+			
+			N_MenuPanel.add(N_LBtn);
+			N_MenuPanel.add(detail);
+			N_MenuPanel.add(detailL); // 강의버튼
+			N_MenuPanel.add(N_SBtn);
+			N_MenuPanel.add(sdetail);
+			N_MenuPanel.add(sdetailL); // 공부하기버튼
+			N_MenuPanel.add(N_PtBtn);
+			N_MenuPanel.add(pdetail);
+			N_MenuPanel.add(pdetailL);
+			N_MenuPanel.add(bonus); // 알바버튼
+			N_MenuPanel.add(N_RestBtn);
+			N_MenuPanel.add(rdetail);
+			N_MenuPanel.add(rdetailL); // 휴식버튼
+			N_MenuPanel.add(N_BackBtn);
+
+			N_MenuPanel.setBounds(0, 110, 640, 640);
+			N_MenuPanel.setVisible(true);
+			contentPane.add(N_MenuPanel);
+			HomePanel.setVisible(false);
+			contentPane.setBounds(0, 0, 640, 109);
+			contentPane.setVisible(true);
+
+		});
+
 		H_MoveBtn.addActionListener(e -> {
-			H_MenuPanel.add(Lb1);
+			
 			H_MenuPanel.add(H_LBtn);
 			H_MenuPanel.add(Hdetail);
 			H_MenuPanel.add(HdetailL);// 강의버튼
