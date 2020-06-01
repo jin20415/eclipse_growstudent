@@ -722,6 +722,13 @@ class N_Lecture extends JFrame {
 			lecturelist.setVisible(false);
 			Lecture_panel.setVisible(false);
 			
+			멘트1.setVisible(false);
+			멘트2.setVisible(false);
+			멘트3.setVisible(false);
+			멘트4.setVisible(false);
+			멘트5.setVisible(false);
+
+			
 			N_Selectpanel.setVisible(true);
 			
 			N_Selectpanel.setLayout(null);
