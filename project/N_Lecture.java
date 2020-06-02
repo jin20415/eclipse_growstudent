@@ -33,28 +33,25 @@ class lectureImagePanel extends JPanel {
 @SuppressWarnings("serial")
 class N_Lecture extends JFrame {
 	Container contentPane;
-	
+
 	subImagePanel longs = new subImagePanel(new ImageIcon("./image/longp.png").getImage());
 	subImagePanel shorts = new subImagePanel(new ImageIcon("./image/shortp.png").getImage());
 	subImagePanel lecturelist = new subImagePanel(new ImageIcon("./image/lecturelist.png").getImage());
-	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
+//	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/home.png").getImage());
+	subImagePanel N_Selectpanel = new subImagePanel(new ImageIcon("./image/N_select_home.png").getImage());
 	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
 	subImagePanel intellis = new subImagePanel(new ImageIcon("./image/intelli.png").getImage());
 	subImagePanel moneys = new subImagePanel(new ImageIcon("./image/money.png").getImage());
 	subImagePanel friends = new subImagePanel(new ImageIcon("./image/friend.png").getImage());
 	subImagePanel dates = new subImagePanel(new ImageIcon("./image/date3.png").getImage());
 	subImagePanel Lecture_panel = new subImagePanel(new ImageIcon("./image/lecture.jpg").getImage());
-	subImagePanel N_Selectpanel = new subImagePanel(new ImageIcon("./image/N_select_home.png").getImage());
-
-	JButton 체력확인 = new JButton("체력확인하기");
-	JButton 활동선택하기 = new JButton("활동선택하기");
 
 	JButton 오픈소스소프트웨어 = new JButton("이동");
 	JButton 데이터베이스 = new JButton("이동");
 	JButton 정보보호 = new JButton("이동");
 	JButton N_MoveBtn = new JButton("활동하기");
-	
+
 	JLabel 체력확인레이블 = new JLabel();
 	JLabel 지식확인레이블 = new JLabel();
 	JLabel 돈확인레이블 = new JLabel();
@@ -71,7 +68,7 @@ class N_Lecture extends JFrame {
 	JButton restbtn = new JButton("휴식");
 	JButton studybtn = new JButton("공부하기");
 	JButton homebtn = new JButton("이동");
-	
+
 	JButton SelectBtn = new JButton("활동선택");
 	JButton EndBtn = new JButton("일과 종료");
 
@@ -493,27 +490,37 @@ class N_Lecture extends JFrame {
 
 		SelectBtn.addActionListener(event -> {
 
-			PL.setText("" + init.Power);
-			IL.setText("" + init.Intelli);
-			ML.setText("" + init.Money);
-			FL.setText("" + init.Friend);
-			DL.setText("D- " + init.DdayNumber);
+			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBackground(new Color(148, 233, 86));
+			lecturebtn.setFont(f3);
+			lecturebtn.setFocusPainted(false);
+			lecturebtn.setBorderPainted(false);
+			lecturebtn.setVisible(true);
+			N_Selectpanel.add(lecturebtn);
 
-			SelectBtn.setVisible(false);
-			EndBtn.setVisible(false);
-			lecturelist.setVisible(false);
-			Lecture_panel.setVisible(false);
+			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBackground(new Color(246, 233, 92));
+			partbtn.setFont(f3);
+			partbtn.setFocusPainted(false);
+			partbtn.setBorderPainted(false);
+			partbtn.setVisible(true);
+			N_Selectpanel.add(partbtn);
 
-			멘트1.setVisible(false);
-			멘트2.setVisible(false);
-			멘트3.setVisible(false);
-			멘트4.setVisible(false);
-			멘트5.setVisible(false);
+			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBackground(new Color(90, 204, 240));
+			restbtn.setFont(f3);
+			restbtn.setFocusPainted(false);
+			restbtn.setBorderPainted(false);
+			restbtn.setVisible(true);
+			N_Selectpanel.add(restbtn);
 
-			powers.setVisible(false);
-			intellis.setVisible(false);
-			moneys.setVisible(false);
-			friends.setVisible(false);
+			studybtn.setBounds(250, 320, 100, 30);
+			studybtn.setBackground(new Color(208, 100, 238));
+			studybtn.setFont(f3);
+			studybtn.setFocusPainted(false);
+			studybtn.setBorderPainted(false);
+			studybtn.setVisible(true);
+			N_Selectpanel.add(studybtn);
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
@@ -534,7 +541,7 @@ class N_Lecture extends JFrame {
 			contentPane.add(intellis);
 
 			moneys.setLayout(null);
-			moneys.setBounds(240, 5, 200, 150);
+			moneys.setBounds(190, 5, 100, 100);
 			ML.setText("" + init.Money);
 			ML.setBounds(5, 13, 100, 50);
 			ML.setFont(powerfont);
@@ -543,7 +550,7 @@ class N_Lecture extends JFrame {
 			contentPane.add(moneys);
 
 			friends.setLayout(null);
-			friends.setBounds(320, 10, 150, 150);
+			friends.setBounds(290, 5, 100, 100);
 			FL.setText("" + init.Friend);
 			FL.setBounds(25, 5, 150, 50);
 			FL.setFont(powerfont);
@@ -558,28 +565,44 @@ class N_Lecture extends JFrame {
 			DL.setFont(powerfont);
 			dates.add(DL);
 			dates.setVisible(true);
+
 			contentPane.add(dates);
+			N_MoveBtn.setVisible(false);
+			HomePanel.setVisible(false);
+			lecturelist.setVisible(false);
+			Lecture_panel.setVisible(false);
 
-			contentPane.setBounds(0, 0, 655, 120);
-			contentPane.setBackground(Color.WHITE);
-			contentPane.setVisible(true);
+			멘트1.setVisible(false);
+			멘트2.setVisible(false);
+			멘트3.setVisible(false);
+			멘트4.setVisible(false);
+			멘트5.setVisible(false);
 
-			JOptionPane.showMessageDialog(null, "활동 선택으로 이동합니다", "이동", JOptionPane.INFORMATION_MESSAGE); // 메시지
 			SelectBtn.setVisible(false);
 			EndBtn.setVisible(false);
 			lecturelist.setVisible(false);
 			Lecture_panel.setVisible(false);
-			dispose();
+
+			N_Selectpanel.setVisible(true);
+
+			N_Selectpanel.setLayout(null);
+			N_Selectpanel.setBounds(0, 100, 650, 500);
+			contentPane.add(N_Selectpanel);
+			contentPane.setLayout(null);
+			contentPane.setBounds(0, 550, 650, 100);
+			contentPane.setVisible(true);
+
+			JOptionPane.showMessageDialog(null, "활동 선택으로 이동합니다", "이동", JOptionPane.INFORMATION_MESSAGE); // 메시지
+
 		});
 
 		EndBtn.addActionListener(event -> {
 
-			DL.setText(" "+init.newday());
+			DL.setText(" " + init.newday());
 			new N_Home(PL, IL, ML, FL, DL);
-			
+
 			SelectBtn.setVisible(false);
 			EndBtn.setVisible(false);
-			
 
 			JLabel dateLb = new JLabel();
 			dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
@@ -588,15 +611,14 @@ class N_Lecture extends JFrame {
 			dateLb.setBounds(310, 10, 600, 40);
 			dateLb.setVisible(true);
 			HomePanel.add(dateLb);
-						
-			
+
 			N_MoveBtn.setFont(f1);
 			N_MoveBtn.setBackground(Color.WHITE);
 			N_MoveBtn.setBounds(0, 410, 250, 45);
 			N_MoveBtn.setBorderPainted(false);
 			N_MoveBtn.setFocusPainted(false);
 			HomePanel.add(N_MoveBtn);
-			
+
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
 			PL.setText("" + init.Power);
@@ -641,16 +663,22 @@ class N_Lecture extends JFrame {
 			dates.add(DL);
 			dates.setVisible(true);
 			contentPane.add(dates);
-			
+
+			멘트1.setVisible(false);
+			멘트2.setVisible(false);
+			멘트3.setVisible(false);
+			멘트4.setVisible(false);
+			멘트5.setVisible(false);
+
 			PL.setText("" + init.Power);
 			IL.setText("" + init.Intelli);
 			ML.setText("" + init.Money);
 			FL.setText("" + init.Friend);
-	        DL.setText("D- "+init.DdayNumber);
-	        
+			DL.setText("D- " + init.DdayNumber);
+
 			lecturelist.setVisible(false);
 			Lecture_panel.setVisible(false);
-			
+
 			HomePanel.setLayout(null);
 			HomePanel.setBounds(0, 70, 640, 452);
 			HomePanel.setVisible(true);
@@ -662,16 +690,49 @@ class N_Lecture extends JFrame {
 			contentPane.setVisible(true);
 
 		});
-		
-		N_MoveBtn.addActionListener(event->{
-			
-			lecturebtn.setBounds(140, 50, 90, 20);
-			lecturebtn.setBackground(new Color(148,233,86));
+
+		N_MoveBtn.addActionListener(event -> {
+
+			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBackground(new Color(148, 233, 86));
+			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
 			lecturebtn.setBorderPainted(false);
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
-			
+
+			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBackground(new Color(246, 233, 92));
+			partbtn.setFont(f3);
+			partbtn.setFocusPainted(false);
+			partbtn.setBorderPainted(false);
+			partbtn.setVisible(true);
+			N_Selectpanel.add(partbtn);
+
+			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBackground(new Color(90, 204, 240));
+			restbtn.setFont(f3);
+			restbtn.setFocusPainted(false);
+			restbtn.setBorderPainted(false);
+			restbtn.setVisible(true);
+			N_Selectpanel.add(restbtn);
+
+			studybtn.setBounds(250, 260, 100, 30);
+			studybtn.setBackground(new Color(208, 100, 238));
+			studybtn.setFont(f3);
+			studybtn.setFocusPainted(false);
+			studybtn.setBorderPainted(false);
+			studybtn.setVisible(true);
+			N_Selectpanel.add(studybtn);
+
+			homebtn.setBounds(450, 400, 100, 30);
+			homebtn.setBackground(new Color(239, 89, 179));
+			homebtn.setFont(f3);
+			homebtn.setFocusPainted(false);
+			homebtn.setBorderPainted(false);
+			homebtn.setVisible(true);
+			N_Selectpanel.add(homebtn);
+
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
 			PL.setText("" + init.Power);
@@ -715,28 +776,159 @@ class N_Lecture extends JFrame {
 			DL.setFont(powerfont);
 			dates.add(DL);
 			dates.setVisible(true);
-			
+
 			contentPane.add(dates);
 			N_MoveBtn.setVisible(false);
 			HomePanel.setVisible(false);
 			lecturelist.setVisible(false);
 			Lecture_panel.setVisible(false);
-			
+
 			멘트1.setVisible(false);
 			멘트2.setVisible(false);
 			멘트3.setVisible(false);
 			멘트4.setVisible(false);
 			멘트5.setVisible(false);
 
-			
 			N_Selectpanel.setVisible(true);
-			
+
 			N_Selectpanel.setLayout(null);
-			N_Selectpanel.setBounds(0,100,650,500);
+			N_Selectpanel.setBounds(0, 100, 650, 500);
 			contentPane.add(N_Selectpanel);
 			contentPane.setLayout(null);
-			contentPane.setBounds(0,550,650,100);
+			contentPane.setBounds(0, 550, 650, 100);
 			contentPane.setVisible(true);
+		});
+
+		lecturebtn.addActionListener(event -> {
+			new N_Lecture(PL, IL, ML, FL, DL);
+
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+		});
+
+		partbtn.addActionListener(event -> {
+			// new N_PartTime(PL, IL, ML, FL, DL);
+
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+		});
+
+		restbtn.addActionListener(event -> {
+			new N_Rest(PL, IL, ML, FL, DL);
+
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+		});
+
+		studybtn.addActionListener(event -> {
+			new N_Study(PL, IL, ML, FL, DL);
+
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+		});
+		homebtn.addActionListener(event -> {
+			new N_Home(PL, IL, ML, FL, DL);
+
+			SelectBtn.setVisible(false);
+			EndBtn.setVisible(false);
+
+			JLabel dateLb = new JLabel();
+			dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+			Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
+			dateLb.setFont(datefont);
+			dateLb.setBounds(310, 10, 600, 40);
+			dateLb.setVisible(true);
+			HomePanel.add(dateLb);
+
+			N_MoveBtn.setFont(f1);
+			N_MoveBtn.setBackground(Color.WHITE);
+			N_MoveBtn.setBounds(0, 410, 250, 45);
+			N_MoveBtn.setBorderPainted(false);
+			N_MoveBtn.setFocusPainted(false);
+			HomePanel.add(N_MoveBtn);
+
+			powers.setLayout(null);
+			powers.setBounds(25, 5, 100, 100);
+			PL.setText("" + init.Power);
+			PL.setBounds(15, 5, 50, 50);
+			PL.setFont(powerfont);
+			powers.add(PL);
+			powers.setVisible(true);
+			contentPane.add(powers);
+
+			intellis.setLayout(null);
+			intellis.setBounds(110, 5, 100, 100);
+			IL.setText("" + init.Intelli);
+			IL.setBounds(18, 5, 50, 50);
+			IL.setFont(powerfont);
+			intellis.add(IL);
+			intellis.setVisible(true);
+			contentPane.add(intellis);
+
+			moneys.setLayout(null);
+			moneys.setBounds(190, 5, 100, 100);
+			ML.setText("" + init.Money);
+			ML.setBounds(5, 13, 100, 50);
+			ML.setFont(powerfont);
+			moneys.add(ML);
+			moneys.setVisible(true);
+			contentPane.add(moneys);
+
+			friends.setLayout(null);
+			friends.setBounds(290, 5, 100, 100);
+			FL.setText("" + init.Friend);
+			FL.setBounds(25, 5, 150, 50);
+			FL.setFont(powerfont);
+			friends.add(FL);
+			friends.setVisible(true);
+			contentPane.add(friends);
+
+			dates.setLayout(null);
+			dates.setBounds(390, 0, 100, 100);
+			DL.setText("D- " + init.DdayNumber);
+			DL.setBounds(12, 16, 150, 50);
+			DL.setFont(powerfont);
+			dates.add(DL);
+			dates.setVisible(true);
+			contentPane.add(dates);
+
+			멘트1.setVisible(false);
+			멘트2.setVisible(false);
+			멘트3.setVisible(false);
+			멘트4.setVisible(false);
+			멘트5.setVisible(false);
+
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			DL.setText("D- " + init.DdayNumber);
+
+			lecturelist.setVisible(false);
+			Lecture_panel.setVisible(false);
+
+			HomePanel.setLayout(null);
+			HomePanel.setBounds(0, 70, 640, 452);
+			HomePanel.setVisible(true);
+			contentPane.add(HomePanel);
+
+			contentPane.setLayout(null);
+			contentPane.setBounds(0, 450, 640, 200);
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setVisible(true);
+
 		});
 	}
 
