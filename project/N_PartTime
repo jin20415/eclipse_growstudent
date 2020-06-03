@@ -40,7 +40,7 @@ class N_PartTime extends JFrame {
 	Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
 	Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 12);
 	Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
-	Font f3 = new Font("HY견고딕", Font.PLAIN, 15);
+	Font f3 = new Font("HY견고딕", Font.BOLD, 18);
 	Font 내용폰트 = new Font("HY견고딕", Font.PLAIN, 18);
 	Font 내용6폰트 = new Font("HY견고딕", Font.BOLD, 12);
 	Font f1 = new Font("휴먼둥근헤드라인", Font.PLAIN, 22);
@@ -53,11 +53,6 @@ class N_PartTime extends JFrame {
 
 	JButton SelectBtn = new JButton("활동선택");
 	JButton EndBtn = new JButton("일과 종료");
-
-	JLabel 체력확인레이블 = new JLabel("" + init.Power);
-	JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
-	JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
-	JLabel pdetail = new JLabel();
 
 	JLabel 설명 = new JLabel("알바 면접을 합격한 곳은 제과점, 영화관, 패스트푸드점");
 	JLabel 설명1 = new JLabel("단 3곳이야");
@@ -576,7 +571,7 @@ class N_PartTime extends JFrame {
 
 		SelectBtn.addActionListener(event -> {
 
-			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBounds(130, 40, 130, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
@@ -584,7 +579,7 @@ class N_PartTime extends JFrame {
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
 
-			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBounds(325, 65, 120, 30);
 			partbtn.setBackground(new Color(246, 233, 92));
 			partbtn.setFont(f3);
 			partbtn.setFocusPainted(false);
@@ -592,7 +587,7 @@ class N_PartTime extends JFrame {
 			partbtn.setVisible(true);
 			N_Selectpanel.add(partbtn);
 
-			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBounds(40, 290, 115, 30);
 			restbtn.setBackground(new Color(90, 204, 240));
 			restbtn.setFont(f3);
 			restbtn.setFocusPainted(false);
@@ -600,13 +595,21 @@ class N_PartTime extends JFrame {
 			restbtn.setVisible(true);
 			N_Selectpanel.add(restbtn);
 
-			studybtn.setBounds(250, 320, 100, 30);
+			studybtn.setBounds(229, 305, 125, 30);
 			studybtn.setBackground(new Color(208, 100, 238));
 			studybtn.setFont(f3);
 			studybtn.setFocusPainted(false);
 			studybtn.setBorderPainted(false);
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
+
+			homebtn.setBounds(540, 411, 80, 30);
+			homebtn.setBackground(new Color(239, 89, 179));
+			homebtn.setFont(f3);
+			homebtn.setFocusPainted(false);
+			homebtn.setBorderPainted(false);
+			homebtn.setVisible(true);
+			N_Selectpanel.add(homebtn);
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
@@ -787,7 +790,7 @@ class N_PartTime extends JFrame {
 
 		N_MoveBtn.addActionListener(event -> {
 
-			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBounds(130, 40, 130, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
@@ -795,15 +798,14 @@ class N_PartTime extends JFrame {
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
 
-			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBounds(325, 65, 120, 30);
 			partbtn.setBackground(new Color(246, 233, 92));
 			partbtn.setFont(f3);
 			partbtn.setFocusPainted(false);
 			partbtn.setBorderPainted(false);
 			partbtn.setVisible(true);
 			N_Selectpanel.add(partbtn);
-
-			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBounds(40, 290, 115, 30);
 			restbtn.setBackground(new Color(90, 204, 240));
 			restbtn.setFont(f3);
 			restbtn.setFocusPainted(false);
@@ -811,7 +813,7 @@ class N_PartTime extends JFrame {
 			restbtn.setVisible(true);
 			N_Selectpanel.add(restbtn);
 
-			studybtn.setBounds(250, 260, 100, 30);
+			studybtn.setBounds(229, 305, 125, 30);
 			studybtn.setBackground(new Color(208, 100, 238));
 			studybtn.setFont(f3);
 			studybtn.setFocusPainted(false);
@@ -819,7 +821,7 @@ class N_PartTime extends JFrame {
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
 
-			homebtn.setBounds(450, 400, 100, 30);
+			homebtn.setBounds(540, 411, 80, 30);
 			homebtn.setBackground(new Color(239, 89, 179));
 			homebtn.setFont(f3);
 			homebtn.setFocusPainted(false);
@@ -1017,6 +1019,10 @@ class N_PartTime extends JFrame {
 			bakery.setVisible(false);
 			theater.setVisible(false);
 
+			알바선택.setVisible(false);
+			N_Selectpanel.setVisible(false);
+            N_MoveBtn.setVisible(true);
+            
 			HomePanel.setLayout(null);
 			HomePanel.setBounds(0, 70, 640, 452);
 			HomePanel.setVisible(true);
