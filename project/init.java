@@ -37,19 +37,19 @@ class init {
 
 	static void 오픈소스이해() {
 		오픈소스이해도 += 5;
-		DdayNumber--;
+	//	DdayNumber--;
 		JOptionPane.showMessageDialog(null, "오픈 소스 소프트웨어 과목의 이해도가 5 증가했습니다!", "이해도", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	static void 데이터베이스이해() {
 		데이터베이스이해도 += 5;
-		DdayNumber--;
+	//	DdayNumber--;
 		JOptionPane.showMessageDialog(null, "데이터베이스 과목의 이해도가 5 증가했습니다!", "이해도", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	static void 정보보호이해() {
 		정보보호이해도 += 5;
-		DdayNumber--;
+	//	DdayNumber--;
 		JOptionPane.showMessageDialog(null, "정보보호 과목의 이해도가 5 증가했습니다!", "이해도", JOptionPane.INFORMATION_MESSAGE);
 	}
 
@@ -100,12 +100,7 @@ class init {
 		MT();
 	}
 
-	static void N_intelli_up() {
-
-		Day += 1;
-		DdayNumber -= 1;
-
-	}
+	
 
 	static void N_Study() {
 		int random = (int) (Math.random() * 20 + 1);
