@@ -14,22 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-class lectureImagePanel extends JPanel {
-	private Image lectureimg;
-
-	public lectureImagePanel(Image lectureimg) {
-		this.lectureimg = lectureimg;
-		setSize(new Dimension(lectureimg.getWidth(null), lectureimg.getHeight(null)));
-		setPreferredSize(new Dimension(lectureimg.getWidth(null), lectureimg.getHeight(null)));
-		setLayout(null);
-		setSize(655, 650);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(lectureimg, 0, 0, null);
-	}
-}
-
 @SuppressWarnings("serial")
 class N_Lecture extends JFrame {
 	Container contentPane;
@@ -50,7 +34,7 @@ class N_Lecture extends JFrame {
 	JButton 오픈소스소프트웨어 = new JButton("이동");
 	JButton 데이터베이스 = new JButton("이동");
 	JButton 정보보호 = new JButton("이동");
-	JButton N_MoveBtn = new JButton("활동하기");
+	JButton N_MoveBtn = new JButton("활동 하기");
 
 	JLabel 체력확인레이블 = new JLabel();
 	JLabel 지식확인레이블 = new JLabel();
@@ -63,10 +47,10 @@ class N_Lecture extends JFrame {
 	JLabel 멘트4 = new JLabel();
 	JLabel 멘트5 = new JLabel();
 
-	JButton lecturebtn = new JButton("강의듣기");
-	JButton partbtn = new JButton("알바가기");
-	JButton restbtn = new JButton("휴식");
-	JButton studybtn = new JButton("공부하기");
+	JButton lecturebtn = new JButton("강의 듣기");
+	JButton partbtn = new JButton("알바 가기");
+	JButton restbtn = new JButton("휴식 하기");
+	JButton studybtn = new JButton("공부 하기");
 	JButton homebtn = new JButton("이동");
 
 	JButton SelectBtn = new JButton("활동선택");
@@ -76,7 +60,8 @@ class N_Lecture extends JFrame {
 	Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
 	Font f1 = new Font("휴먼둥근헤드라인", Font.PLAIN, 22);
 	Font f2 = new Font("HY견고딕", Font.BOLD, 20);
-	Font f3 = new Font("HY견고딕", Font.PLAIN, 15);
+	Font f3 = new Font("HY견고딕", Font.BOLD, 18);
+	Font f4 = new Font("HY견고딕", Font.PLAIN, 15);
 
 	N_Lecture(JLabel PL, JLabel IL, JLabel ML, JLabel FL, JLabel DL) {
 		contentPane = getContentPane();
@@ -172,6 +157,7 @@ class N_Lecture extends JFrame {
 		lecturelist.add(정보보호);
 
 		오픈소스소프트웨어.addActionListener(event -> {
+
 			init.N_Lecture_power();
 			Lecture_panel.setLayout(null);
 			Lecture_panel.setBounds(0, 0, 640, 400);
@@ -179,27 +165,27 @@ class N_Lecture extends JFrame {
 
 			멘트1.setText("'공7514 오픈소스 소프트웨어 강의실에 도착했어. 사물함에 가서 강의자료를 가져오자.'");
 			멘트1.setBounds(10, 470, 640, 50);
-			멘트1.setFont(f3);
+			멘트1.setFont(f4);
 			contentPane.add(멘트1);
 
 			멘트2.setText("'강의 시작했어! 집중 해보자.'");
 			멘트2.setBounds(10, 490, 640, 50);
-			멘트2.setFont(f3);
+			멘트2.setFont(f4);
 			contentPane.add(멘트2);
 
 			멘트3.setText("교수님 : 원격저장소 기능에는 포크, 풀 리퀘스트, 이슈, 위키가 있습니다.");
 			멘트3.setBounds(10, 510, 640, 50);
-			멘트3.setFont(f3);
+			멘트3.setFont(f4);
 			contentPane.add(멘트3);
 
 			멘트4.setText("강의가 끝났습니다. . .");
 			멘트4.setBounds(10, 530, 300, 50);
-			멘트4.setFont(f3);
+			멘트4.setFont(f4);
 			contentPane.add(멘트4);
 
-			멘트5.setText("[알림: 체력 - 25 지능 + 5]");
-			멘트5.setBounds(250, 530, 300, 50);
-			멘트5.setFont(f3);
+			멘트5.setText("[알림: 체력이 20 떨어졌습니다. ]");
+			멘트5.setBounds(170, 530, 300, 50);
+			멘트5.setFont(f4);
 			contentPane.add(멘트5);
 
 			contentPane.setBounds(0, 400, 655, 200);
@@ -269,7 +255,6 @@ class N_Lecture extends JFrame {
 			contentPane.setBackground(Color.WHITE);
 			contentPane.setVisible(true);
 			init.오픈소스이해();
-			init.N_intelli_up();
 			init.MT();
 
 		});
@@ -284,27 +269,27 @@ class N_Lecture extends JFrame {
 
 			멘트1.setText("'공7507 데이터베이스 강의실에 도착했어. 사물함에 가서 교재를 가져와야겠어.'");
 			멘트1.setBounds(10, 470, 640, 50);
-			멘트1.setFont(f3);
+			멘트1.setFont(f4);
 			contentPane.add(멘트1);
 
 			멘트2.setText("강의 시작했어! '교수님 : 정보통신기술과 마당서점의 성장 단계에 대해 알아보겠습니다.'");
 			멘트2.setBounds(10, 490, 640, 50);
-			멘트2.setFont(f3);
+			멘트2.setFont(f4);
 			contentPane.add(멘트2);
 
 			멘트3.setText("교수님 : 1970년대는 컴퓨터 없이 관리되었고, 80년대부터 컴퓨터를 이용한");
 			멘트3.setBounds(10, 510, 640, 50);
-			멘트3.setFont(f3);
+			멘트3.setFont(f4);
 			contentPane.add(멘트3);
 
-			멘트4.setText(" 응용 프로그램으로 업무를 처리했습니다. 강의가 끝났습니다. . .");
-			멘트4.setBounds(10, 530, 300, 50);
-			멘트4.setFont(f3);
+			멘트4.setText("응용 프로그램으로 업무를 처리했습니다. ");
+			멘트4.setBounds(10, 530, 640, 50);
+			멘트4.setFont(f4);
 			contentPane.add(멘트4);
 
-			멘트5.setText("[알림: 체력 - 25 지능 + 5]");
-			멘트5.setBounds(250, 530, 300, 50);
-			멘트5.setFont(f3);
+			멘트5.setText("강의가 끝났습니다. . .[알림: 체력이 20 떨어졌습니다.]");
+			멘트5.setBounds(10, 530, 300, 50);
+			멘트5.setFont(f4);
 			contentPane.add(멘트5);
 
 			contentPane.setBounds(0, 400, 655, 200);
@@ -375,46 +360,45 @@ class N_Lecture extends JFrame {
 			contentPane.setVisible(true);
 
 			init.데이터베이스이해();
-			init.N_intelli_up();
 			init.MT();
 
 		});
 
 		정보보호.addActionListener(event -> {
 
+			init.N_Lecture_power();
+
 			Lecture_panel.setLayout(null);
 			Lecture_panel.setBounds(0, 0, 640, 400);
 			contentPane.add(Lecture_panel);
 
-			멘트1.setText("'공7714 정보보호 강의실에 도착했어. 사물함에 가서 교재를 가져와야겠어.'");
+			멘트1.setText("'공7714 정보보호 강의실에 도착했는데 교재가 사물함에 있어. 사물함에 가서 교재를 '");
 			멘트1.setBounds(10, 470, 640, 50);
-			멘트1.setFont(f3);
+			멘트1.setFont(f4);
 			contentPane.add(멘트1);
 
-			멘트2.setText("강의 시작했어! '교수님 : 나한테 배우면 쉬워~.'");
+			멘트2.setText("챙겨 강의실에 도착하니 마침 강의가 시작 전이였어!'");
 			멘트2.setBounds(10, 490, 640, 50);
-			멘트2.setFont(f3);
+			멘트2.setFont(f4);
 			contentPane.add(멘트2);
 
-			멘트3.setText("교수님 : 다혜한테 교재 내용 한두문장 적어달라구 하기 .");
+			멘트3.setText("'교수님 : 패시브 어택은 공격을 받는걸 감지하지 못하지만 액티브 어택은 공격을 ");
 			멘트3.setBounds(10, 510, 640, 50);
-			멘트3.setFont(f3);
+			멘트3.setFont(f4);
 			contentPane.add(멘트3);
 
-			멘트4.setText("강의가 끝났습니다. . .");
+			멘트4.setText("감지할 수 있습니다. 강의가 끝났습니다. . .");
 			멘트4.setBounds(10, 530, 300, 50);
-			멘트4.setFont(f3);
+			멘트4.setFont(f4);
 			contentPane.add(멘트4);
 
-			멘트5.setText("[알림: 체력 - 25 지능 + 5]");
-			멘트5.setBounds(250, 530, 300, 50);
-			멘트5.setFont(f3);
+			멘트5.setText("[알림: 체력이 20 떨어졌습니다.]");
+			멘트5.setBounds(320, 530, 300, 50);
+			멘트5.setFont(f4);
 			contentPane.add(멘트5);
 
 			contentPane.setBounds(0, 400, 655, 200);
 			contentPane.setBackground(Color.WHITE);
-
-			init.N_Lecture_power();
 
 			체력확인레이블.setText("" + init.Power);
 			체력확인레이블.setBounds(15, 5, 50, 50);
@@ -480,7 +464,6 @@ class N_Lecture extends JFrame {
 			contentPane.setVisible(true);
 
 			init.정보보호이해();
-			init.N_intelli_up();
 			init.MT();
 
 		});
@@ -490,7 +473,7 @@ class N_Lecture extends JFrame {
 
 		SelectBtn.addActionListener(event -> {
 
-			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBounds(130, 40, 130, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
@@ -498,7 +481,7 @@ class N_Lecture extends JFrame {
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
 
-			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBounds(325, 65, 120, 30);
 			partbtn.setBackground(new Color(246, 233, 92));
 			partbtn.setFont(f3);
 			partbtn.setFocusPainted(false);
@@ -506,7 +489,7 @@ class N_Lecture extends JFrame {
 			partbtn.setVisible(true);
 			N_Selectpanel.add(partbtn);
 
-			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBounds(40, 290, 115, 30);
 			restbtn.setBackground(new Color(90, 204, 240));
 			restbtn.setFont(f3);
 			restbtn.setFocusPainted(false);
@@ -514,13 +497,21 @@ class N_Lecture extends JFrame {
 			restbtn.setVisible(true);
 			N_Selectpanel.add(restbtn);
 
-			studybtn.setBounds(250, 320, 100, 30);
+			studybtn.setBounds(229, 305, 125, 30);
 			studybtn.setBackground(new Color(208, 100, 238));
 			studybtn.setFont(f3);
 			studybtn.setFocusPainted(false);
 			studybtn.setBorderPainted(false);
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
+
+			homebtn.setBounds(540, 411, 80, 30);
+			homebtn.setBackground(new Color(239, 89, 179));
+			homebtn.setFont(f3);
+			homebtn.setFocusPainted(false);
+			homebtn.setBorderPainted(false);
+			homebtn.setVisible(true);
+			N_Selectpanel.add(homebtn);
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
@@ -598,7 +589,10 @@ class N_Lecture extends JFrame {
 
 		EndBtn.addActionListener(event -> {
 
+			PL.setText(" " + init.newdaypower());
+
 			DL.setText(" " + init.newday());
+
 			new N_Home(PL, IL, ML, FL, DL);
 
 			SelectBtn.setVisible(false);
@@ -621,7 +615,7 @@ class N_Lecture extends JFrame {
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
-			PL.setText("" + init.Power);
+			PL.setText("" + init.newdaypower());
 			PL.setBounds(15, 5, 50, 50);
 			PL.setFont(powerfont);
 			powers.add(PL);
@@ -693,7 +687,7 @@ class N_Lecture extends JFrame {
 
 		N_MoveBtn.addActionListener(event -> {
 
-			lecturebtn.setBounds(130, 50, 100, 30);
+			lecturebtn.setBounds(130, 40, 130, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
@@ -701,7 +695,7 @@ class N_Lecture extends JFrame {
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
 
-			partbtn.setBounds(320, 70, 100, 30);
+			partbtn.setBounds(325, 65, 120, 30);
 			partbtn.setBackground(new Color(246, 233, 92));
 			partbtn.setFont(f3);
 			partbtn.setFocusPainted(false);
@@ -709,7 +703,7 @@ class N_Lecture extends JFrame {
 			partbtn.setVisible(true);
 			N_Selectpanel.add(partbtn);
 
-			restbtn.setBounds(50, 288, 100, 30);
+			restbtn.setBounds(40, 290, 115, 30);
 			restbtn.setBackground(new Color(90, 204, 240));
 			restbtn.setFont(f3);
 			restbtn.setFocusPainted(false);
@@ -717,7 +711,7 @@ class N_Lecture extends JFrame {
 			restbtn.setVisible(true);
 			N_Selectpanel.add(restbtn);
 
-			studybtn.setBounds(250, 260, 100, 30);
+			studybtn.setBounds(229, 305, 125, 30);
 			studybtn.setBackground(new Color(208, 100, 238));
 			studybtn.setFont(f3);
 			studybtn.setFocusPainted(false);
@@ -725,7 +719,7 @@ class N_Lecture extends JFrame {
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
 
-			homebtn.setBounds(450, 400, 100, 30);
+			homebtn.setBounds(540, 411, 80, 30);
 			homebtn.setBackground(new Color(239, 89, 179));
 			homebtn.setFont(f3);
 			homebtn.setFocusPainted(false);
@@ -810,7 +804,7 @@ class N_Lecture extends JFrame {
 		});
 
 		partbtn.addActionListener(event -> {
-			// new N_PartTime(PL, IL, ML, FL, DL);
+			new N_PartTime(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
 			IL.setText("" + init.Intelli);
@@ -918,6 +912,8 @@ class N_Lecture extends JFrame {
 
 			lecturelist.setVisible(false);
 			Lecture_panel.setVisible(false);
+			N_Selectpanel.setVisible(false);
+			N_MoveBtn.setVisible(true);
 
 			HomePanel.setLayout(null);
 			HomePanel.setBounds(0, 70, 640, 452);
