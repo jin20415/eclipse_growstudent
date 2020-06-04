@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 class N_PartTime extends JFrame {
 	Container contentPane;
-	
+
 	subImagePanel 알바선택 = new subImagePanel(new ImageIcon("./image/career4.png").getImage());
 	subImagePanel theater = new subImagePanel(new ImageIcon("./image/theater.jpg").getImage());
 	subImagePanel pizza = new subImagePanel(new ImageIcon("./image/pizza.jpg").getImage());
@@ -571,6 +571,13 @@ class N_PartTime extends JFrame {
 
 		SelectBtn.addActionListener(event -> {
 
+			if (init.Power <= 0) {
+				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "로  체력이 없어서 더 이상 할 수 없습니다", "경고",
+						JOptionPane.WARNING_MESSAGE); // 메시지출력
+				init.DdayNumber--;
+				init.Day++;
+				init.newdaypower();
+			}
 			lecturebtn.setBounds(130, 40, 130, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
@@ -667,7 +674,7 @@ class N_PartTime extends JFrame {
 			내용5.setVisible(false);
 			내용6.setVisible(false);
 
-			알바선택.setVisible(false);			
+			알바선택.setVisible(false);
 			pizza.setVisible(false);
 			theater.setVisible(false);
 			bakery.setVisible(false);
@@ -691,6 +698,7 @@ class N_PartTime extends JFrame {
 		EndBtn.addActionListener(event -> {
 
 			DL.setText(" " + init.newday());
+			PL.setText(" " + init.newdaypower());
 			new N_Home(PL, IL, ML, FL, DL);
 
 			SelectBtn.setVisible(false);
@@ -768,14 +776,13 @@ class N_PartTime extends JFrame {
 			pizza.setVisible(false);
 			theater.setVisible(false);
 			bakery.setVisible(false);
-			
+
 			PL.setText("" + init.Power);
 			IL.setText("" + init.Intelli);
 			ML.setText("" + init.Money);
 			FL.setText("" + init.Friend);
 			DL.setText("D- " + init.DdayNumber);
 
-			
 			HomePanel.setLayout(null);
 			HomePanel.setBounds(0, 70, 640, 452);
 			HomePanel.setVisible(true);
@@ -876,7 +883,6 @@ class N_PartTime extends JFrame {
 			contentPane.add(dates);
 			N_MoveBtn.setVisible(false);
 			HomePanel.setVisible(false);
-		
 
 			내용.setVisible(false);
 			내용1.setVisible(false);
@@ -897,6 +903,7 @@ class N_PartTime extends JFrame {
 		});
 
 		lecturebtn.addActionListener(event -> {
+
 			new N_Lecture(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
@@ -907,7 +914,8 @@ class N_PartTime extends JFrame {
 		});
 
 		partbtn.addActionListener(event -> {
-			 new N_PartTime(PL, IL, ML, FL, DL);
+
+			new N_PartTime(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
 			IL.setText("" + init.Intelli);
@@ -917,6 +925,7 @@ class N_PartTime extends JFrame {
 		});
 
 		restbtn.addActionListener(event -> {
+
 			new N_Rest(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
@@ -927,6 +936,7 @@ class N_PartTime extends JFrame {
 		});
 
 		studybtn.addActionListener(event -> {
+
 			new N_Study(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
@@ -1021,8 +1031,8 @@ class N_PartTime extends JFrame {
 
 			알바선택.setVisible(false);
 			N_Selectpanel.setVisible(false);
-            N_MoveBtn.setVisible(true);
-            
+			N_MoveBtn.setVisible(true);
+
 			HomePanel.setLayout(null);
 			HomePanel.setBounds(0, 70, 640, 452);
 			HomePanel.setVisible(true);
