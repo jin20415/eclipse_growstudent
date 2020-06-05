@@ -65,7 +65,7 @@ class N_Rest extends JFrame {
 		Restpanel.setBounds(1, 110, 650, 470);
 
 		노래방.setBounds(553, 140, 57, 30);
-		노래방.setBackground(Color.WHITE);
+		노래방.setBackground(new Color(127,127,127));
 		노래방.setFont(restfont);
 		노래방.setBorderPainted(false);
 		노래방.setFocusPainted(false);
@@ -73,7 +73,7 @@ class N_Rest extends JFrame {
 		Restpanel.add(노래방);
 
 		영화관.setBounds(423, 260, 57, 30);
-		영화관.setBackground(Color.WHITE);
+		영화관.setBackground(new Color(127,127,127));
 		영화관.setFont(restfont);
 		영화관.setBorderPainted(false);
 		영화관.setFocusPainted(false);
@@ -81,7 +81,7 @@ class N_Rest extends JFrame {
 		Restpanel.add(영화관);
 
 		놀이공원.setBounds(553, 378, 57, 30);
-		놀이공원.setBackground(Color.WHITE);
+		놀이공원.setBackground(new Color(127,127,127));
 		놀이공원.setFont(restfont);
 		놀이공원.setBorderPainted(false);
 		놀이공원.setFocusPainted(false);
@@ -334,7 +334,7 @@ class N_Rest extends JFrame {
 			contentPane.add(intellis);
 
 			돈확인레이블.setText("" + init.Money);
-			돈확인레이블.setBounds(5, 13, 100, 50);
+			돈확인레이블.setBounds(15, 13, 100, 50);
 			돈확인레이블.setFont(btnfont);
 			moneys.add(돈확인레이블);
 			moneys.setBounds(490, 10, 190, 80);
@@ -484,7 +484,7 @@ class N_Rest extends JFrame {
 
 		N_MoveBtn.addActionListener(event -> {
 
-			lecturebtn.setBounds(130, 40, 130, 30);
+			lecturebtn.setBounds(220, 180, 80, 30);
 			lecturebtn.setBackground(new Color(148, 233, 86));
 			lecturebtn.setFont(f3);
 			lecturebtn.setFocusPainted(false);
@@ -492,14 +492,15 @@ class N_Rest extends JFrame {
 			lecturebtn.setVisible(true);
 			N_Selectpanel.add(lecturebtn);
 
-			partbtn.setBounds(325, 65, 120, 30);
+			partbtn.setBounds(440, 180, 80, 30);
 			partbtn.setBackground(new Color(246, 233, 92));
 			partbtn.setFont(f3);
 			partbtn.setFocusPainted(false);
 			partbtn.setBorderPainted(false);
 			partbtn.setVisible(true);
 			N_Selectpanel.add(partbtn);
-			restbtn.setBounds(40, 290, 115, 30);
+			
+			restbtn.setBounds(130, 410, 80, 30);
 			restbtn.setBackground(new Color(90, 204, 240));
 			restbtn.setFont(f3);
 			restbtn.setFocusPainted(false);
@@ -507,7 +508,7 @@ class N_Rest extends JFrame {
 			restbtn.setVisible(true);
 			N_Selectpanel.add(restbtn);
 
-			studybtn.setBounds(229, 305, 125, 30);
+			studybtn.setBounds(320, 430, 80, 30);
 			studybtn.setBackground(new Color(208, 100, 238));
 			studybtn.setFont(f3);
 			studybtn.setFocusPainted(false);
@@ -515,13 +516,14 @@ class N_Rest extends JFrame {
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
 
-			homebtn.setBounds(540, 411, 80, 30);
+			homebtn.setBounds(510, 391, 80, 30);
 			homebtn.setBackground(new Color(239, 89, 179));
 			homebtn.setFont(f3);
 			homebtn.setFocusPainted(false);
 			homebtn.setBorderPainted(false);
 			homebtn.setVisible(true);
 			N_Selectpanel.add(homebtn);
+
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 100, 100);
