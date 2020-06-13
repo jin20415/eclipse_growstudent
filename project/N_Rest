@@ -34,11 +34,11 @@ class N_Rest extends JFrame {
 	JButton 영화관 = new JButton("이동");
 	JButton 놀이공원 = new JButton("이동");
 
-	JButton lecturebtn = new JButton("강의듣기");
-	JButton partbtn = new JButton("알바가기");
-	JButton restbtn = new JButton("휴식");
-	JButton studybtn = new JButton("공부하기");
-	JButton homebtn = new JButton("이동");
+	JButton lecturebtn = new JButton("이동");
+	JButton partbtn = new JButton("이동");
+	JButton restbtn = new JButton("이동");
+	JButton studybtn = new JButton("이동");
+	JButton fitnessbtn = new JButton("이동");
 	JButton N_MoveBtn = new JButton("활동하기");
 
 	JLabel 체력확인레이블 = new JLabel();
@@ -297,12 +297,7 @@ class N_Rest extends JFrame {
 			SelectBtn.setFocusPainted(false);
 			contentPane.add(SelectBtn);
 
-	/*		EndBtn.setBounds(0, 70, 130, 30);
-			EndBtn.setBackground(new Color(225, 80, 80));
-			EndBtn.setFont(btnfont);
-			EndBtn.setBorderPainted(false);
-			EndBtn.setFocusPainted(false);
-			contentPane.add(EndBtn);*/
+
 
 			contentPane.add(cinemapanel);
 			contentPane.setBounds(0, 428, 665, 227);
@@ -371,6 +366,7 @@ class N_Rest extends JFrame {
 			영화관.setVisible(false);
 			놀이공원.setVisible(false);
 
+			N_MoveBtn.setVisible(false);
 			SelectBtn.setBounds(0, 30, 130, 30);
 			SelectBtn.setBackground(new Color(225, 80, 80));
 			SelectBtn.setFont(btnfont);
@@ -402,10 +398,10 @@ class N_Rest extends JFrame {
 //			EndBtn.setVisible(false);
 
 			JLabel dateLb = new JLabel();
-			dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+			dateLb.setText("Today 2020년" + init.Month + "월" + init.Day + "일  " );
 			Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
 			dateLb.setFont(datefont);
-			dateLb.setBounds(310, 10, 600, 40);
+			dateLb.setBounds(380, 10, 600, 40);
 			dateLb.setVisible(true);
 			HomePanel.add(dateLb);
 
@@ -414,6 +410,7 @@ class N_Rest extends JFrame {
 			N_MoveBtn.setBounds(0, 410, 250, 45);
 			N_MoveBtn.setBorderPainted(false);
 			N_MoveBtn.setFocusPainted(false);
+			N_MoveBtn.setVisible(true);
 			HomePanel.add(N_MoveBtn);
 
 			powers.setLayout(null);
@@ -516,13 +513,13 @@ class N_Rest extends JFrame {
 			studybtn.setVisible(true);
 			N_Selectpanel.add(studybtn);
 
-			homebtn.setBounds(510, 391, 80, 30);
-			homebtn.setBackground(new Color(239, 89, 179));
-			homebtn.setFont(f3);
-			homebtn.setFocusPainted(false);
-			homebtn.setBorderPainted(false);
-			homebtn.setVisible(true);
-			N_Selectpanel.add(homebtn);
+			fitnessbtn.setBounds(510, 391, 80, 30);
+			fitnessbtn.setBackground(new Color(239, 89, 179));
+			fitnessbtn.setFont(f3);
+			fitnessbtn.setFocusPainted(false);
+			fitnessbtn.setBorderPainted(false);
+			fitnessbtn.setVisible(true);
+			N_Selectpanel.add(fitnessbtn);
 
 
 			powers.setLayout(null);
@@ -622,96 +619,14 @@ class N_Rest extends JFrame {
 			FL.setText("" + init.Friend);
 			DL.setText("D- " + init.DdayNumber);
 		});
-		homebtn.addActionListener(event -> {
-			new N_Home(PL, IL, ML, FL, DL);
-
-			SelectBtn.setVisible(false);
-//			EndBtn.setVisible(false);
-
-			JLabel dateLb = new JLabel();
-			dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
-			Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
-			dateLb.setFont(datefont);
-			dateLb.setBounds(310, 10, 600, 40);
-			dateLb.setVisible(true);
-			HomePanel.add(dateLb);
-
-			N_MoveBtn.setFont(f1);
-			N_MoveBtn.setBackground(Color.WHITE);
-			N_MoveBtn.setBounds(0, 410, 250, 45);
-			N_MoveBtn.setBorderPainted(false);
-			N_MoveBtn.setFocusPainted(false);
-			HomePanel.add(N_MoveBtn);
-
-			powers.setLayout(null);
-			powers.setBounds(25, 5, 100, 100);
-			PL.setText("" + init.Power);
-			PL.setBounds(15, 5, 50, 50);
-			PL.setFont(powerfont);
-			powers.add(PL);
-			powers.setVisible(true);
-			contentPane.add(powers);
-
-			intellis.setLayout(null);
-			intellis.setBounds(110, 5, 100, 100);
-			IL.setText("" + init.Intelli);
-			IL.setBounds(18, 5, 50, 50);
-			IL.setFont(powerfont);
-			intellis.add(IL);
-			intellis.setVisible(true);
-			contentPane.add(intellis);
-
-			moneys.setLayout(null);
-			moneys.setBounds(190, 5, 100, 100);
-			ML.setText("" + init.Money);
-			ML.setBounds(5, 13, 100, 50);
-			ML.setFont(powerfont);
-			moneys.add(ML);
-			moneys.setVisible(true);
-			contentPane.add(moneys);
-
-			friends.setLayout(null);
-			friends.setBounds(290, 5, 100, 100);
-			FL.setText("" + init.Friend);
-			FL.setBounds(25, 5, 150, 50);
-			FL.setFont(powerfont);
-			friends.add(FL);
-			friends.setVisible(true);
-			contentPane.add(friends);
-
-			dates.setLayout(null);
-			dates.setBounds(390, 0, 100, 100);
-			DL.setText("D- " + init.DdayNumber);
-			DL.setBounds(12, 16, 150, 50);
-			DL.setFont(powerfont);
-			dates.add(DL);
-			dates.setVisible(true);
-			contentPane.add(dates);
+		fitnessbtn.addActionListener(event -> {
+			new N_Fitness(PL, IL, ML, FL, DL);
 
 			PL.setText("" + init.Power);
 			IL.setText("" + init.Intelli);
 			ML.setText("" + init.Money);
 			FL.setText("" + init.Friend);
 			DL.setText("D- " + init.DdayNumber);
-
-			singpanel.setVisible(false);
-			cinemapanel.setVisible(false);
-			parkpanel.setVisible(false);
-
-			Restpanel.setVisible(false);
-			N_Selectpanel.setVisible(false);
-			N_MoveBtn.setVisible(true);
-
-			HomePanel.setLayout(null);
-			HomePanel.setBounds(0, 70, 640, 452);
-			HomePanel.setVisible(true);
-			contentPane.add(HomePanel);
-
-			contentPane.setLayout(null);
-			contentPane.setBounds(0, 450, 640, 200);
-			contentPane.setBackground(Color.WHITE);
-			contentPane.setVisible(true);
-
 		});
 
 	}
