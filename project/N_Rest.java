@@ -374,12 +374,7 @@ class N_Rest extends JFrame {
 			SelectBtn.setFocusPainted(false);
 			contentPane.add(SelectBtn);
 
-/*			EndBtn.setBounds(0, 70, 130, 30);
-			EndBtn.setBackground(new Color(225, 80, 80));
-			EndBtn.setFont(btnfont);
-			EndBtn.setBorderPainted(false);
-			EndBtn.setFocusPainted(false);
-			contentPane.add(EndBtn);*/
+
 
 			contentPane.add(parkpanel);
 			contentPane.setBounds(0, 428, 665, 227);
@@ -387,7 +382,7 @@ class N_Rest extends JFrame {
 
 			JOptionPane.showMessageDialog(null, "불꽃놀이 퍼레이드가 정말 예뻤어", "놀이공원", JOptionPane.INFORMATION_MESSAGE);
 
-			// dispose();
+			
 		});
 
 		SelectBtn.addActionListener(event -> {
@@ -395,7 +390,7 @@ class N_Rest extends JFrame {
 			new N_Home(PL, IL, ML, FL, DL);
 
 			SelectBtn.setVisible(false);
-//			EndBtn.setVisible(false);
+
 
 			JLabel dateLb = new JLabel();
 			dateLb.setText("Today 2020년" + init.Month + "월" + init.Day + "일  " );
